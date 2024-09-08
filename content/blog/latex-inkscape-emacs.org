@@ -1,0 +1,31 @@
+---
+title: "Latex-Inkscape-DoomEmacs Combo"
+date: 2023-08-03T17:44:15+07:00
+author: "firmanqs"
+draft: false
+tags: ["math", "latex", "code", "emacs"]
+description: "doing some (emacs :write (LaTex with diagram in Inkscape))"
+---
+
+* Setup
+Before we cook lets prepare the meat.
+
+#+begin_quote
+By the way, you can use fanilla emacs too. I have try configuring my vanilla emacs, it works, but slower than doom emacs (i am not good at lisp yet).
+#+end_quote
+
+So open your doom emacs =init.el= at =~/.config/doom/init.el= or =~/doom.d/init.el= and uncomment the =latex= module with =+latexmk= and =+lsp= flags. Now reload your config by executing =M-x doom-reload= (or =SPC-h-r-r=)
+
+We also need a python script called =inkscape-figure= made by Gilles Castel (RIP.). To install inkscape-figure: run
+
+#+begin_src sh
+pip3 install inkscape-figure
+#+end_src
+
+Inkscape-figure, require us to have rofi (of course we can use another menu, maybe dmenu or wofi) i left that as an exercise for you (says mathbook). For now, let's install rofi
+
+#+begin_src sh
+sudo apt install rofi # debian based
+sudo pacman -s rofi # arch based
+sudo dnf install rofi # fedora and family
+#+end_src

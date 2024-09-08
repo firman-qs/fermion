@@ -1,0 +1,13 @@
+---
+title: "LaTeX Homework Template"
+date: 2024-06-10T17:44:15+07:00
+author: "firmanqs"
+draft: false
+toc: false
+tags: ["LaTeX", "School"]
+description: "LaTeX homework template with problem and solution page link"
+---
+
+* How to create Homework LaTeX Template?
+{{< youtube 2yGDNBcYQpo >}}
+[[https://youtu.be/2yGDNBcYQpo][Creating a LaTeX Homework Template (after not using it for a while)]]

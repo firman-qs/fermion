@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fermion – Kumpulan Materi Fisika</title>
+    <link>http://192.168.1.108:1313/docs/</link>
+    <description>Recent content in Kumpulan Materi Fisika on Fermion</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2024 15:42:56 +0700</lastBuildDate>
+    
+	  <atom:link href="http://192.168.1.108:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Titik Berat Benda Titik/Partikel</title>
+      <link>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-titik/</link>
+      <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
+      
+      <guid>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-titik/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Penjelasan Materi Titik Berat Sistem Benda Titik/Partikel&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;penjelasan-materi-titik-berat-sistem-benda-titikpartikel&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#penjelasan-materi-titik-berat-sistem-benda-titikpartikel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-orange-100 hx-bg-orange-50 hx-text-orange-800 dark:hx-border-orange-400/30 dark:hx-bg-orange-400/20 dark:hx-text-orange-300&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;
+        📝
+      &lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;
+      Tugas sistem 3 partikel pada akhir video dapat di-scan dan diunggah &lt;a href=&#34;https://drive.google.com/drive/folders/1_KSi9XThz-BNHciMG2nrXf5dTjxJZJtm?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;disini&lt;/a&gt;.
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&#34;margin-top: 2ex;&#34;&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Materi titik berat di mulai pada menit &lt;strong&gt;51:43&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div style=&#34;margin-top: 2ex;&#34;&gt;&lt;/div&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/iIdfuy6sAwM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Titik Berat Benda Homogen 1 Dimensi</title>
+      <link>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-1d/</link>
+      <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
+      
+      <guid>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-1d/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Titik Berat Benda Homogen 2 Dimensi</title>
+      <link>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-2d/</link>
+      <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
+      
+      <guid>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-2d/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

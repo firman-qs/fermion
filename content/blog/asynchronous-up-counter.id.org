@@ -1,0 +1,29 @@
+---
+title: "Pencacah Maju Asinkron (Asynchronous Up Counter) dengan Clocked J-K Flip-Flop: Simulasi dengan Proteus"
+date: 2022-11-10T17:44:15+07:00
+author: "firmanqs"
+draft: false
+tags: ["electronics", "integrated circuit", "proteus"]
+description: "Mensimulasikan Pencacah Maju Asinkron (Asynchronous Up Counter) dengan Clocked J-K Flip-Flop di dalam software Proteus"
+toc: false
+---
+
+Dasar dari rangkaian Up Counter Asinkron adalah *T flip-flop* yang dibentuk dari *J-K flip-flop*. Dengan memberikan kedua input *J* dan *K* nilai logika *“1”* sehingga beroperasi sebagai *J-K “Toggle”*.
+
+{{< figure src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*BRUGx0mogyV9FxfFh9j9WA.png" alt="T-FF from JK-FF">}}
+
+Rangkaian pencacah maju tak sinkron memerlukan empat buah *J-K flip-flop*. Flip-flop pertama diberi sinyal clock, sedangkan outputnya (*Q*) menjadi clock untuk flip-flop kedua. Selanjutnya output flip-flop kedua menjadi clock untuk flip-flop ketiga, begitu juga seterusnya untuk flip-flop keempat. Pada flip-flop ke empat output *Q* di tanahkan (/grounded/).
+
+Berikut rangkaian Up Counter dengan menggunakan proteus (file project dapat didownload [[https://github.com/firman-qs/proteus-project][disini]]):
+
+{{< figure src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*nKBEj6OA6YDCL6XNgGRiXA.png" alt="Gambar simulasi Up Counter dengan Flip-Flop J-K" title="Gambar simulasi Up Counter dengan Flip-Flop J-K">}}
+
+Jika anda ingin mencoba melakukan percobaan Up Counter dengan Flip Flop J-K ini, maka langkah yang perlu dilakukan adalah:
+
+1. Set Clock ke nilai 0 (Low)
+2. Set Q0, Q1, Q3, dan Q3 ke nilai 0 (Sakelar yang menghubungkan ground dan R atau Clear, dalam kondisi tertutup. Kemudian, membukanya kembali).
+3. Set Clock ke nilai 0 dan 1 bergantian dengan memutus/menghubungkan saklar pertama (atas).
+4. Catatan: LED paling kiri merupakan LSB (Least Significant Bit) sedangkan yang kanan MSB (Most Significant Bit), sehingga terbalik dengan angka biner normal (seharusnya LSB dikanan).
+
+* Versi Video
+{{< youtube UVQQUzUYsaY >}}

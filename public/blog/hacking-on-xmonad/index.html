@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+
+  <title>Hacking on XMonad &#43; Polybar – Fermion</title>
+  <meta name="description" content="Nothing special, just XMonad rice" />
+
+  
+    <link rel="canonical" href="http://192.168.1.108:1313/blog/hacking-on-xmonad/" itemprop="url" />
+  
+
+  
+
+<meta property="og:title" content="Hacking on XMonad &#43; Polybar" />
+<meta property="og:description" content="Nothing special, just XMonad rice" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://192.168.1.108:1313/blog/hacking-on-xmonad/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-01-11T17:44:15+07:00" />
+<meta property="article:modified_time" content="2024-01-11T17:44:15+07:00" />
+
+  
+  <meta itemprop="name" content="Hacking on XMonad &#43; Polybar">
+  <meta itemprop="description" content="Nothing special, just XMonad rice">
+  <meta itemprop="datePublished" content="2024-01-11T17:44:15+07:00">
+  <meta itemprop="dateModified" content="2024-01-11T17:44:15+07:00">
+  <meta itemprop="wordCount" content="4674">
+  <meta itemprop="keywords" content="Ricing,Linux,XMonad">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hacking on XMonad &#43; Polybar">
+  <meta name="twitter:description" content="Nothing special, just XMonad rice">
+
+    <link href="/css/compiled/main.css" rel="stylesheet" />
+
+
+
+  <link href="/css/custom.css" rel="stylesheet" />
+
+
+
+
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+</head>
+<body dir="ltr"><div class="nav-container hx-sticky hx-top-0 hx-z-20 hx-w-full hx-bg-transparent print:hx-hidden">
+  <div class="nav-container-blur hx-pointer-events-none hx-absolute hx-z-[-1] hx-h-full hx-w-full hx-bg-white dark:hx-bg-dark hx-shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] contrast-more:hx-shadow-[0_0_0_1px_#000] dark:hx-shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] contrast-more:dark:hx-shadow-[0_0_0_1px_#fff]"></div>
+
+  <nav class="hx-mx-auto hx-flex hx-items-center hx-justify-end hx-gap-2 hx-h-16 hx-px-6 hx-max-w-[90rem]">
+    <a class="hx-flex hx-items-center hover:hx-opacity-75 ltr:hx-mr-auto rtl:hx-ml-auto" href="/">
+        <img class="hx-block dark:hx-hidden" src="/images/logo.svg" alt="Fermion" height="20" width="20" />
+        <img class="hx-hidden dark:hx-block" src="/images/logo-dark.svg" alt="Fermion" height="20" width="20" />
+        <span class="hx-mx-2 hx-font-extrabold hx-inline hx-select-none" title="Fermion">Fermion</span>
+    </a><a
+            title="Fisika"
+            href="/docs"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"
+          >
+            <span class="hx-text-center">Fisika</span>
+          </a><a
+            title="Blog"
+            href="/blog"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-font-medium"
+          >
+            <span class="hx-text-center">Blog</span>
+          </a><a
+            title="About"
+            href="/about"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"
+          >
+            <span class="hx-text-center">About</span>
+          </a><div class="search-wrapper hx-relative md:hx-w-64">
+  <div class="hx-relative hx-flex hx-items-center hx-text-gray-900 contrast-more:hx-text-gray-800 dark:hx-text-gray-300 contrast-more:dark:hx-text-gray-300">
+    <input
+      placeholder="Search..."
+      class="search-input hx-block hx-w-full hx-appearance-none hx-rounded-lg hx-px-3 hx-py-2 hx-transition-colors hx-text-base hx-leading-tight md:hx-text-sm hx-bg-black/[.05] dark:hx-bg-gray-50/10 focus:hx-bg-white dark:focus:hx-bg-dark placeholder:hx-text-gray-500 dark:placeholder:hx-text-gray-400 contrast-more:hx-border contrast-more:hx-border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx-absolute hx-my-1.5 hx-select-none ltr:hx-right-1.5 rtl:hx-left-1.5 hx-h-5 hx-rounded hx-bg-white hx-px-1.5 hx-font-mono hx-text-[10px] hx-font-medium hx-text-gray-500 hx-border dark:hx-border-gray-100/20 dark:hx-bg-dark/50 contrast-more:hx-border-current contrast-more:hx-text-current contrast-more:dark:hx-border-current hx-items-center hx-gap-1 hx-transition-opacity hx-pointer-events-none hx-hidden sm:hx-flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx-hidden hx-border hx-border-gray-200 hx-bg-white hx-text-gray-100 dark:hx-border-neutral-800 dark:hx-bg-neutral-900 hx-absolute hx-top-full hx-z-20 hx-mt-2 hx-overflow-auto hx-overscroll-contain hx-rounded-xl hx-py-2.5 hx-shadow-xl hx-max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:hx-max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx-inset-x-0 ltr:md:hx-left-auto rtl:md:hx-right-auto contrast-more:hx-border contrast-more:hx-border-gray-900 contrast-more:dark:hx-border-gray-50 hx-w-screen hx-min-h-[100px] hx-max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferer" href="https://github.com/firman-qs" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx-sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hamburger-menu -hx-mr-2 hx-rounded hx-p-2 active:hx-bg-gray-400/20 md:hx-hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class="hx-mx-auto hx-flex hx-max-w-screen-xl">
+    <div class="mobile-menu-overlay [transition:background-color_1.5s_ease] hx-fixed hx-inset-0 hx-z-10 hx-bg-black/80 dark:hx-bg-black/60 hx-hidden"></div>
+<aside class="sidebar-container hx-flex hx-flex-col print:hx-hidden md:hx-top-16 md:hx-shrink-0 md:hx-w-64 md:hx-self-start max-md:[transform:translate3d(0,-100%,0)] md:hx-hidden xl:hx-block">
+  
+  <div class="hx-px-4 hx-pt-4 md:hx-hidden">
+    <div class="search-wrapper hx-relative md:hx-w-64">
+  <div class="hx-relative hx-flex hx-items-center hx-text-gray-900 contrast-more:hx-text-gray-800 dark:hx-text-gray-300 contrast-more:dark:hx-text-gray-300">
+    <input
+      placeholder="Search..."
+      class="search-input hx-block hx-w-full hx-appearance-none hx-rounded-lg hx-px-3 hx-py-2 hx-transition-colors hx-text-base hx-leading-tight md:hx-text-sm hx-bg-black/[.05] dark:hx-bg-gray-50/10 focus:hx-bg-white dark:focus:hx-bg-dark placeholder:hx-text-gray-500 dark:placeholder:hx-text-gray-400 contrast-more:hx-border contrast-more:hx-border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx-absolute hx-my-1.5 hx-select-none ltr:hx-right-1.5 rtl:hx-left-1.5 hx-h-5 hx-rounded hx-bg-white hx-px-1.5 hx-font-mono hx-text-[10px] hx-font-medium hx-text-gray-500 hx-border dark:hx-border-gray-100/20 dark:hx-bg-dark/50 contrast-more:hx-border-current contrast-more:hx-text-current contrast-more:dark:hx-border-current hx-items-center hx-gap-1 hx-transition-opacity hx-pointer-events-none hx-hidden sm:hx-flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx-hidden hx-border hx-border-gray-200 hx-bg-white hx-text-gray-100 dark:hx-border-neutral-800 dark:hx-bg-neutral-900 hx-absolute hx-top-full hx-z-20 hx-mt-2 hx-overflow-auto hx-overscroll-contain hx-rounded-xl hx-py-2.5 hx-shadow-xl hx-max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:hx-max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx-inset-x-0 ltr:md:hx-left-auto rtl:md:hx-right-auto contrast-more:hx-border contrast-more:hx-border-gray-900 contrast-more:dark:hx-border-gray-50 hx-w-screen hx-min-h-[100px] hx-max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx-overflow-y-auto hx-overflow-x-hidden hx-p-4 hx-grow md:hx-h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx-flex hx-flex-col hx-gap-1 md:hx-hidden">
+      
+      
+          <li class="open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/"
+    
+  >Blog
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/latex-homework-template/"
+    
+  >LaTeX Homework Template
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/menulis-latex/"
+    
+  >Menulis Latex
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/patching-simple-terminal-st/"
+    
+  >Patching Simple Terminal (st)
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/blog/hacking-on-xmonad/"
+    
+  >Hacking on XMonad &#43; Polybar
+    </a>
+  
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/plotting-fresnel-equation-python/"
+    
+  >Plotting Fresnel Equations with Python3
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/latex-inkscape-emacs/"
+    
+  >Latex-Inkscape-DoomEmacs Combo
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/asynchronous-up-counter.id/"
+    
+  >Pencacah Maju Asinkron (Asynchronous Up Counter) dengan Clocked J-K Flip-Flop: Simulasi dengan Proteus
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/"
+    
+  >Kumpulan Materi Fisika
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/"
+    
+  >Fisika Kelas 11
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/elastisitas/"
+    
+  >Elastisitas
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/"
+    
+  >Titik Berat Benda
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/titik-berat-sistem-titik/"
+    
+  >Titik Berat Benda Titik/Partikel
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/titik-berat-sistem-1d/"
+    
+  >Titik Berat Benda Homogen 1 Dimensi
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/titik-berat-sistem-2d/"
+    
+  >Titik Berat Benda Homogen 2 Dimensi
+    </a>
+              
+            </li></ul>
+      </div>
+            </li></ul>
+      </div>
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikax/"
+    
+  >Fisika Kelas 10
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/about/"
+    
+  >About
+    </a></li>
+      <li class="[word-break:break-word] hx-mt-5 hx-mb-2 hx-px-2 hx-py-1.5 hx-text-sm hx-font-semibold hx-text-gray-900 first:hx-mt-0 dark:hx-text-gray-100">
+        <span class="hx-cursor-default">More</span>
+      </li>
+    
+      <li><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/"
+    
+  >My Github</a></li>
+    
+    </ul>
+
+    <div class="max-xl:hx-hidden hx-h-0 hx-w-64 hx-shrink-0"></div></div>
+  
+  
+    <div class="md:hx-hidden  hx-sticky hx-bottom-0 hx-bg-white dark:hx-bg-dark hx-mx-4 hx-py-4 hx-shadow-[0_-12px_16px_#fff] hx-flex hx-items-center hx-gap-2 dark:hx-border-neutral-800 dark:hx-shadow-[0_-12px_16px_#111] contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-shadow-none hx-border-t" data-toggle-animation="show"><div class="hx-flex hx-grow hx-flex-col"><button
+  title="Change theme"
+  data-theme="light"
+  class="theme-toggle hx-group hx-h-7 hx-rounded-md hx-px-2 hx-text-left hx-text-xs hx-font-medium hx-text-gray-600 hx-transition-colors dark:hx-text-gray-400 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50"
+  type="button"
+  aria-label="Change theme"
+>
+  <div class="hx-flex hx-items-center hx-gap-2 hx-capitalize"><svg height=12 class="group-data-[theme=light]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hx-hidden">Light</span><svg height=12 class="group-data-[theme=dark]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hx-hidden">Dark</span></div>
+</button>
+</div></div></aside>
+    
+<nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
+      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/imfing/hextra/edit/main/exampleSite/content/blog/hacking-on-xmonad.org" target="_blank" rel="noreferer">Edit this page on GitHub →</a>
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
+          <span>Scroll to top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+        
+  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current">
+        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
+          <a href="/blog/">Blog</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Hacking on XMonad &#43; Polybar</div>
+  </div>
+
+        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">Hacking on XMonad &#43; Polybar</h1>
+        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">January 11, 2024</span></div>
+        <div class="content">
+          
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+ABOUT
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>This is the xmonad window manager configuration of firman-qs.</p>
+<ul>
+<li>My Github:  <a href="http://www.github.com/firmn-qs/">http://www.github.com/firmn-qs/</a></li>
+</ul>
+<p>Originally, this was my old archlinux <a href="https://distro.tube/dtos/">DTOS</a> configuration, but now i am on fedora. I have tested on my fedora and it works fine. For other distributions it should be the same, just complete the necessary packages. I&#39;ll try to give a little guidance.</p>
+<p>
+<code class="verbatim">Note</code> Before you go and copy my config, read the section below for the dependencies and short tutorial to get started. if I didn&#39;t miss anything, this should be enough to get your linux to use my xmonad configuration.</p>
+<p>
+Credit: <a href="https://xmonad.org/"><a href="https://xmonad.org">https://xmonad.org</a></a>, <a href="https://gitlab.com/dtos"><a href="https://gitlab.com/dtos">https://gitlab.com/dtos</a></a></p>
+<div class="bold-block">
+<p>You can see my doom emacs configuration here:</p>
+<ul>
+<li><a href="https://github.com/firman-qs/.dotfiles/blob/main/.config/doom/config.org">config.org</a></li>
+<li><a href="https://github.com/firman-qs/.dotfiles/blob/main/.config/doom/init.el">init.el</a></li>
+<li><a href="https://github.com/firman-qs/.dotfiles/blob/main/.config/doom/packages.el">package.el</a></li>
+</ul>
+</div>
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+Documentation
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p><a href="https://xmonad.org/documentation.html">https://xmonad.org/documentation.html</a>
+What I will tell you next, all come from the documentation. Documentation is the most important thing when you learn something, whether it&#39;s a window manager, programming language, etc. Here are some links to the xmonad documentation:</p>
+<ul>
+<li><a href="https://xmonad.org/documentation.html"><a href="https://xmonad.org/documentation.html">https://xmonad.org/documentation.html</a></a> Documentation home page.</li>
+<li><a href="https://xmonad.org/INSTALL.html"><a href="https://xmonad.org/INSTALL.html">https://xmonad.org/INSTALL.html</a></a> On how to install xmonad.</li>
+<li>
+<p>Hackage Documentation, It contains further documentation, like what libraries you can use, how to use them, more like how to use haskell for xmonad.</p>
+<ul>
+<li><a href="https://hackage.haskell.org/package/xmonad"><a href="https://hackage.haskell.org/package/xmonad">https://hackage.haskell.org/package/xmonad</a></a></li>
+<li><a href="https://hackage.haskell.org/package/xmonad-contrib"><a href="https://hackage.haskell.org/package/xmonad-contrib">https://hackage.haskell.org/package/xmonad-contrib</a></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Getting Started with xmonad and this Config Dependencies
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<div id="outline-container-headline-4" class="outline-4">
+<h4 id="headline-4">
+Installing xmonad
+</h4>
+<div id="outline-text-headline-4" class="outline-text-4">
+<p>In general, the process is the same, the difference is which method you use. Either use your distro&#39;s package manager, or build from source with cabal or stack. This time I will use the package manager, because I find it easier and use less space. Of course if you want to play with haskell more deeply, using stack or cabal is great.</p>
+<div id="outline-container-headline-5" class="outline-5">
+<h5 id="headline-5">
+Installing dependencies
+</h5>
+<div id="outline-text-headline-5" class="outline-text-5">
+<p>The dependencies are the same, but the names may differ in different package managers. I will give an example for Fedora, for other distros, you can open the <a href="https://xmonad.org/INSTALL.html">install xmonad documentation link</a> that I provided before. Run in terminal</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf update <span class="o">&amp;&amp;</span>
+</span></span><span class="line"><span class="cl">sudo dnf install git libX11-devel libXft-devel libXinerama-devel libXrandr-devel libXScrnSaver-devel</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-5">
+<h5 id="headline-6">
+Make xmonad config directory
+</h5>
+<div id="outline-text-headline-6" class="outline-text-5">
+<p>This is where you store all configurations. The new xmonad saves its configuration in ~/.config/xmonad, while the older version is in ~/.xmonad. In my case, the fedora package manager provided xmonad which seemed to be older, so I saved the configuration in ~/.xmonad. If you are using a distro like arch linux you will probably use ~/.config/xmonad instead. Just test which one works later. To make configuration directory:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># for latest version:</span>
+</span></span><span class="line"><span class="cl">mkdir ~/.config/xmonad
+</span></span><span class="line"><span class="cl"><span class="c1"># or for older version:</span>
+</span></span><span class="line"><span class="cl">mkdir ~/.xmonad</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-5">
+<h5 id="headline-7">
+Installing xmonad
+</h5>
+<div id="outline-text-headline-7" class="outline-text-5">
+<p>Three things you need to install, xmonad itself, xmonad-contrib (Community-maintained tiling algorithms and extension modules for xmonad), and the bar (unless you don&#39;t want bar 😁). The bar that is commonly used in conjunction with xmonad is xmobar and <a href="https://youtube.com/playlist?list=PL5--8gKSku144jIsizdhdxq_fKTmBBGBA">distrotube</a> has a great tutorial on this. The other bar, which I&#39;ll be using in this configuration is polybar, so we&#39;ll be installing that as well. On fedora:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install xmonad ghc-xmonad-contrib polybar</span></span></code></pre></div>
+</div>
+<p>
+Remember, the package name may be different in each package manager that your distro uses. Use package search to help you, for example, on arch linux you can use <code>pacman -Ss pkg-name-you-are-looking-for</code>, or on ubuntu: <code>~apt search pkg-name-you-are-looking-for</code>.
+if i remember correctly, on arch linux the names are xmonad, xmonad-contrib (without ghc-), and polybar. So on an arch based distro you can do:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo pacman -S xmonad xmonad-contrib polybar</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-5">
+<h5 id="headline-8">
+Another thing to install
+</h5>
+<div id="outline-text-headline-8" class="outline-text-5">
+<div id="outline-container-headline-9" class="outline-6">
+<h6 id="headline-9">
+Dmenu
+</h6>
+<div id="outline-text-headline-9" class="outline-text-6">
+<p>Xmonad uses dmenu by default, you can copy my patched dmenu (see <a href="https://github.com/firman-qs/.dotfiles">my dmenu build</a>) and install it or install the plain version (<a href="https://tools.suckless.org/dmenu)">https://tools.suckless.org/dmenu)</a> and patch it yourself. Of course you can use rofi or another launcher, just set it in keybinding later.</p>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-6">
+<h6 id="headline-10">
+Dbus
+</h6>
+<div id="outline-text-headline-10" class="outline-text-6">
+<p>To easily display XMonad status in polybar we need DBus monitoring and i use <a href="https://github.com/xintron/xmonad-log">xintron/xmonad-log</a> for that. Xmonad-log allows us to send status over DBus using XMonad&#39;s DynamicLog to any application that support executing custom scripts such as polybar.</p>
+<ol>
+<li>First we need to install <a href="https://hackage.haskell.org/package/dbus">dbus</a>. Again, i&#39;m using fedora here:</li>
+</ol>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install ghc-dbus ghc-dbus-devel</span></span></code></pre></div>
+</div>
+<ol>
+<li>
+<p>Next, we need to install golang to build xmonad-log:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo dnf install golang</span></span></code></pre></div>
+</div>
+</li>
+<li>
+<p>Then we clone the xmonad-log repository. On <a href="https://github.com/xintron/xmonad-log">its github</a> it says we need to clone it to <code>$GOPATH/src/github.com/xintron/xmonad-log</code>. $GOPATH is a variable used by Go to reference the location where all project folders are stored. However, Setup Go project using $GOPATH is not recommended for the latest version of Go, instead we use Go Modules. So just clone to our home directory, or any other directory you want.</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># clone to home directory</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/xintron/xmonad-log.git ~/xmonad-log
+</span></span><span class="line"><span class="cl"><span class="c1"># or clone to another directory</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/xintron/xmonad-log.git ~/path/to/another/dir/xmonad-log</span></span></code></pre></div>
+</div>
+</li>
+<li>
+<p>Now go to xmonad-log directory which we have clone, by ordering:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> xmonad-log</span></span></code></pre></div>
+</div>
+</li>
+<li>
+<p>Once we&#39;re on xmonad-log directory, then we initilize new Go project by:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">go mod init xmonad-log</span></span></code></pre></div>
+</div>
+</li>
+<li>
+<p>Then add dependencies to current module and install them, by:</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">go get xmonad-log</span></span></code></pre></div>
+</div>
+</li>
+<li>
+<p>Now we build it</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">go build</span></span></code></pre></div>
+</div>
+</li>
+</ol>
+<p>This will give you an xmonad-log binary in the directory. Move this to an appropriate directory in your $PATH.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-2">
+<h2 id="headline-11">
+IMPORTS
+</h2>
+<div id="outline-text-headline-11" class="outline-text-2">
+<p>These are Haskell modules that we must import so that we can use their functions later in the config. We use <code>import</code> stetement for to import modules. Qualified import makes the imported module only available in qualified form, eg. it force an obligatory namespace qualifier to imported identifiers. A qualified import allows us to use functions with the same name from several modules. Because there is a namespace, haskell doesn&#39;t get agitated.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="c1">-- Base</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">System.Directory</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">System.IO</span> <span class="p">(</span><span class="nf">hClose</span><span class="p">,</span> <span class="nf">hPutStr</span><span class="p">,</span> <span class="nf">hPutStrLn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">System.Exit</span> <span class="p">(</span><span class="nf">exitSuccess</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">XMonad.StackSet</span> <span class="k">as</span> <span class="n">W</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Actions</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.CopyWindow</span> <span class="p">(</span><span class="nf">kill1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.CycleWS</span> <span class="p">(</span><span class="kt">Direction1D</span><span class="p">(</span><span class="o">..</span><span class="p">),</span> <span class="nf">moveTo</span><span class="p">,</span> <span class="nf">shiftTo</span><span class="p">,</span> <span class="nf">toggleWS</span><span class="p">,</span> <span class="kt">WSType</span><span class="p">(</span><span class="o">..</span><span class="p">),</span> <span class="nf">nextScreen</span><span class="p">,</span> <span class="nf">prevScreen</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.MouseResize</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.Promote</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.RotSlaves</span> <span class="p">(</span><span class="nf">rotSlavesDown</span><span class="p">,</span> <span class="nf">rotAllDown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.WindowGo</span> <span class="p">(</span><span class="nf">runOrRaise</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Actions.WithAll</span> <span class="p">(</span><span class="nf">sinkAll</span><span class="p">,</span> <span class="nf">killAll</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">XMonad.Actions.Search</span> <span class="k">as</span> <span class="n">S</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Data</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">Data.Char</span> <span class="p">(</span><span class="nf">isSpace</span><span class="p">,</span> <span class="nf">toUpper</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">Data.Maybe</span> <span class="p">(</span><span class="nf">fromJust</span><span class="p">,</span> <span class="nf">isJust</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">Data.Monoid</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">Data.Tree</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Data.Map</span> <span class="k">as</span> <span class="n">M</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Dbus</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">DBus</span> <span class="k">as</span> <span class="n">D</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">DBus.Client</span> <span class="k">as</span> <span class="n">D</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">Codec.Binary.UTF8.String</span> <span class="k">as</span> <span class="n">UTF8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Hooks</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.DynamicLog</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.EwmhDesktops</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.ManageDocks</span> <span class="p">(</span><span class="nf">avoidStruts</span><span class="p">,</span> <span class="nf">docks</span><span class="p">,</span> <span class="nf">manageDocks</span><span class="p">,</span> <span class="kt">ToggleStruts</span><span class="p">(</span><span class="o">..</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.ManageHelpers</span> <span class="p">(</span><span class="nf">isFullscreen</span><span class="p">,</span> <span class="nf">doFullFloat</span><span class="p">,</span> <span class="nf">doCenterFloat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.ServerMode</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.SetWMName</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.StatusBar</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.StatusBar.PP</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.WindowSwallowing</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Hooks.WorkspaceHistory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Layouts</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.Accordion</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.GridVariants</span> <span class="p">(</span><span class="kt">Grid</span><span class="p">(</span><span class="kt">Grid</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.SimplestFloat</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.Spiral</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.ResizableTile</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.Tabbed</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.ThreeColumns</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Layouts modifiers</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.LayoutModifier</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.LimitWindows</span> <span class="p">(</span><span class="nf">limitWindows</span><span class="p">,</span> <span class="nf">increaseLimit</span><span class="p">,</span> <span class="nf">decreaseLimit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.MultiToggle</span> <span class="p">(</span><span class="nf">mkToggle</span><span class="p">,</span> <span class="nf">single</span><span class="p">,</span> <span class="kt">EOT</span><span class="p">(</span><span class="kt">EOT</span><span class="p">),</span> <span class="p">(</span><span class="o">??</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.MultiToggle.Instances</span> <span class="p">(</span><span class="kt">StdTransformers</span><span class="p">(</span><span class="kt">NBFULL</span><span class="p">,</span> <span class="kt">MIRROR</span><span class="p">,</span> <span class="kt">NOBORDERS</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.NoBorders</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.Renamed</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.ShowWName</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.Simplest</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.Spacing</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.SubLayouts</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.WindowArranger</span> <span class="p">(</span><span class="nf">windowArrange</span><span class="p">,</span> <span class="kt">WindowArrangerMsg</span><span class="p">(</span><span class="o">..</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Layout.WindowNavigation</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">XMonad.Layout.ToggleLayouts</span> <span class="k">as</span> <span class="n">T</span> <span class="p">(</span><span class="n">toggleLayouts</span><span class="p">,</span> <span class="kt">ToggleLayout</span><span class="p">(</span><span class="kt">Toggle</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="k">qualified</span> <span class="nn">XMonad.Layout.MultiToggle</span> <span class="k">as</span> <span class="n">MT</span> <span class="p">(</span><span class="kt">Toggle</span><span class="p">(</span><span class="o">..</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Utilities</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.Dmenu</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.EZConfig</span> <span class="p">(</span><span class="nf">additionalKeysP</span><span class="p">,</span> <span class="nf">mkNamedKeymap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.Hacks</span> <span class="p">(</span><span class="nf">windowedFullscreenFixEventHook</span><span class="p">,</span> <span class="nf">javaHack</span><span class="p">,</span> <span class="nf">trayerAboveXmobarEventHook</span><span class="p">,</span> <span class="nf">trayAbovePanelEventHook</span><span class="p">,</span> <span class="nf">trayerPaddingXmobarEventHook</span><span class="p">,</span> <span class="nf">trayPaddingXmobarEventHook</span><span class="p">,</span> <span class="nf">trayPaddingEventHook</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.NamedActions</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.NamedScratchpad</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.NamedWindows</span> <span class="p">(</span><span class="nf">getName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.Run</span> <span class="p">(</span><span class="nf">runProcessWithInput</span><span class="p">,</span> <span class="nf">safeSpawn</span><span class="p">,</span> <span class="nf">spawnPipe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">XMonad.Util.SpawnOnce</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Colorscheme Module, made using pywal template, and link it to ~/.xmonaad/lib/Colors directory using ln -s</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nn">Colors.XmonadPywal</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-2">
+<h2 id="headline-12">
+VARIABLES
+</h2>
+<div id="outline-text-headline-12" class="outline-text-2">
+<p>It&#39;s nice to assign values to stuff that you will use more than once in the config. Setting values for things like font, terminal and editor means you only have to change the value here to make changes globally.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="c1">-- Variables</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myFont</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myFont</span> <span class="ow">=</span> <span class="s">&#34;xft:JetBrainsMono Nerd Font:regular:size=9:antialias=true:hinting=true&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myModMask</span> <span class="ow">::</span> <span class="kt">KeyMask</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myModMask</span> <span class="ow">=</span> <span class="n">mod4Mask</span>  <span class="c1">-- Sets modkey to super/windows key</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myTerminal</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myTerminal</span> <span class="ow">=</span> <span class="s">&#34;alacritty&#34;</span>  <span class="c1">-- Sets default terminal</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myBrowser</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myBrowser</span> <span class="ow">=</span> <span class="s">&#34;firefox &#34;</span>  <span class="c1">-- Sets qutebrowser as browser</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myEmacs</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myEmacs</span> <span class="ow">=</span> <span class="s">&#34;emacsclient -c -a &#39;emacs&#39; &#34;</span>  <span class="c1">-- Makes emacs keybindings easier to type</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myEditor</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myEditor</span> <span class="ow">=</span> <span class="s">&#34;code&#34;</span>  <span class="c1">-- Sets emacs as editor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myFileManager</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myFileManager</span> <span class="ow">=</span> <span class="s">&#34;nemo&#34;</span>  <span class="c1">-- Sets emacs as editor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myBorderWidth</span> <span class="ow">::</span> <span class="kt">Dimension</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myBorderWidth</span> <span class="ow">=</span> <span class="mi">2</span>  <span class="c1">-- Sets border width for windows</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myNormColor</span> <span class="ow">::</span> <span class="kt">String</span>  <span class="c1">-- Border color of normal windows</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myNormColor</span>   <span class="ow">=</span> <span class="n">background</span>  <span class="c1">-- This variable is imported from Colors.THEME</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myFocusColor</span> <span class="ow">::</span> <span class="kt">String</span>  <span class="c1">-- Border color of focused windows</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myFocusColor</span>  <span class="ow">=</span> <span class="n">color4</span>  <span class="c1">-- This variable is imported from Colors.THEME</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">mySoundPlayer</span> <span class="ow">::</span> <span class="kt">String</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mySoundPlayer</span> <span class="ow">=</span> <span class="s">&#34;ffplay -nodisp -autoexit &#34;</span>  <span class="c1">-- The program that will play system sounds</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- just like his name, to count window</span>
+</span></span><span class="line"><span class="cl"><span class="nf">windowCount</span> <span class="ow">::</span> <span class="kt">X</span> <span class="p">(</span><span class="kt">Maybe</span> <span class="kt">String</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">windowCount</span> <span class="ow">=</span> <span class="n">gets</span> <span class="o">$</span> <span class="kt">Just</span> <span class="o">.</span> <span class="n">show</span> <span class="o">.</span> <span class="n">length</span> <span class="o">.</span> <span class="kt">W</span><span class="o">.</span><span class="n">integrate&#39;</span> <span class="o">.</span> <span class="kt">W</span><span class="o">.</span><span class="n">stack</span> <span class="o">.</span> <span class="kt">W</span><span class="o">.</span><span class="n">workspace</span> <span class="o">.</span> <span class="kt">W</span><span class="o">.</span><span class="n">current</span> <span class="o">.</span> <span class="n">windowset</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
+AUTOSTARTS
+</h2>
+<div id="outline-text-headline-13" class="outline-text-2">
+<p>This is a program that automatically runs on startup or restarting xmonad. We need to store it in <code>startupHook</code> on <a href="#main">main</a> method (this similar to <code>main</code> in other languages, such as <code>c</code>). For now we store it in <code>myStartupHook</code> first then put it later on <code>startupHook</code>.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">myStartupHook</span> <span class="ow">::</span> <span class="kt">X</span> <span class="nb">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myStartupHook</span> <span class="ow">=</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnOnce</span> <span class="p">(</span><span class="n">mySoundPlayer</span> <span class="o">++</span> <span class="n">startupSound</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnOnce</span> <span class="s">&#34;picom&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnOnce</span> <span class="s">&#34;nm-applet&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnOnce</span> <span class="s">&#34;pasystray&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnOnce</span> <span class="s">&#34;xset dpms 0 0 10800 &amp; xss-lock -- slock &amp;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawn</span> <span class="s">&#34;/usr/bin/emacs --daemon&#34;</span>  <span class="c1">-- emacs daemon for the emacsclient</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawn</span> <span class="s">&#34;polybar mainbar-xmonad&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnOnce</span> <span class="s">&#34;wal -R &amp;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">setWMName</span> <span class="s">&#34;LG3D&#34;</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-2">
+<h2 id="headline-14">
+SCRATCHPADS
+</h2>
+<div id="outline-text-headline-14" class="outline-text-2">
+<p>Allows to have several floating scratchpads running different applications. <a href="https://hackage.haskell.org/package/xmonad-contrib-0.17.1/docs/XMonad-Util-NamedScratchpad.html">Import Util.NamedScratchpad</a> and bind a key to <code>namedScratchpadSpawnAction</code>. In the example below, I have created named scratchpads for:</p>
+<ul>
+<li>alacritty – my terminal</li>
+<li>mocp – a terminal music player</li>
+<li>qalculate-gtk – a nice calculator</li>
+</ul>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">myScratchPads</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">NamedScratchpad</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myScratchPads</span> <span class="ow">=</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="kt">NS</span> <span class="s">&#34;terminal&#34;</span> <span class="n">spawnTerm</span> <span class="n">findTerm</span> <span class="n">manageTerm</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="kt">NS</span> <span class="s">&#34;mocp&#34;</span> <span class="n">spawnMocp</span> <span class="n">findMocp</span> <span class="n">manageMocp</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="kt">NS</span> <span class="s">&#34;calculator&#34;</span> <span class="n">spawnCalc</span> <span class="n">findCalc</span> <span class="n">manageCalc</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnTerm</span>  <span class="ow">=</span> <span class="n">myTerminal</span> <span class="o">++</span> <span class="s">&#34; -t scratchpad&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">findTerm</span>   <span class="ow">=</span> <span class="n">title</span> <span class="o">=?</span> <span class="s">&#34;scratchpad&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">manageTerm</span> <span class="ow">=</span> <span class="n">customFloating</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="kt">RationalRect</span> <span class="n">l</span> <span class="n">t</span> <span class="n">w</span> <span class="n">h</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">        <span class="n">h</span> <span class="ow">=</span> <span class="mf">0.9</span>
+</span></span><span class="line"><span class="cl">        <span class="n">w</span> <span class="ow">=</span> <span class="mf">0.9</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span> <span class="ow">=</span> <span class="mf">0.95</span> <span class="o">-</span><span class="n">h</span>
+</span></span><span class="line"><span class="cl">        <span class="n">l</span> <span class="ow">=</span> <span class="mf">0.95</span> <span class="o">-</span><span class="n">w</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnMocp</span>  <span class="ow">=</span> <span class="n">myTerminal</span> <span class="o">++</span> <span class="s">&#34; -t mocp -e mocp&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">findMocp</span>   <span class="ow">=</span> <span class="n">title</span> <span class="o">=?</span> <span class="s">&#34;mocp&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">manageMocp</span> <span class="ow">=</span> <span class="n">customFloating</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="kt">RationalRect</span> <span class="n">l</span> <span class="n">t</span> <span class="n">w</span> <span class="n">h</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">        <span class="n">h</span> <span class="ow">=</span> <span class="mf">0.9</span>
+</span></span><span class="line"><span class="cl">        <span class="n">w</span> <span class="ow">=</span> <span class="mf">0.9</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span> <span class="ow">=</span> <span class="mf">0.95</span> <span class="o">-</span><span class="n">h</span>
+</span></span><span class="line"><span class="cl">        <span class="n">l</span> <span class="ow">=</span> <span class="mf">0.95</span> <span class="o">-</span><span class="n">w</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spawnCalc</span>  <span class="ow">=</span> <span class="s">&#34;qalculate-gtk&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">findCalc</span>   <span class="ow">=</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;Qalculate-gtk&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">manageCalc</span> <span class="ow">=</span> <span class="n">customFloating</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="kt">RationalRect</span> <span class="n">l</span> <span class="n">t</span> <span class="n">w</span> <span class="n">h</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">        <span class="n">h</span> <span class="ow">=</span> <span class="mf">0.5</span>
+</span></span><span class="line"><span class="cl">        <span class="n">w</span> <span class="ow">=</span> <span class="mf">0.4</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span> <span class="ow">=</span> <span class="mf">0.75</span> <span class="o">-</span><span class="n">h</span>
+</span></span><span class="line"><span class="cl">        <span class="n">l</span> <span class="ow">=</span> <span class="mf">0.70</span> <span class="o">-</span><span class="n">w</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-15" class="outline-2">
+<h2 id="headline-15">
+LAYOUTS
+</h2>
+<div id="outline-text-headline-15" class="outline-text-2">
+<p>Defining the layouts that I want to have available. This require us to import modules <code>XMonad.Layout</code>.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="cm">{- | Makes setting the spacingRaw simpler to write. The spacingRaw module adds
+</span></span></span><span class="line"><span class="cl"><span class="cm">a configurable amount of space around windows.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mySpacing</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="n">l</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">XMonad</span><span class="o">.</span><span class="kt">Layout</span><span class="o">.</span><span class="kt">LayoutModifier</span><span class="o">.</span><span class="kt">ModifiedLayout</span> <span class="kt">Spacing</span> <span class="n">l</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mySpacing</span> <span class="n">i</span> <span class="ow">=</span> <span class="n">spacingRaw</span> <span class="kt">False</span> <span class="p">(</span><span class="kt">Border</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span><span class="p">)</span> <span class="kt">True</span> <span class="p">(</span><span class="kt">Border</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span><span class="p">)</span> <span class="kt">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">{- | Below is a variation of the above except no borders are applied if fewer
+</span></span></span><span class="line"><span class="cl"><span class="cm">than two windows. So a single window has no gaps.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mySpacing&#39;</span> <span class="ow">::</span> <span class="kt">Integer</span> <span class="ow">-&gt;</span> <span class="n">l</span> <span class="n">a</span> <span class="ow">-&gt;</span> <span class="kt">XMonad</span><span class="o">.</span><span class="kt">Layout</span><span class="o">.</span><span class="kt">LayoutModifier</span><span class="o">.</span><span class="kt">ModifiedLayout</span> <span class="kt">Spacing</span> <span class="n">l</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nf">mySpacing&#39;</span> <span class="n">i</span> <span class="ow">=</span> <span class="n">spacingRaw</span> <span class="kt">True</span> <span class="p">(</span><span class="kt">Border</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span><span class="p">)</span> <span class="kt">True</span> <span class="p">(</span><span class="kt">Border</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span> <span class="n">i</span><span class="p">)</span> <span class="kt">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">{- Defining a bunch of layouts, many that I don&#39;t use. limitWindows n sets
+</span></span></span><span class="line"><span class="cl"><span class="cm">maximum number of windows displayed for layout. mySpacing n sets the gap size
+</span></span></span><span class="line"><span class="cl"><span class="cm">around the windows.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">tall</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;tall&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">limitWindows</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">addTabs</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">subLayout</span> <span class="kt">[]</span> <span class="p">(</span><span class="n">smartBorders</span> <span class="kt">Simplest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">mySpacing</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="kt">ResizableTall</span> <span class="mi">1</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="kt">[]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">monocle</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;monocle&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">addTabs</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">subLayout</span> <span class="kt">[]</span> <span class="p">(</span><span class="n">smartBorders</span> <span class="kt">Simplest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">Full</span>
+</span></span><span class="line"><span class="cl"><span class="nf">floats</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;floats&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">simplestFloat</span>
+</span></span><span class="line"><span class="cl"><span class="nf">grid</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;grid&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">limitWindows</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">addTabs</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">subLayout</span> <span class="kt">[]</span> <span class="p">(</span><span class="n">smartBorders</span> <span class="kt">Simplest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">mySpacing</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">mkToggle</span> <span class="p">(</span><span class="n">single</span> <span class="kt">MIRROR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="kt">Grid</span> <span class="p">(</span><span class="mi">16</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spirals</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;spirals&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">limitWindows</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">addTabs</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">subLayout</span> <span class="kt">[]</span> <span class="p">(</span><span class="n">smartBorders</span> <span class="kt">Simplest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">mySpacing&#39;</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">spiral</span> <span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">threeCol</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;threeCol&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">limitWindows</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">addTabs</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">subLayout</span> <span class="kt">[]</span> <span class="p">(</span><span class="n">smartBorders</span> <span class="kt">Simplest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="kt">ThreeCol</span> <span class="mi">1</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{- | Mirror takes a layout and rotates it by 90 degrees.
+</span></span></span><span class="line"><span class="cl"><span class="cm">So we are applying Mirror to the ThreeCol layout.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">threeRow</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;threeRow&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">limitWindows</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">addTabs</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">subLayout</span> <span class="kt">[]</span> <span class="p">(</span><span class="n">smartBorders</span> <span class="kt">Simplest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="kt">Mirror</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="kt">ThreeCol</span> <span class="mi">1</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{- | I cannot add spacing to this layout because it will
+</span></span></span><span class="line"><span class="cl"><span class="cm">add spacing between window and tabs which looks bad.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">tabs</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;tabs&#34;</span><span class="p">]</span> <span class="o">$</span> <span class="n">tabbed</span> <span class="n">shrinkText</span> <span class="n">myTabTheme</span>
+</span></span><span class="line"><span class="cl"><span class="nf">tallAccordion</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;tallAccordion&#34;</span><span class="p">]</span> <span class="kt">Accordion</span>
+</span></span><span class="line"><span class="cl"><span class="nf">wideAccordion</span> <span class="ow">=</span> <span class="n">renamed</span> <span class="p">[</span><span class="kt">Replace</span> <span class="s">&#34;wideAccordion&#34;</span><span class="p">]</span> <span class="o">$</span> <span class="kt">Mirror</span> <span class="kt">Accordion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- setting colors for tabs layout and tabs sublayout.</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myTabTheme</span> <span class="ow">=</span> <span class="n">def</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="n">fontName</span>             <span class="ow">=</span> <span class="n">myFont</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">activeColor</span>          <span class="ow">=</span> <span class="n">color15</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">inactiveColor</span>        <span class="ow">=</span> <span class="n">color8</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">activeBorderColor</span>    <span class="ow">=</span> <span class="n">color15</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">inactiveBorderColor</span>  <span class="ow">=</span> <span class="n">background</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">activeTextColor</span>      <span class="ow">=</span> <span class="n">background</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">inactiveTextColor</span>    <span class="ow">=</span> <span class="n">color0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- The layout hook</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myLayoutHook</span> <span class="ow">=</span> <span class="n">avoidStruts</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">mouseResize</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">windowArrange</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="kt">T</span><span class="o">.</span><span class="n">toggleLayouts</span> <span class="n">floats</span>
+</span></span><span class="line"><span class="cl">    <span class="o">$</span> <span class="n">mkToggle</span> <span class="p">(</span><span class="kt">NBFULL</span> <span class="o">??</span> <span class="kt">NOBORDERS</span> <span class="o">??</span> <span class="kt">EOT</span><span class="p">)</span> <span class="n">myDefaultLayout</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myDefaultLayout</span> <span class="ow">=</span> <span class="n">smartBorders</span>
+</span></span><span class="line"><span class="cl">        <span class="o">$</span> <span class="n">withBorder</span> <span class="n">myBorderWidth</span>
+</span></span><span class="line"><span class="cl">        <span class="o">$</span> <span class="n">configurableNavigation</span> <span class="n">noNavigateBorders</span> <span class="n">tall</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">noBorders</span> <span class="n">monocle</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">floats</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">noBorders</span> <span class="n">tabs</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">grid</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">spirals</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">threeCol</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">threeRow</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">tallAccordion</span>
+</span></span><span class="line"><span class="cl">            <span class="o">|||</span> <span class="n">wideAccordion</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-2">
+<h2 id="headline-16">
+WORKSPACES
+</h2>
+<div id="outline-text-headline-16" class="outline-text-2">
+<p>Thisi worspace configuration contains workspace name, how make custom xmonad polybar-module clickable, and theme for workspace name on change popup.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="c1">-- Workspace name</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myWorkspaces</span> <span class="ow">::</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myWorkspaces</span> <span class="ow">=</span> <span class="p">[</span><span class="s">&#34;1&#34;</span><span class="p">,</span> <span class="s">&#34;2&#34;</span><span class="p">,</span> <span class="s">&#34;3&#34;</span><span class="p">,</span> <span class="s">&#34;4&#34;</span><span class="p">,</span> <span class="s">&#34;5&#34;</span><span class="p">,</span> <span class="s">&#34;6&#34;</span><span class="p">,</span> <span class="s">&#34;7&#34;</span><span class="p">,</span> <span class="s">&#34;8&#34;</span><span class="p">,</span> <span class="s">&#34;9&#34;</span><span class="p">,</span> <span class="s">&#34;10&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{- | another worspace name that you can use:
+</span></span></span><span class="line"><span class="cl"><span class="cm">    myWorkspaces =
+</span></span></span><span class="line"><span class="cl"><span class="cm">    [ &#34;dev&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;www&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;sys&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;doc&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;vbx&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;cht&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;mus&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;vid&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;trm&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , &#34;gfx&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ]
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Make custom xmonad polybar module clickable</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myWorkspaceIndices</span> <span class="ow">=</span> <span class="kt">M</span><span class="o">.</span><span class="n">fromList</span> <span class="o">$</span> <span class="n">zipWith</span> <span class="p">(,)</span> <span class="n">myWorkspaces</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{- | Basically we use xdotool (don&#39;t forget to install it) to press our
+</span></span></span><span class="line"><span class="cl"><span class="cm">keybinding, when we do click to polybar xmonad workspace.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">clickable</span> <span class="n">ws</span> <span class="ow">=</span> <span class="s">&#34;%{A:xdotool key super+&#34;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">i</span> <span class="o">++</span> <span class="s">&#34; &amp;:}&#34;</span> <span class="o">++</span> <span class="n">ws</span> <span class="o">++</span> <span class="s">&#34;%{A}&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">where</span> <span class="n">i</span> <span class="ow">=</span> <span class="n">fromJust</span> <span class="o">$</span> <span class="kt">M</span><span class="o">.</span><span class="n">lookup</span> <span class="n">ws</span> <span class="n">myWorkspaceIndices</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">{- | Theme for showWName which prints current workspace when you change
+</span></span></span><span class="line"><span class="cl"><span class="cm">workspaces. In order to make it work, on main method you need to have:
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , layoutHook = showWName&#39; myShowWNameTheme $ myLayoutHook
+</span></span></span><span class="line"><span class="cl"><span class="cm">instead of just:
+</span></span></span><span class="line"><span class="cl"><span class="cm">    , layoutHook = myLayoutHook
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myShowWNameTheme</span> <span class="ow">::</span> <span class="kt">SWNConfig</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myShowWNameTheme</span> <span class="ow">=</span> <span class="n">def</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="n">swn_font</span>      <span class="ow">=</span> <span class="s">&#34;xft:JetBrainsMono Nerd Font:bold:size=50&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">swn_fade</span>      <span class="ow">=</span> <span class="mf">1.0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">swn_bgcolor</span>   <span class="ow">=</span> <span class="s">&#34;#1c1f24&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">swn_color</span>     <span class="ow">=</span> <span class="s">&#34;#ffffff&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-2">
+<h2 id="headline-17">
+MANAGEHOOK
+</h2>
+<div id="outline-text-headline-17" class="outline-text-2">
+<p>Sets some rules for certain programs. Examples include forcing certain programs to always float, or to always appear on a certain workspace.  Forcing programs to a certain workspace with a doShift requires xdotool if you are using clickable workspaces. You need the className or title of the program. Use xprop to get this info.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="cm">{- | &#39;doFloat&#39; forces a window to float. Useful for dialog boxes and such.
+</span></span></span><span class="line"><span class="cl"><span class="cm">using &#39;doShift ( myWorkspaces !! 7)&#39; sends program to workspace 8! I&#39;m doing it
+</span></span></span><span class="line"><span class="cl"><span class="cm">this way because otherwise I would have to write out the full name of my
+</span></span></span><span class="line"><span class="cl"><span class="cm">workspaces and the names would be very long if using clickable workspaces.
+</span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myManageHook</span> <span class="ow">::</span> <span class="kt">XMonad</span><span class="o">.</span><span class="kt">Query</span> <span class="p">(</span><span class="kt">Data</span><span class="o">.</span><span class="kt">Monoid</span><span class="o">.</span><span class="kt">Endo</span> <span class="kt">WindowSet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myManageHook</span> <span class="ow">=</span> <span class="n">composeAll</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;confirm&#34;</span>        <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;file_progress&#34;</span>  <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;dialog&#34;</span>         <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;download&#34;</span>       <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;error&#34;</span>          <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;Gimp&#34;</span>           <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;notification&#34;</span>   <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;pinentry-gtk-2&#34;</span> <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;splash&#34;</span>         <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;toolbar&#34;</span>        <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;Yad&#34;</span>            <span class="o">--&gt;</span> <span class="n">doCenterFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">title</span> <span class="o">=?</span> <span class="s">&#34;Oracle VM VirtualBox Manager&#34;</span>   <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">title</span> <span class="o">=?</span> <span class="s">&#34;Order Chain - Market Snapshots&#34;</span> <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">title</span> <span class="o">=?</span> <span class="s">&#34;Mozilla Firefox&#34;</span>    <span class="o">--&gt;</span> <span class="n">doShift</span> <span class="p">(</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;Brave-browser&#34;</span>  <span class="o">--&gt;</span> <span class="n">doShift</span> <span class="p">(</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">1</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;mpv&#34;</span>            <span class="o">--&gt;</span> <span class="n">doShift</span> <span class="p">(</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">7</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;Gimp&#34;</span>           <span class="o">--&gt;</span> <span class="n">doShift</span> <span class="p">(</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">8</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;VirtualBox Manager&#34;</span> <span class="o">--&gt;</span> <span class="n">doShift</span>  <span class="p">(</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">4</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;firefox&#34;</span> <span class="o">&lt;&amp;&amp;&gt;</span> <span class="n">resource</span> <span class="o">=?</span> <span class="s">&#34;Dialog&#34;</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="n">doFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">isFullscreen</span> <span class="o">--&gt;</span>  <span class="n">doFullFloat</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span> <span class="o">&lt;+&gt;</span> <span class="n">namedScratchpadManageHook</span> <span class="n">myScratchPads</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-18" class="outline-2">
+<h2 id="headline-18">
+SYSTEM SOUNDS
+</h2>
+<div id="outline-text-headline-18" class="outline-text-2">
+<p>Available sounds that are part of the default <a href="https://gitlab.com/dtos/dtos-sounds">dtos-sounds</a> package include:</p>
+<ul>
+<li>menu-01.mp3</li>
+<li>menu-02.mp3</li>
+<li>menu-03.mp3</li>
+<li>shutdown-01.mp3</li>
+<li>shutdown-02.mp3</li>
+<li>shutdown-03.mp3</li>
+<li>startup-01.mp3</li>
+<li>startup-02.mp3</li>
+<li>startup-03.mp3</li>
+</ul>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">soundDir</span> <span class="ow">=</span> <span class="s">&#34;/home/fqs/.config/dtos-sounds/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">startupSound</span>  <span class="ow">=</span> <span class="n">soundDir</span> <span class="o">++</span> <span class="s">&#34;startup-01.mp3&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">shutdownSound</span> <span class="ow">=</span> <span class="n">soundDir</span> <span class="o">++</span> <span class="s">&#34;shutdown-01.mp3&#34;</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-19" class="outline-2">
+<h2 id="headline-19">
+NAMED ACTIONS
+</h2>
+<div id="outline-text-headline-19" class="outline-text-2">
+<p><code class="verbatim">NamedActions</code> is a wrapper for keybinding configuration that can list the available keybindings.  The following custom functions are used to add <code class="verbatim">NamedActions</code> to our keybindings in the format that I desired.  <code class="verbatim">subTitle&#39;</code> allows me to format the subtitle (<code class="verbatim">subKeys</code>) so that I can prepend and/or append text to them.  <code class="verbatim">showKeybindings</code> is a function that pipes the output of our <code class="verbatim">NamedActions</code> into a GUI display program, such as &#39;yad&#39; or &#39;zenity&#39;.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">subtitle&#39;</span> <span class="ow">::</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="p">((</span><span class="kt">KeyMask</span><span class="p">,</span> <span class="kt">KeySym</span><span class="p">),</span> <span class="kt">NamedAction</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">subtitle&#39;</span> <span class="n">x</span> <span class="ow">=</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="kt">NamedAction</span> <span class="o">$</span> <span class="n">map</span> <span class="n">toUpper</span> <span class="o">$</span> <span class="n">sep</span> <span class="o">++</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">-- &#34;</span> <span class="o">++</span> <span class="n">x</span> <span class="o">++</span> <span class="s">&#34; --</span><span class="se">\n</span><span class="s">&#34;</span> <span class="o">++</span> <span class="n">sep</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sep</span> <span class="ow">=</span> <span class="n">replicate</span> <span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="n">length</span> <span class="n">x</span><span class="p">)</span> <span class="sc">&#39;-&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">showKeybindings</span> <span class="ow">::</span> <span class="p">[((</span><span class="kt">KeyMask</span><span class="p">,</span> <span class="kt">KeySym</span><span class="p">),</span> <span class="kt">NamedAction</span><span class="p">)]</span> <span class="ow">-&gt;</span> <span class="kt">NamedAction</span>
+</span></span><span class="line"><span class="cl"><span class="nf">showKeybindings</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">addName</span> <span class="s">&#34;Show Keybindings&#34;</span> <span class="o">$</span> <span class="n">io</span> <span class="o">$</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h</span> <span class="ow">&lt;-</span> <span class="n">spawnPipe</span> <span class="s">&#34;yad --text-info --fontname=</span><span class="se">\&#34;</span><span class="s">JetBrainsMono Nerd Font 11</span><span class="se">\&#34;</span><span class="s"> --fore=#46d9ff back=#282c36 --center --geometry=1200x700 --title </span><span class="se">\&#34;</span><span class="s">XMonad keybindings</span><span class="se">\&#34;</span><span class="s">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">--hPutStr h (unlines $ showKm x) -- showKM adds &#34;&gt;&gt;&#34; before subtitles</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hPutStr</span> <span class="n">h</span> <span class="p">(</span><span class="n">unlines</span> <span class="o">$</span> <span class="n">showKmSimple</span> <span class="n">x</span><span class="p">)</span> <span class="c1">-- showKmSimple doesn&#39;t add &#34;&gt;&gt;&#34; to subtitles</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hClose</span> <span class="n">h</span>
+</span></span><span class="line"><span class="cl">    <span class="n">return</span> <span class="nb">()</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-20" class="outline-2">
+<h2 id="headline-20">
+KEYBINDINGS
+</h2>
+<div id="outline-text-headline-20" class="outline-text-2">
+<p>This config use the <a href="https://hackage.haskell.org/package/xmonad-contrib-0.17.1/docs/XMonad-Util-EZConfig.html">Xmonad.Util.EZConfig</a> module, that make keybindings to be written in simpler form. The Super/Windows key is &#39;M&#39; (the modkey), the ALT key is &#39;M1&#39;. Shift is &#39;S&#39; and CTRL is &#39;C&#39;. If you dont know what is the name of key actually is, always refer to <a href="https://hackage.haskell.org/package/xmonad-contrib-0.17.1/docs/XMonad-Util-EZConfig.html#v:additionalKeysP">EZConfig documentation</a> (for example, the backspace key is written as &lt;Backspace&gt;, note it is enclosed in &lt;…&gt; and the initial letter is capitalized). Each group of keybindings must have a <code class="verbatim">subKeys</code> heading, and each individual keybinding must use <code class="verbatim">addName</code> to add a description. These headings and descriptions are needed for the keybindings list that can be launched with &#39;M-F1&#39;.</p>
+<p>
+<code class="verbatim">Note</code> will complete the table later, the key should be self-explanatory. I will give you small example:
+&#34;M-C-r&#34; means you need to press Modkey+Ctrl+r
+&#34;M-x r&#34; means you need to press Modkey+x, release it, then press r</p>
+<table>
+<thead>
+<tr>
+<th>A FEW KEYBINDINGS</th>
+<th>ASSOCIATED ACTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MODKEY + RETURN</td>
+<td>opens terminal</td>
+</tr>
+</tbody>
+</table>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">myKeys</span> <span class="ow">::</span> <span class="kt">XConfig</span> <span class="n">l0</span> <span class="ow">-&gt;</span> <span class="p">[((</span><span class="kt">KeyMask</span><span class="p">,</span> <span class="kt">KeySym</span><span class="p">),</span> <span class="kt">NamedAction</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myKeys</span> <span class="n">c</span> <span class="ow">=</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">--(subtitle &#34;Custom Keys&#34;:) $ mkNamedKeymap c $</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">let</span> <span class="n">subKeys</span> <span class="n">str</span> <span class="n">ks</span> <span class="ow">=</span> <span class="n">subtitle&#39;</span> <span class="n">str</span> <span class="kt">:</span> <span class="n">mkNamedKeymap</span> <span class="n">c</span> <span class="n">ks</span> <span class="kr">in</span>
+</span></span><span class="line"><span class="cl">    <span class="n">subKeys</span> <span class="s">&#34;Xmonad Essentials&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-C-r&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Recompile XMonad&#34;</span>      <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;xmonad --recompile&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-&lt;F5&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Restart XMonad&#34;</span>     <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;killall emacs; killall polybar; xmonad --restart&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-q&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Quit XMonad&#34;</span>           <span class="o">$</span> <span class="n">sequence_</span> <span class="p">[</span><span class="n">spawn</span> <span class="p">(</span><span class="n">mySoundPlayer</span> <span class="o">++</span> <span class="n">shutdownSound</span><span class="p">),</span> <span class="n">io</span> <span class="n">exitSuccess</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-x&#34;</span><span class="p">,</span>   <span class="n">addName</span> <span class="s">&#34;Quit XMonad&#34;</span>           <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-logout&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-q&#34;</span><span class="p">,</span>   <span class="n">addName</span> <span class="s">&#34;Kill focused window&#34;</span>   <span class="o">$</span> <span class="n">kill1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-q&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Kill all windows on WS&#34;</span><span class="o">$</span> <span class="n">killAll</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-d&#34;</span><span class="p">,</span>   <span class="n">addName</span> <span class="s">&#34;Run prompt&#34;</span>            <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm_run&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-b&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle bar show/hide&#34;</span>  <span class="o">$</span> <span class="n">sendMessage</span> <span class="kt">ToggleStruts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Switch to workspace&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-1&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 1&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-2&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 2&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-3&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 3&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-4&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 4&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-5&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 5&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-6&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 6&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-7&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 7&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-8&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 8&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-9&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 9&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-0&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to workspace 10&#34;</span>  <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">greedyView</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Send window to workspace&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-S-1&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 1&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-2&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 2&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-3&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 3&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-4&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 4&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-5&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 5&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-6&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 6&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-7&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 7&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-8&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 8&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-9&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 9&#34;</span>   <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-0&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Send to workspace 10&#34;</span>  <span class="o">$</span> <span class="n">windows</span> <span class="o">$</span> <span class="kt">W</span><span class="o">.</span><span class="n">shift</span> <span class="o">$</span> <span class="n">myWorkspaces</span> <span class="o">!!</span> <span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Move window to WS and go there&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-S-&lt;Page_Up&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Move window to next WS&#34;</span>    <span class="o">$</span> <span class="n">shiftTo</span> <span class="kt">Next</span> <span class="n">nonNSP</span> <span class="o">&gt;&gt;</span> <span class="n">moveTo</span> <span class="kt">Next</span> <span class="n">nonNSP</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-&lt;Page_Down&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Move window to prev WS&#34;</span>  <span class="o">$</span> <span class="n">shiftTo</span> <span class="kt">Prev</span> <span class="n">nonNSP</span> <span class="o">&gt;&gt;</span> <span class="n">moveTo</span> <span class="kt">Prev</span> <span class="n">nonNSP</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Window navigation&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-j&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Move focus to next window&#34;</span>               <span class="o">$</span> <span class="n">windows</span> <span class="kt">W</span><span class="o">.</span><span class="n">focusDown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-k&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Move focus to prev window&#34;</span>               <span class="o">$</span> <span class="n">windows</span> <span class="kt">W</span><span class="o">.</span><span class="n">focusUp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-m&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Move focus to master window&#34;</span>             <span class="o">$</span> <span class="n">windows</span> <span class="kt">W</span><span class="o">.</span><span class="n">focusMaster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-j&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Swap focused window with next window&#34;</span>  <span class="o">$</span> <span class="n">windows</span> <span class="kt">W</span><span class="o">.</span><span class="n">swapDown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-k&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Swap focused window with prev window&#34;</span>  <span class="o">$</span> <span class="n">windows</span> <span class="kt">W</span><span class="o">.</span><span class="n">swapUp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-m&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Swap focused window with master window&#34;</span><span class="o">$</span> <span class="n">windows</span> <span class="kt">W</span><span class="o">.</span><span class="n">swapMaster</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-&lt;Backspace&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Move focused window to master&#34;</span> <span class="o">$</span> <span class="n">promote</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-,&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Rotate all windows except master&#34;</span>      <span class="o">$</span> <span class="n">rotSlavesDown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-.&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Rotate all windows current stack&#34;</span>      <span class="o">$</span> <span class="n">rotAllDown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">{- | Dmenu scripts (dmscripts)
+</span></span></span><span class="line"><span class="cl"><span class="cm">    In Xmonad and many tiling window managers, M-p is the default keybinding to
+</span></span></span><span class="line"><span class="cl"><span class="cm">    launch dmenu_run, so I&#39;ve decided to use M-p plus KEY for these dmenu scripts.
+</span></span></span><span class="line"><span class="cl"><span class="cm">    -}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Dmenu scripts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-p h&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;List all dmscripts&#34;</span>    <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-hub&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p b&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Set background&#34;</span>        <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-setbg&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p c&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Edit config files&#34;</span>     <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-confedit&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p m&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;View manpages&#34;</span>         <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-man&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p o&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Store and copy notes&#34;</span>  <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-note&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p x&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Logout Menu&#34;</span>           <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-logout&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p r&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Listen to online radio&#34;</span><span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-radio&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p s&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Record Screen&#34;</span>         <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-record&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p w&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Search various engines&#34;</span><span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-websearch&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-p n&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Connect Wifi&#34;</span>          <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;dm-wifi&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Favorite programs&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-&lt;Return&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Launch terminal&#34;</span>  <span class="o">$</span> <span class="n">spawn</span> <span class="n">myTerminal</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-b&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Launch web browser&#34;</span>      <span class="o">$</span> <span class="n">spawn</span> <span class="n">myBrowser</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-e&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Launch file manager&#34;</span>     <span class="o">$</span> <span class="n">spawn</span> <span class="n">myFileManager</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-s&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Launch file manager&#34;</span>     <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;flameshot gui&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-M1-h&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Launch htop&#34;</span>          <span class="o">$</span> <span class="n">spawn</span> <span class="p">(</span><span class="n">myTerminal</span> <span class="o">++</span> <span class="s">&#34; -e htop&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Monitors&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-.&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch focus to next monitor&#34;</span>    <span class="o">$</span> <span class="n">nextScreen</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-,&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch focus to prev monitor&#34;</span>    <span class="o">$</span> <span class="n">prevScreen</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Switch layouts</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Switch layouts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-&lt;Tab&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch to next layout&#34;</span>   <span class="o">$</span> <span class="n">sendMessage</span> <span class="kt">NextLayout</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-f&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle noborders/full&#34;</span>       <span class="o">$</span> <span class="n">sendMessage</span> <span class="p">(</span><span class="kt">MT</span><span class="o">.</span><span class="kt">Toggle</span> <span class="kt">NBFULL</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">sendMessage</span> <span class="kt">ToggleStruts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Window resizing</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Window resizing&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-h&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Shrink window&#34;</span>               <span class="o">$</span> <span class="n">sendMessage</span> <span class="kt">Shrink</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-l&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Expand window&#34;</span>               <span class="o">$</span> <span class="n">sendMessage</span> <span class="kt">Expand</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-M1-j&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Shrink window vertically&#34;</span> <span class="o">$</span> <span class="n">sendMessage</span> <span class="kt">MirrorShrink</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-M1-k&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Expand window vertically&#34;</span> <span class="o">$</span> <span class="n">sendMessage</span> <span class="kt">MirrorExpand</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Floating windows</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Floating windows&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-S-&lt;Space&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle float layout&#34;</span> <span class="o">$</span> <span class="n">sendMessage</span> <span class="p">(</span><span class="kt">T</span><span class="o">.</span><span class="kt">Toggle</span> <span class="s">&#34;floats&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-t&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Sink a floating window&#34;</span>      <span class="o">$</span> <span class="n">withFocused</span> <span class="o">$</span> <span class="n">windows</span> <span class="o">.</span> <span class="kt">W</span><span class="o">.</span><span class="n">sink</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-t&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Sink all floated windows&#34;</span>  <span class="o">$</span> <span class="n">sinkAll</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Increase/decrease spacing (gaps)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Window spacing (gaps)&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-g j&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Decrease window spacing&#34;</span> <span class="o">$</span> <span class="n">decWindowSpacing</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-g k&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Increase window spacing&#34;</span> <span class="o">$</span> <span class="n">incWindowSpacing</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-g h&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Decrease screen spacing&#34;</span> <span class="o">$</span> <span class="n">decScreenSpacing</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-g l&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Increase screen spacing&#34;</span> <span class="o">$</span> <span class="n">incScreenSpacing</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Increase/decrease windows in the master pane or the stack</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Increase/decrease windows in master pane or the stack&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-S-&lt;Up&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Increase clients in master pane&#34;</span>   <span class="o">$</span> <span class="n">sendMessage</span> <span class="p">(</span><span class="kt">IncMasterN</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-S-&lt;Down&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Decrease clients in master pane&#34;</span> <span class="o">$</span> <span class="n">sendMessage</span> <span class="p">(</span><span class="kt">IncMasterN</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-=&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Increase max # of windows for layout&#34;</span>   <span class="o">$</span> <span class="n">increaseLimit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M--&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Decrease max # of windows for layout&#34;</span>   <span class="o">$</span> <span class="n">decreaseLimit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">{- | Sublayouts
+</span></span></span><span class="line"><span class="cl"><span class="cm">    This is used to push windows to tabbed sublayouts, or pull them out of it.
+</span></span></span><span class="line"><span class="cl"><span class="cm">    -}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Sublayouts&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-C-h&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;pullGroup L&#34;</span>           <span class="o">$</span> <span class="n">sendMessage</span> <span class="o">$</span> <span class="n">pullGroup</span> <span class="kt">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-l&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;pullGroup R&#34;</span>           <span class="o">$</span> <span class="n">sendMessage</span> <span class="o">$</span> <span class="n">pullGroup</span> <span class="kt">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-k&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;pullGroup U&#34;</span>           <span class="o">$</span> <span class="n">sendMessage</span> <span class="o">$</span> <span class="n">pullGroup</span> <span class="kt">U</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-j&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;pullGroup D&#34;</span>           <span class="o">$</span> <span class="n">sendMessage</span> <span class="o">$</span> <span class="n">pullGroup</span> <span class="kt">D</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-m&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;MergeAll&#34;</span>              <span class="o">$</span> <span class="n">withFocused</span> <span class="p">(</span><span class="n">sendMessage</span> <span class="o">.</span> <span class="kt">MergeAll</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-u&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;UnMerge&#34;</span>               <span class="o">$</span> <span class="n">withFocused</span> <span class="p">(</span><span class="n">sendMessage</span> <span class="o">.</span> <span class="kt">UnMerge</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-/&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;UnMergeAll&#34;</span>            <span class="o">$</span> <span class="n">withFocused</span> <span class="p">(</span><span class="n">sendMessage</span> <span class="o">.</span> <span class="kt">UnMergeAll</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-.&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch focus next tab&#34;</span> <span class="o">$</span> <span class="n">onGroup</span> <span class="kt">W</span><span class="o">.</span><span class="n">focusUp&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-C-,&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Switch focus prev tab&#34;</span> <span class="o">$</span> <span class="n">onGroup</span> <span class="kt">W</span><span class="o">.</span><span class="n">focusDown&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">{- | Scratchpads
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Toggle show/hide these programs. They run on a hidden workspace.
+</span></span></span><span class="line"><span class="cl"><span class="cm">    When you toggle them to show, it brings them to current workspace.
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Toggle them to hide and it sends them back to hidden workspace (NSP).
+</span></span></span><span class="line"><span class="cl"><span class="cm">    -}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Scratchpads&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-` 1&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle scratchpad terminal&#34;</span>   <span class="o">$</span> <span class="n">namedScratchpadAction</span> <span class="n">myScratchPads</span> <span class="s">&#34;terminal&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-` 2&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle scratchpad mocp&#34;</span>       <span class="o">$</span> <span class="n">namedScratchpadAction</span> <span class="n">myScratchPads</span> <span class="s">&#34;mocp&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-` 3&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle scratchpad calculator&#34;</span> <span class="o">$</span> <span class="n">namedScratchpadAction</span> <span class="n">myScratchPads</span> <span class="s">&#34;calculator&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Controls for mocp music player (SUPER-u followed by a key)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Mocp music player&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-u p&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;mocp play&#34;</span>                <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;mocp --play&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-u l&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;mocp next&#34;</span>                <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;mocp --next&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-u h&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;mocp prev&#34;</span>                <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;mocp --previous&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-u &lt;Space&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;mocp toggle pause&#34;</span>  <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;mocp --toggle-pause&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Emacs (SUPER-e followed by a key)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Code Editor&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M-c c&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;VS Code&#34;</span>                   <span class="o">$</span> <span class="n">spawn</span> <span class="n">myEditor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-c e&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Emacsclient&#34;</span>               <span class="o">$</span> <span class="n">spawn</span> <span class="n">myEmacs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-c a&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Emacsclient EMMS (music)&#34;</span>  <span class="o">$</span> <span class="n">spawn</span> <span class="p">(</span><span class="n">myEmacs</span> <span class="o">++</span> <span class="s">&#34;--eval &#39;(emms)&#39; --eval &#39;(emms-play-directory-tree </span><span class="se">\&#34;</span><span class="s">~/Music/</span><span class="se">\&#34;</span><span class="s">)&#39;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-c b&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Emacsclient Ibuffer&#34;</span>       <span class="o">$</span> <span class="n">spawn</span> <span class="p">(</span><span class="n">myEmacs</span> <span class="o">++</span> <span class="s">&#34;--eval &#39;(ibuffer)&#39;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-c d&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Emacsclient Dired&#34;</span>         <span class="o">$</span> <span class="n">spawn</span> <span class="p">(</span><span class="n">myEmacs</span> <span class="o">++</span> <span class="s">&#34;--eval &#39;(dired nil)&#39;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;M-c m&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Mousepad&#34;</span>                  <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;mousepad&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Multimedia Keys</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Multimedia keys&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;&lt;XF86AudioMute&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Toggle audio mute&#34;</span>   <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;volumecontrol.sh -o m&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;&lt;XF86AudioLowerVolume&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Lower volume&#34;</span> <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;volumecontrol.sh -o d&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;&lt;XF86AudioRaiseVolume&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Raise volume&#34;</span> <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;volumecontrol.sh -o i&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;&lt;XF86MonBrightnessDown&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Raise vol&#34;</span>   <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;brightnesscontrol.sh d&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;&lt;XF86MonBrightnessUp&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Raise vol&#34;</span>     <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;brightnesscontrol.sh i&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="p">(</span><span class="s">&#34;&lt;Print&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Take screenshot&#34;</span>             <span class="o">$</span> <span class="n">spawn</span> <span class="s">&#34;flameshotgui&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Workspace</span>
+</span></span><span class="line"><span class="cl">    <span class="o">^++^</span> <span class="n">subKeys</span> <span class="s">&#34;Workspace&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span> <span class="p">(</span><span class="s">&#34;M1-&lt;Tab&gt;&#34;</span><span class="p">,</span> <span class="n">addName</span> <span class="s">&#34;Cycle with last WS&#34;</span> <span class="o">$</span> <span class="n">toggleWS</span><span class="p">)</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">-- The following lines are needed for named scratchpads.</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nonNSP</span>          <span class="ow">=</span> <span class="kt">WSIs</span> <span class="p">(</span><span class="n">return</span> <span class="p">(</span><span class="nf">\</span><span class="n">ws</span> <span class="ow">-&gt;</span> <span class="kt">W</span><span class="o">.</span><span class="n">tag</span> <span class="n">ws</span> <span class="o">/=</span> <span class="s">&#34;NSP&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nonEmptyNonNSP</span>  <span class="ow">=</span> <span class="kt">WSIs</span> <span class="p">(</span><span class="n">return</span> <span class="p">(</span><span class="nf">\</span><span class="n">ws</span> <span class="ow">-&gt;</span> <span class="n">isJust</span> <span class="p">(</span><span class="kt">W</span><span class="o">.</span><span class="n">stack</span> <span class="n">ws</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="kt">W</span><span class="o">.</span><span class="n">tag</span> <span class="n">ws</span> <span class="o">/=</span> <span class="s">&#34;NSP&#34;</span><span class="p">))</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-21" class="outline-2">
+<h2 id="headline-21">
+MAKE XMONAD AND POLYBAR TALK TO EACH OTHER
+</h2>
+<div id="outline-text-headline-21" class="outline-text-2">
+<p>As i have explained before, we need to integrate xmonad to visualize the current window title and workspaces in polybar. To make xmonad and polybar talk we only need to add [module/xmonad] in our polybar config and polybar ready to talk. Now, for xmonad to talk, we need to configure it to send log events information via <a href="https://hackage.haskell.org/package/dbus">dbus</a> using XMonad&#39;s DynamicLog with the help of xmonad-log. The <a href="https://hackage.haskell.org/package/xmonad-contrib-0.17.1/docs/XMonad-Hooks-DynamicLog.html#t:PP">pretty printing (PP)</a> options, allows us to customize the formatting of status information.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">bg1</span> <span class="ow">=</span> <span class="s">&#34;#3c3836&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">bg2</span> <span class="ow">=</span> <span class="s">&#34;#504945&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">red</span> <span class="ow">=</span> <span class="s">&#34;#fb4934&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">myLogHook</span> <span class="ow">::</span> <span class="kt">D</span><span class="o">.</span><span class="kt">Client</span> <span class="ow">-&gt;</span> <span class="kt">PP</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myLogHook</span> <span class="n">dbus</span> <span class="ow">=</span> <span class="n">def</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="n">ppOutput</span> <span class="ow">=</span> <span class="n">dbusOutput</span> <span class="n">dbus</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">ppWsSep</span> <span class="ow">=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">ppSep</span> <span class="ow">=</span> <span class="s">&#34; | &#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">ppLayout</span> <span class="ow">=</span> <span class="n">wrap</span> <span class="s">&#34;%{A1:xdotool key super+Tab &amp;:}&#34;</span> <span class="s">&#34;%{A}&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">ppTitle</span> <span class="ow">=</span> <span class="n">shorten</span> <span class="mi">50</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">ppExtras</span> <span class="ow">=</span> <span class="p">[</span><span class="n">windowCount</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">,</span> <span class="n">ppOrder</span> <span class="ow">=</span> <span class="nf">\</span><span class="p">(</span><span class="kr">_</span><span class="kt">:</span><span class="n">l</span><span class="kt">:</span><span class="n">t</span><span class="kt">:</span><span class="n">ex</span><span class="p">)</span> <span class="ow">-&gt;</span> <span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">++</span><span class="n">ex</span><span class="o">++</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">-- Emit a DBus signal on log updates</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dbusOutput</span> <span class="ow">::</span> <span class="kt">D</span><span class="o">.</span><span class="kt">Client</span> <span class="ow">-&gt;</span> <span class="kt">String</span> <span class="ow">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">dbusOutput</span> <span class="n">dbus</span> <span class="n">str</span> <span class="ow">=</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">let</span> <span class="n">signal</span> <span class="ow">=</span> <span class="p">(</span><span class="kt">D</span><span class="o">.</span><span class="n">signal</span> <span class="n">objectPath</span> <span class="n">interfaceName</span> <span class="n">memberName</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">D</span><span class="o">.</span><span class="n">signalBody</span> <span class="ow">=</span> <span class="p">[</span><span class="kt">D</span><span class="o">.</span><span class="n">toVariant</span> <span class="o">$</span> <span class="kt">UTF8</span><span class="o">.</span><span class="n">decodeString</span> <span class="n">str</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">D</span><span class="o">.</span><span class="n">emit</span> <span class="n">dbus</span> <span class="n">signal</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">where</span>
+</span></span><span class="line"><span class="cl">    <span class="n">objectPath</span> <span class="ow">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">objectPath_</span> <span class="s">&#34;/org/xmonad/Log&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">interfaceName</span> <span class="ow">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">interfaceName_</span> <span class="s">&#34;org.xmonad.Log&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memberName</span> <span class="ow">=</span> <span class="kt">D</span><span class="o">.</span><span class="n">memberName_</span> <span class="s">&#34;Update&#34;</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-22" class="outline-2">
+<h2 id="headline-22">
+THE MAIN
+</h2>
+<div id="outline-text-headline-22" class="outline-text-2">
+<p>This is the &#34;main&#34; of XMonad. This where everything in our configs comes together and works.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-haskell" data-lang="haskell"><span class="line"><span class="cl"><span class="nf">main</span> <span class="ow">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+</span></span><span class="line"><span class="cl"><span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dbus</span> <span class="ow">&lt;-</span> <span class="kt">D</span><span class="o">.</span><span class="n">connectSession</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">-- Request access to the DBus name</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">D</span><span class="o">.</span><span class="n">requestName</span> <span class="n">dbus</span> <span class="p">(</span><span class="kt">D</span><span class="o">.</span><span class="n">busName_</span> <span class="s">&#34;org.xmonad.Log&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="kt">D</span><span class="o">.</span><span class="n">nameAllowReplacement</span><span class="p">,</span> <span class="kt">D</span><span class="o">.</span><span class="n">nameReplaceExisting</span><span class="p">,</span> <span class="kt">D</span><span class="o">.</span><span class="n">nameDoNotQueue</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xmonad</span>
+</span></span><span class="line"><span class="cl">        <span class="o">$</span> <span class="n">addDescrKeys&#39;</span> <span class="p">((</span><span class="n">mod4Mask</span><span class="p">,</span> <span class="n">xK_F1</span><span class="p">),</span> <span class="n">showKeybindings</span><span class="p">)</span> <span class="n">myKeys</span>
+</span></span><span class="line"><span class="cl">        <span class="o">$</span> <span class="n">docks</span> <span class="o">.</span> <span class="n">ewmh</span>
+</span></span><span class="line"><span class="cl">        <span class="o">$</span> <span class="n">def</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="n">manageHook</span>         <span class="ow">=</span> <span class="n">myManageHook</span> <span class="o">&lt;+&gt;</span> <span class="n">manageDocks</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">handleEventHook</span>    <span class="ow">=</span> <span class="n">windowedFullscreenFixEventHook</span> <span class="o">&lt;&gt;</span> <span class="n">swallowEventHook</span> <span class="p">(</span><span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;Alacritty&#34;</span>  <span class="o">&lt;||&gt;</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;st-256color&#34;</span> <span class="o">&lt;||&gt;</span> <span class="n">className</span> <span class="o">=?</span> <span class="s">&#34;XTerm&#34;</span><span class="p">)</span> <span class="p">(</span><span class="n">return</span> <span class="kt">True</span><span class="p">)</span> <span class="o">&lt;&gt;</span> <span class="n">trayerPaddingXmobarEventHook</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">modMask</span>            <span class="ow">=</span> <span class="n">myModMask</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">terminal</span>           <span class="ow">=</span> <span class="n">myTerminal</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">startupHook</span>        <span class="ow">=</span> <span class="n">myStartupHook</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">layoutHook</span>         <span class="ow">=</span> <span class="n">myLayoutHook</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">workspaces</span>         <span class="ow">=</span> <span class="n">myWorkspaces</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">borderWidth</span>        <span class="ow">=</span> <span class="n">myBorderWidth</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">normalBorderColor</span>  <span class="ow">=</span> <span class="n">myNormColor</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">focusedBorderColor</span> <span class="ow">=</span> <span class="n">myFocusColor</span>
+</span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">logHook</span>            <span class="ow">=</span> <span class="n">dynamicLogWithPP</span> <span class="p">(</span><span class="n">myLogHook</span> <span class="n">dbus</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+
+        </div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2024-01-11T17:44:15.000Z">January 11, 2024</time></div>
+        
+        <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
+        href="/blog/plotting-fresnel-equation-python/"
+        title="Plotting Fresnel Equations with Python3"
+        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Plotting Fresnel Equations with Python3</a><a
+        href="/blog/patching-simple-terminal-st/"
+        title="Patching Simple Terminal (st)"
+        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
+      >Patching Simple Terminal (st)<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx-bg-gray-100 hx-pb-[env(safe-area-inset-bottom)] dark:hx-bg-neutral-900 print:hx-bg-transparent"><div class="hx-mx-auto hx-flex hx-gap-2 hx-py-2 hx-px-4 hx-max-w-screen-xl"><button
+  title="Change theme"
+  data-theme="light"
+  class="theme-toggle hx-group hx-h-7 hx-rounded-md hx-px-2 hx-text-left hx-text-xs hx-font-medium hx-text-gray-600 hx-transition-colors dark:hx-text-gray-400 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50"
+  type="button"
+  aria-label="Change theme"
+>
+  <div class="hx-flex hx-items-center hx-gap-2 hx-capitalize"><svg height=12 class="group-data-[theme=light]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hx-hidden">Light</span><svg height=12 class="group-data-[theme=dark]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hx-hidden">Dark</span></div>
+</button>
+</div><hr class="dark:hx-border-neutral-800" /><div
+    class="hx-max-w-screen-xl hx-mx-auto hx-flex hx-justify-center hx-py-12 hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400 md:hx-justify-start"
+  >
+    <div class="hx-flex hx-w-full hx-flex-col hx-items-center sm:hx-items-start"><div class="hx-font-semibold"><a class="hx-flex hx-text-sm hx-items-center hx-gap-1 hx-text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
+    <span>Powered by Hextra<svg height=1em class="hx-inline-block ltr:hx-ml-1 rtl:hx-mr-1 hx-align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
+  </a></div><div class="hx-mt-6 hx-text-xs">© 2024 Hextra Project.</div>
+    </div>
+  </div>
+</footer>
+    
+    <script defer src="/js/main.js" integrity=""></script>
+
+
+<script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
+    <script defer src="/en.search.js" integrity=""></script>
+
+
+  </body>
+</html>

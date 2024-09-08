@@ -1,5 +1,12 @@
 +++
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
-draft = true
+draft = false
+authors:
+  - name: firmanqs
+tags:
+  - Markdown
+  - Example
+  - Guide
+description: "no description"
 +++

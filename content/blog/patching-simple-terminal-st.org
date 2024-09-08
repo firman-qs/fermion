@@ -1,0 +1,12 @@
+---
+title: "Patching Simple Terminal (st)"
+date: 2024-02-07T17:44:15+07:00
+author: "firmanqs"
+draft: false
+toc: false
+tags: ["st", "terminal"]
+description: "Patching ultrasimple terminal to make it unsimple"
+---
+
+* How to create Homework LaTeX Template?
+{{< youtube kJy-CsGPf_g >}}

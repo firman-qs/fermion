@@ -1,0 +1,559 @@
+---
+title: "Menulis Latex"
+date: 2024-02-07T17:44:15+07:00
+author: "firmanqs"
+draft: false
+tags: ["math", "latex", "code"]
+description: "Tutorial LaTeX"
+---
+
+* Menulis LaTeX
+
+Pernahkah kalian membaca dokumen, artikel ilmiah, atau buku teks fisika dengan banyak persamaan/rumus seperti gambar di bawah?
+
+dummy pict
+
+Dokumen pada Gambar 1, 2, dan 3 ditulis menggunakan LaTeX. Secara sederhana, LaTeX sama saja dengan _software_ penulisan dokumen lainnya, seperti Ms. Word. Perbedanannya, untuk melakukan pemformatan pada dokumen, kita menggunakan sebuah perintah/command, bukan menggunakan tombol GUI (graphical user interface).
+
+#+begin_quote
+**Jika alsannya adalah untuk menuliskan persamaan, mengapa tidak menggunakan Ms. Word saja?** Memang kita dapat menggunakan _equation tools_ di dalam Ms. Word untuk menulis dokumen yang berisi persamaan fisika/matematika. Namun, jika persamaan-persamaan tersbut mulai kompleks, akan jauh lebih mudah dan tertata jika dituliskan menggunakan LaTeX. Disamping itu, terdapat banyak kelebihan menggunakan LaTeX dibandingkan software office biasa[fn:1].
+#+end_quote
+
+
+#+begin_quote
+Menulis menggunakan LaTeX pada awalnya akan terasa sulit. Sebelumnya, kita terbiasa menulis dengan gaya "WYSIWYG" _What You See is What You Get_ dengan Ms. Office atau Google Suite. Sedangkan LaTeX lebih condong pada "WYGIWYM" _What You Get is What You Mean_. Pada LaTeX, kita menuliskan perintah/command semantik LaTeX dan melihat output dokumen yang dihasilkan setelah melakukan proses _compile_.
+#+end_quote
+
+Untuk bacaan lebih lanjut, kalian dapat mengunjungi artikel [[https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes*What_is_LaTeX?][Learn LaTeX in 30 minutes]]. Tutorial ini juga dibuat mengacu pada artikel tersebut.
+
+TLDR.
+
+#+begin_quote
+Kalian dapat membaca artikel ini secara linier berurutan atau langsung melihat contoh dan mempelajarinya sendiri dengan mengeditnya.
+#+end_quote
+
+* Persiapan
+Untuk menulis LaTeX, pada dasarnya kalian memerlukan code/text-editor & terminal. Code/text-editor digunakan untuk mengedit kode LaTeX, sedangkan terminal digunakan untuk menjalankan perintah /compile/ melalui /shell/ yang ada.
+
+Code/text editor yang dapat kalian gunakan sangat bervariasi. Kalian dapat menggunakan text editor seperti: notepad; code editor seperti: Visual Studio Code, emacs, dan VIM/Neovim; maupun IDE LaTeX seperti TeXstudio, TeXmaker, dan TeXifier.
+
+#+begin_quote
+Namun, untuk pengenalan kali ini kita akan menggunakan [[https://www.overleaf.com/project][Overleaf]]. [[https://www.overleaf.com/project][Overleaf]] adalah editor LaTeX berbasis web. Dengan menggunakan [[https://www.overleaf.com/project][Overleaf]] kita tidak perlu melakukan installasi dan setup LaTeX di komputer kita. Kelemahannya, kalian harus /online/ untuk dapat menggunakan [[https://www.overleaf.com/project][Overleaf]].
+#+end_quote
+
+<figure>
+    <img loading="lazy" className="w-full" src="/images/learn-latex-article-g.gif"/>
+    <figcaption>Penulisan LaTeX menggunakan <a href="https://www.overleaf.com/project" rel="noreferrer">Overleaf</a></figcaption>
+</figure>
+
+#+begin_quote
+Jika kalian ingin menulis LaTeX secara _offline_, kalian dapat melihat berbagai video totorial di YouTube. Berikut beberapa contohnya:
+
+- Untuk sistem operasi Windows: [[https://www.youtube.com/watch?v=4lyHIQl4VM8][klik di sini]]
+- Untuk sistem operasi MacOS: [[https://www.youtube.com/watch?v=CmagZthwhaY][klik di sini]]
+- Untuk sistem operasi Linux: [[https://www.youtube.com/watch?v=meIMb6vwhxo&t=40s][klik di sini]]
+
+Catatan: Untuk linux, sesuaikan perintah install TeXLive dengan package manager distro linux masing-masing. Dalam video tersbut saya menggunakan Endeavour OS (Arch linux based).
+#+end_quote
+
+** Prasyarat: Dasar Overleaf
+
+- Kalian harus membuat akun Overleaf dengan klik *Sign up* di sudut kanan atas.
+- Klik *New Project* (di sisi kiri) untuk membuat proyek baru (untuk saat ini, pilih *Blank Project*. Tentu kalian bebas mencoba pilihan lainnya.).
+![new project](/images/learn-latex-article-6.png)
+- Setelah itu, kalian akan masuk ke dalam halaman berikut.
+![new project](/images/learn-latex-article-7.png)
+
+Di sebelah kiri, terdadpat file-tree projek kalian. Secara _default_ kita diberikan file *main.tex* yang merupakan file latex kita.
+
+#+begin_quote
+Setiap file dalam komputer memiliki ekstensi file (bagian yang terletak setelah nama file, misal namaFile.extensi). Sebagai contoh, file gambar dapat memiliki ekstensi (*.jpg*, *.png*, *.webp*, dsb.). File bahasa pemrograman python dengan ekstensi *.py*, bahasa c++ dengan ekstensi *.cpp*, begitupun LaTeX/TeX dengan ekstensi *.tex*.
+#+end_quote
+
+** Memulai Menulis LaTeX
+Setiap dokumen LaTeX memiliki struktur dasar sebagai berikut:
+
+#+begin_src latex
+\documentclass{article} % Kelas dokumen
+\usepackage{graphicx} % mengimport package "graphicx"
+
+\title{Judul Dokumen}
+\author{Nama Penulis}
+\date{\today} % Tanggal otomatis
+
+\begin{document}
+
+    \maketitle % Mengkonversi \title{...} \author{...} \date{...} ke dalam teks judul
+
+    Isi dokumen kita. Laba penjualan yang diperoleh sebesar 3\%.
+
+\end{document}
+#+end_src
+
+Stuktur dokumen diatas jika kita compile di dalam [[https://www.overleaf.com/project][overleaf]] akan menghasilkan output berikut.
+
+<figure>
+    <img loading="lazy" className="w-full" src="/images/learn-latex-article-4.png"/>
+</figure>
+
+Mari kita bahas elemen-elemen utama dalam struktur dasar di atas.
+
++ ~\documentclass{article}:~ Menentukan jenis dokumen, dalam hal ini adalah artikel. Selain artikel terdapat beberapa kelas lain seperti report, book, beamer, dan bahkan kelas dokumen custom yang dapat dibuat sendiri.
++ ~\usepackage{graphicx}:~ Mengimport package "graphicx". Terdapat banyak package yang dapat digunakan di dalam LaTeX. Dalam contoh ini, graphicx diperlukan jika kita ingin menyisipkan gambar di dalam dokumen kita.
++ ~\title{}:~ Mendefinisikan judul dokumen.
++ ~\author{}:~ Mendefinisikan nama penulis.
++ ~\date{}:~ Mendefinisikan tanggal. \today menghasilkan tanggal hari ini secara otomatis.
++ ~\begin{document} dan \end{document}:~ Menkaliani awal dan akhir dokumen.
++ ~\maketitle:~ Membuat judul dokumen berdasarkan ~\title{...} \author{...} \date{...}~.
++ ~\section{}:~ Membuat section/bagian dalam dokumen mirip seperti heading pada Ms. Word.
++ Seluruh area sebelum perintah ~\begin{document}~ disebut area preamble.
++ baris yang diawali tkalian ~%~ tidak akan dieksekusi/dicompile. Simbol ~%~ digunakan untuk menandakan baris /comment/ seperti bahasa-bahasa pemrograman lain. Bagaimana jika ingin menuliskan tanda ~%~ di dalam sebuah kalimat? kita harus menambahak escape character: ~\~ sebelum tanda %.
+
+#+begin_quote
+Secara lebih detail kalian dapat membaca [[https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes*Writing_your_first_piece_of_LaTeX][artikel berikut]].
+#+end_quote
+
+** Text Bold, Italic, dan Underline
+Teks dengan format:
+
+- **Bold**: dihasilkan dengan memasukkan teks ke dalam perintah `\textbf{teks ini dicetak tebal}`.
+- _Italic_: dihasilkan dengan memasukkan teks ke dalam perintah `\textit{teks ini dicetak miring}`.
+- <u>Underline</u>: dihasilkan dengan memasukkan teks ke dalam perintah `\underline{teks ini memiliki underline}`.
+- <em>Emphasized</em> (membuat teks menjadi italic jika dalam teks biasa, atau tegak jika berada dalam perintah `\textit{...}`): dihasilkan dengan perintah `\emph{contoh teks dengan penekanan (emphasized)}`.
+
+Perhatikan contoh berikut.
+
+```latex showLineNumbers
+\documentclass{article}
+
+\begin{document}
+
+    Lorem \textbf{teks bercetak bold} dolor sit amet,
+    \underline{teks dengan underline} elit, sed do eiusmod
+    tempor \textit{teks bercetak italic} ut labore et
+    dolore magna aliqua.
+
+    Ut enim ad minim veniam, quis nostrud \emph{teks emphasized}
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    \textit{Ut enim ad minim veniam, \emph{teks emphasized di dalam
+    italic} ullamco laboris nisi ut aliquip consequat.}
+
+\end{document}
+```
+<Callout>
+output:
+![contoh format teks](/images/learn-latex-article-5.png)
+</Callout>
+
+** Menambahkan Gambar
+
+Untuk menambahkan gambar, kita memerlukan package `graphicx` yang menyediakan perintah import gambar. Jika kita memiliki struktur projek sebegai berikut pada file-tree.
+
+```sh
+.
+├── gambar
+│   └── contoh-gambar.png
+└── main.tex
+```
+<Callout>
+Note: `contoh-gambar.png` terletak di dalam folder `gambar`.
+</Callout>
+
+Maka gambar dapat di-_import_ menggunakan perintah `\includegraphics{gambar/contoh-gambar.png}`. Berikut contoh lengkap menambahkan gambar.
+
+
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+\begin{figure}[h] % argument `[h]` akan saya bahas pada blog terpisah
+    \centering
+    \includegraphics[width=0.75\textwidth]{gambar/contoh-gambar.png}
+    \caption{Mengimport gambar}
+    \label{fig:contoh-gambar}
+\end{figure}
+
+Gambar \ref{fig:contoh-gambar} menunjukkan kapasitor pelat sejajar
+dengan dua material dielektrik linier berbeda.
+
+\end{document}
+
+```
+<Callout>
+Output:
+![contoh menambahkan gambar](/images/learn-latex-article-8.png)
+</Callout>
+
+*** Pembahasan Environment Figure
+
+Setiap perintah yang dimulai dengan `\begin{...} ...
+\end{...}` disebut environment. Secara sederhana environment adalah pengelompokan perintah dengan fungsi yang saling berikaitan. Sebagai contoh, perintah `\begin{figure}` dan `\end{figure}` adalah _environment gambar_. Di mana pada _environment gambar_ dapat berisi:
+
+- `\centering:` meletakkan gambar/teks di tengah secara horizontal (center).
+- `\includegraphics[width=0.5\textwidth]{path/to/image.jpg}:` Menyisipkan gambar dan mengatur lebarnya menjadi 50% dari lebar area teks. Ganti `path/to/image.jpg` dengan path (alamat/letak) file gambar kalian, dalam contoh di atas pada `gambar/contoh-gambar.png`.
+- `\caption{Mengimport gambar}:` Menambahkan _caption_ di bawah gambar.
+- `\label{fig:contoh-gambar}:` Memberikan label pada gambar untuk referensi di tempat lain dalam dokumen.
+
+`\label{...}` tidak hanya digunakan di dalam _environment gambar_, tetapi juga _environments_ lain untuk kemudian dikutip di bagian lain menggunakan perintah `\ref{...}`.
+
+** Opsi Merubah Ukuran Gambar
+
+Kalian dapat mengatur ukuran gambar menggunakan beberapa cara:
+
+1. width: untuk mengatur lebar.
+```latex showLineNumbers
+% Mengatur ukuran gambar relatif terhadap lebar area teks
+\includegraphics[width=0.75\textwidth]{path/to/image.jpg}
+
+% atau dengan ukuran absolut
+\includegraphics[width=10cm]{path/to/image.jpg}
+```
+
+2. height: untuk mengatur tinggi.
+
+```latex showLineNumbers
+% Mengatur ukuran gambar relatif terhadap lebar area teks
+\includegraphics[height=0.75\textwidth]{path/to/image.jpg}
+
+% atau dengan ukuran absolut
+\includegraphics[height=10cm]{path/to/image.jpg}
+```
+
+Kalian dapt menggunakan key height dan width bersamaan,
+
+```latex showLineNumbers
+\includegraphics[height=5cm, width=10cm]{path/to/image.jpg}
+```
+dengan konsekuensi jika rasio ukuran yang kalian berikan tidak sama dengan rasio gambar, maka gambar akan _strech_/tertarik/_gepeng_.
+
+
+3. scale: menskalakan gambar berdasarkan faktor pengali.
+
+```latex showLineNumbers
+% ukuran gambar 0.5 (setengah) ukuran aslinya
+\includegraphics[scale=0.5]{path/to/image.jpg}
+
+% ukuran gambar 1.5 (satu-setengah) ukuran aslinya
+\includegraphics[scale=1.5]{path/to/image.jpg}
+```
+
+*** Posisi Gambar
+
+Argument pemosisian dalam _environment gambar_ dapat berupa `[h], [t], [b], [p]`:
+
+- `[h]` (_here_ atau di sini): menembpatkan gambar kira-kira _di sini!_.
+- `[t]` (_top_ atau atas): menempatkan gambar di bagian atas halaman.
+- `[b]` (_bottom_ atau bawah): menempatkan gambar di bagian bawah halaman.
+- `[p]` (_page_ atau halaman): menempatkan gambar pada halaman tersendiri/khusus.
+
+atau kombinasi beberapa/semua dari keempatnya.
+
+
+** Bullet/List di dalam LaTeX
+
+*** Unordered list
+
+_Unordered list_ menggunakan poin-poin _bullet_ untuk menkaliani setiap item. Untuk membuat _unordered list_, gunakan _environment itemize_.
+
+```latex showLineNumbers
+\begin{itemize}
+    \item Unordered item pertama
+    \item Unordered item kedua
+    \item Unordered item ketiga
+\end{itemize}
+```
+
+*** Ordered list
+
+_Ordered list_ menggunakan nomor/alphabet untuk menkaliani setiap item. Untuk membuat _ordered list_, gunakan _environment enumerate_.
+
+```latex showLineNumbers
+\begin{enumerate}
+    \item Ordered item pertama
+    \item Ordered item kedua
+    \item Ordered item ketiga
+\end{enumerate}
+```
+
+*** Kombinasi Ordered dan Unordered list
+
+```latex showLineNumbers
+\begin{enumerate}
+    \item Item pertama
+    \begin{itemize}
+        \item Subitem satu
+        \item Subitem dua
+    \end{itemize}
+    \item Item kedua
+\end{enumerate}
+```
+
+<Callout>
+Output:
+![list](/images/learn-latex-article-9.png)
+</Callout>
+
+> Untuk pemformatan list lebih lanjut seperti cara mengubah icon bullet, gaya penomoran (misalnya menggunakan angka romawi), maupun indentasi, kalian dapat membaca artikel berikut: <a href="https://www.overleaf.com/learn/latex/Lists" target="_blank" rel="noreferrer">overleaf.com/learn/latex/Lists</a>.
+
+** Menambahkan Persamaan Matematika dalam Dokumen LaTeX
+
+Salah satu keunggulan utama LaTeX adalah kemampuannya untuk menangani notasi matematika dengan sangat baik. Kalian dapat menulis persamaan matematika baik dalam bentuk _inline_ (di dalam teks) maupun dalam bentuk _display_ (terpisah dari teks atau pada baris khusus).
+
+*** Persamaan Matematika Inline
+
+Persamaan matematika _inline_ ditulis di dalam tkalian `$...$`  atau `\(...\)`. Kode berikut
+
+```latex showLineNumbers
+\documentclass{article}
+\begin{document}
+    Rumus Pythagoras adalah \(a^2 + b^2 = c^2\).
+    Persamaan $E=mc^2$ menyatakan hubungan massa dan energi.
+\end{document}
+```
+<Callout>
+menghasilkan output
+
+![inline math](/images/learn-latex-article-10.png)
+</Callout>
+
+*** Persamaan Matematika Display
+
+Ekspresi matematika display ditulis di luar teks biasa, seringkali digunakan untuk menampilkan persamaan yang kompleks atau ingin diberi penomoran. Gunakan _environment equation_ untuk menampilkan persamaan matematika dalam gaya displayed.
+
+
+```latex {5,6,7,8,11,12,13} showLineNumbers
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+    Hubungan Energi relativistik dinyatakan oleh Persamaan (\ref{persamaan-1}).
+    \begin{equation}
+        E^2=(pc)^2+(m_0 c^2)^2.
+        \label{persamaan-1}
+    \end{equation}
+
+    Hukum Faraday dalam bentuk differensial dinytakan oleh
+    \begin{equation*}
+        \vec{\nabla} \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}
+    \end{equation*}
+\end{document}
+```
+
+<Callout>
+Output:
+
+![displayed math](/images/learn-latex-article-11.png)
+</Callout>
+
+Perhatikan perbedaan _environmen equation_ vs _equation*_. _equation*_ tidak memberikan penomoran persamaan. _Environment equatin*_ ini disediakan oleh package `amsmath`.
+
+<Callout>
+- Secara sederhana, untuk menuliskan huruf yunani atau simbol matematika, kita menuliskan `\namaSymbolAtauHuruf` (selalu di awali tkalian _backslash_ "\\"). Sebagai contoh: $\alpha, \beta,$ dan $\gamma$ dapat diperoleh dengan menuliskan `\alpha, \beta,` dan `\gamma`.
+- Untuk menulis fungsi matematika seperti trigonometri atau logaritma, gunakan perintah bawaan seperti `\sin`, `\cos`, `\log`, dan sebagainya. Jangan menuliskannya tanpa "\\". Berikut perbedaan hasil fungsi `sin` yang ditulis dengan dan tanpa tkalian "\\".
+
+    - dengen "\\" (terbaca sebagai suatu fungsi $\sin(\dots)$)
+        $$
+        \sin(x)
+        $$
+
+    - tanpa "\\" (dianggap sebagai variabel $s$, $i$, dan $n$, sehingga ditulis miring)
+        $$
+        sin(x)
+        $$
+</Callout>
+
+Untuk notasi matematika yang lebih kompleks, kita disarankan untuk menggunakan paket `amsmath`.
+
+*** Package `amsmath`
+
+***** Environment align dan aligned
+
+_Environment align_ digunakan untuk menyusun beberapa persamaan dengan tkalian `=` yang sejajar, atau mensejajarkan pada titik-titik tertentu.
+
+```latex showLineNumbers /&/ {6,13}
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+    \section*{Environment align}
+    \begin{align}
+        \vec{E} &= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+        = \frac{1}{\epsilon_0} & \frac{1}{4\pi r^2}Q\\
+        &= \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+        &= \frac{Q}{4\pi \epsilon_0 r^2}
+    \end{align}
+
+    \section*{Environment align*}
+    \begin{align*}
+        \vec{E} &= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+        = \frac{1}{\epsilon_0} & \frac{1}{4\pi r^2}Q\\
+        & = \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+        &= \frac{Q}{4\pi \epsilon_0 r^2}
+    \end{align*}
+
+    \section*{Environment aligned di dalam equation}
+    \begin{equation}
+        \begin{aligned}
+            \vec{E} &= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+            = \frac{1}{\epsilon_0} & \frac{1}{4\pi r^2}Q\\
+            & = \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+            &= \frac{Q}{4\pi \epsilon_0 r^2}
+        \end{aligned}
+    \end{equation}
+\end{document}
+```
+
+<Callout>
+Output:
+
+<object data="/documents/learn-latex-article-12.pdf" type="application/pdf" width="100%" height="460" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen >
+    <p>Unable to display PDF file. <a target="_blank" href="/documents/learn-latex-article-12.pdf">Download</a> instead.</p>
+</object>
+</Callout>
+
+- Perhatikan bahwa kita menkaliani titik-titik yang ingin disejajarkan dalam persamaan menggunakan simbol _ampersand_ (`&`).
+- Untuk menggunaakn tkalian ampersand (&) di dalam teks biasa, sama seperti tanda %, kalian harus menambahkan tanda `\` di awal (escape character).
+- Perhatikan perbedaan sistem penomoran dari ketiga contoh di atas.
+
+> Untuk penulisan ekspresi matematika yang lebih lengkap dapat kalian baca dalam artikel <a rel="noreferrer" href="https://www.overleaf.com/learn/latex/Mathematics" target="_blank">overleaf.com/learn/latex/Mathematics</a>
+
+** Membuat Tabel
+Untuk membuat tabel sederhana di LaTeX, gunakan _environment table_ untuk menampung tabel dan _environment tabular_ untuk menyimpan isi tabel.
+
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|r|}
+        \hline
+        Header 1  & Header 2 & Header 3 \\
+        \hline
+        Data 1    & Data 2   & Data 3 \\
+        Data 4    & Data 5   & Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Contoh Tabel}
+    \label{tab:contoh}
+\end{table}
+
+\end{document}
+```
+<Callout>
+Output:
+
+<img src="/images/learn-latex-article-14.png" loading="lazy"/>
+
+</Callout>
+
+
+- `\begin{table}[h]` dan `\end{table}`: _environment_ untuk tabel yang menyediakan _floating environment_, sehingga LaTeX dapat memposisikan tabel sesuai dengan layout dokumen. Opsi/argumen _[h]_ menunjukkan bahwa tabel sebaiknya diletakkan "here" (di sini).
+- `\centering`: meletakkan tabel di tengah halaman secara horizontal.
+- `\begin{tabular}{|c|c|c|}` dan `\end{tabular}`: _environment_ untuk membuat isi tabel.
+- `{|l|c|r|}` menentukan bahwa tabel memiliki tiga kolom yang disusun secara vertikal (dengan garis pembatas di antaranya). Kolom pertama rata kiri (l, left), kolom ke-dua rata tengah (c, center), dan kolom ke-tiga rata kanan (r, right). Coba contoh berikut:
+    - `{c|c|c}`
+    - `{ll|c}`
+- `\hline`: Menambahkan border/garis horizontal.
+- `&`: Memisahkan kolom.
+- `\\`: Menkaliankan akhir baris/membuat baris baru.
+- `\caption{Contoh Tabel}`: Menambahkan keterangan atau judul tabel.
+
+*** Menggabungkan kolom dan/atau baris (merge column and row)
+Sebagai section terakhir, saya akan berikan ini sebagai latihan bagi kalian untuk memhamai secara mandiri.
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{multirow}
+
+
+\begin{document}
+
+\section{Pendahuluan}
+Dokumen ini menunjukkan cara membuat dan menyesuaikan tabel dalam LaTeX.
+
+\section{Tabel Dasar}
+Berikut adalah tabel dasar:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Header 1 & Header 2 & Header 3 \\
+        \hline
+        Data 1 & Data 2 & Data 3 \\
+        Data 4 & Data 5 & Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Contoh Tabel}
+    \label{tab:contoh}
+\end{table}
+
+\section{Lebar Kolom yang Disesuaikan}
+Berikut adalah tabel dengan lebar kolom yang disesuaikan:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{5cm}|p{4cm}|}
+        \hline
+        Header 1 & Header 2 & Header 3 \\
+        \hline
+        Data 1 & Data 2 & Data 3 \\
+        Data 4 & Data 5 & Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Tabel dengan Lebar Kolom yang Disesuaikan}
+    \label{tab:lebar_kolom}
+\end{table}
+
+\section{Menggabungkan Baris dan Kolom}
+Berikut adalah tabel dengan baris dan kolom yang digabungkan:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{Gabungan Kolom} & Kolom 3 \\
+        \hline
+        \multirow{2}{*}{Baris 1 dan 2} & Data 2 & Data 3 \\
+        & Data 5 & Data 6 \\
+        \hline
+        Data 7 & Data 8 & Data 9 \\
+        \hline
+    \end{tabular}
+    \caption{Tabel dengan Baris dan Kolom yang Digabungkan}
+    \label{tab:gabungan}
+\end{table}
+
+\end{document}
+
+```
+
+<Callout>
+Output:
+
+<object data="/documents/learn-latex-article-15.pdf" type="application/pdf" width="100%" height="460" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen >
+    <p>Unable to display PDF file. <a target="_blank" href="/documents/learn-latex-article-15.pdf">Download</a> instead.</p>
+</object>
+</Callout>
+
+
+
+<Callout>
+
+** Penutup
+
+Dalam menulis LaTeX kalian tidak perlu menghafal secara detail semua perintah dan packages yang dibutuhkan:
+
+<div className="text-center">
+_You google what you need, and then forget about it, until the next time you need it, at which point you google it again_
+</div>
+
+*** Referensi tutorial
+- Totorial LaTeX lengkap dapat kalian di dalam <a href="https://www.overleaf.com/learn" target="_blank" rel="noreferrer">dokumentasi LaTeX oleh Overleaf</a>,
+
+- atau dengan melihat playlist youtube <a href="https://youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73&si=WhEAnfmAUYOhoBXK" target="_blank" rel="noreferrer">_LaTeX tutorials_ berikut</a>.
+
+</Callout>
+
+** Referensi
+[fn:1]: Baca artikel [[https://www.overleaf.com/about/why-latex][The secret to better scientific and technical writing]]

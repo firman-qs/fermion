@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+
+  <title>Menulis Latex – Fermion</title>
+  <meta name="description" content="Tutorial LaTeX" />
+
+  
+    <link rel="canonical" href="http://192.168.1.108:1313/blog/menulis-latex/" itemprop="url" />
+  
+
+  
+
+<meta property="og:title" content="Menulis Latex" />
+<meta property="og:description" content="Tutorial LaTeX" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://192.168.1.108:1313/blog/menulis-latex/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-02-07T17:44:15+07:00" />
+<meta property="article:modified_time" content="2024-02-07T17:44:15+07:00" />
+
+  
+  <meta itemprop="name" content="Menulis Latex">
+  <meta itemprop="description" content="Tutorial LaTeX">
+  <meta itemprop="datePublished" content="2024-02-07T17:44:15+07:00">
+  <meta itemprop="dateModified" content="2024-02-07T17:44:15+07:00">
+  <meta itemprop="wordCount" content="2332">
+  <meta itemprop="keywords" content="Math,Latex,Code">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Menulis Latex">
+  <meta name="twitter:description" content="Tutorial LaTeX">
+
+    <link href="/css/compiled/main.css" rel="stylesheet" />
+
+
+
+  <link href="/css/custom.css" rel="stylesheet" />
+
+
+
+
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+</head>
+<body dir="ltr"><div class="nav-container hx-sticky hx-top-0 hx-z-20 hx-w-full hx-bg-transparent print:hx-hidden">
+  <div class="nav-container-blur hx-pointer-events-none hx-absolute hx-z-[-1] hx-h-full hx-w-full hx-bg-white dark:hx-bg-dark hx-shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] contrast-more:hx-shadow-[0_0_0_1px_#000] dark:hx-shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] contrast-more:dark:hx-shadow-[0_0_0_1px_#fff]"></div>
+
+  <nav class="hx-mx-auto hx-flex hx-items-center hx-justify-end hx-gap-2 hx-h-16 hx-px-6 hx-max-w-[90rem]">
+    <a class="hx-flex hx-items-center hover:hx-opacity-75 ltr:hx-mr-auto rtl:hx-ml-auto" href="/">
+        <img class="hx-block dark:hx-hidden" src="/images/logo.svg" alt="Fermion" height="20" width="20" />
+        <img class="hx-hidden dark:hx-block" src="/images/logo-dark.svg" alt="Fermion" height="20" width="20" />
+        <span class="hx-mx-2 hx-font-extrabold hx-inline hx-select-none" title="Fermion">Fermion</span>
+    </a><a
+            title="Fisika"
+            href="/docs"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"
+          >
+            <span class="hx-text-center">Fisika</span>
+          </a><a
+            title="Blog"
+            href="/blog"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-font-medium"
+          >
+            <span class="hx-text-center">Blog</span>
+          </a><a
+            title="About"
+            href="/about"
+            
+            class="hx-text-sm contrast-more:hx-text-gray-700 contrast-more:dark:hx-text-gray-100 hx-relative -hx-ml-2 hx-hidden hx-whitespace-nowrap hx-p-2 md:hx-inline-block hx-text-gray-600 hover:hx-text-gray-800 dark:hx-text-gray-400 dark:hover:hx-text-gray-200"
+          >
+            <span class="hx-text-center">About</span>
+          </a><div class="search-wrapper hx-relative md:hx-w-64">
+  <div class="hx-relative hx-flex hx-items-center hx-text-gray-900 contrast-more:hx-text-gray-800 dark:hx-text-gray-300 contrast-more:dark:hx-text-gray-300">
+    <input
+      placeholder="Search..."
+      class="search-input hx-block hx-w-full hx-appearance-none hx-rounded-lg hx-px-3 hx-py-2 hx-transition-colors hx-text-base hx-leading-tight md:hx-text-sm hx-bg-black/[.05] dark:hx-bg-gray-50/10 focus:hx-bg-white dark:focus:hx-bg-dark placeholder:hx-text-gray-500 dark:placeholder:hx-text-gray-400 contrast-more:hx-border contrast-more:hx-border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx-absolute hx-my-1.5 hx-select-none ltr:hx-right-1.5 rtl:hx-left-1.5 hx-h-5 hx-rounded hx-bg-white hx-px-1.5 hx-font-mono hx-text-[10px] hx-font-medium hx-text-gray-500 hx-border dark:hx-border-gray-100/20 dark:hx-bg-dark/50 contrast-more:hx-border-current contrast-more:hx-text-current contrast-more:dark:hx-border-current hx-items-center hx-gap-1 hx-transition-opacity hx-pointer-events-none hx-hidden sm:hx-flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx-hidden hx-border hx-border-gray-200 hx-bg-white hx-text-gray-100 dark:hx-border-neutral-800 dark:hx-bg-neutral-900 hx-absolute hx-top-full hx-z-20 hx-mt-2 hx-overflow-auto hx-overscroll-contain hx-rounded-xl hx-py-2.5 hx-shadow-xl hx-max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:hx-max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx-inset-x-0 ltr:md:hx-left-auto rtl:md:hx-right-auto contrast-more:hx-border contrast-more:hx-border-gray-900 contrast-more:dark:hx-border-gray-50 hx-w-screen hx-min-h-[100px] hx-max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx-p-2 hx-text-current" target="_blank" rel="noreferer" href="https://github.com/firman-qs" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx-sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hamburger-menu -hx-mr-2 hx-rounded hx-p-2 active:hx-bg-gray-400/20 md:hx-hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class="hx-mx-auto hx-flex hx-max-w-screen-xl">
+    <div class="mobile-menu-overlay [transition:background-color_1.5s_ease] hx-fixed hx-inset-0 hx-z-10 hx-bg-black/80 dark:hx-bg-black/60 hx-hidden"></div>
+<aside class="sidebar-container hx-flex hx-flex-col print:hx-hidden md:hx-top-16 md:hx-shrink-0 md:hx-w-64 md:hx-self-start max-md:[transform:translate3d(0,-100%,0)] md:hx-hidden xl:hx-block">
+  
+  <div class="hx-px-4 hx-pt-4 md:hx-hidden">
+    <div class="search-wrapper hx-relative md:hx-w-64">
+  <div class="hx-relative hx-flex hx-items-center hx-text-gray-900 contrast-more:hx-text-gray-800 dark:hx-text-gray-300 contrast-more:dark:hx-text-gray-300">
+    <input
+      placeholder="Search..."
+      class="search-input hx-block hx-w-full hx-appearance-none hx-rounded-lg hx-px-3 hx-py-2 hx-transition-colors hx-text-base hx-leading-tight md:hx-text-sm hx-bg-black/[.05] dark:hx-bg-gray-50/10 focus:hx-bg-white dark:focus:hx-bg-dark placeholder:hx-text-gray-500 dark:placeholder:hx-text-gray-400 contrast-more:hx-border contrast-more:hx-border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx-absolute hx-my-1.5 hx-select-none ltr:hx-right-1.5 rtl:hx-left-1.5 hx-h-5 hx-rounded hx-bg-white hx-px-1.5 hx-font-mono hx-text-[10px] hx-font-medium hx-text-gray-500 hx-border dark:hx-border-gray-100/20 dark:hx-bg-dark/50 contrast-more:hx-border-current contrast-more:hx-text-current contrast-more:dark:hx-border-current hx-items-center hx-gap-1 hx-transition-opacity hx-pointer-events-none hx-hidden sm:hx-flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx-hidden hx-border hx-border-gray-200 hx-bg-white hx-text-gray-100 dark:hx-border-neutral-800 dark:hx-bg-neutral-900 hx-absolute hx-top-full hx-z-20 hx-mt-2 hx-overflow-auto hx-overscroll-contain hx-rounded-xl hx-py-2.5 hx-shadow-xl hx-max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:hx-max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx-inset-x-0 ltr:md:hx-left-auto rtl:md:hx-right-auto contrast-more:hx-border contrast-more:hx-border-gray-900 contrast-more:dark:hx-border-gray-50 hx-w-screen hx-min-h-[100px] hx-max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx-overflow-y-auto hx-overflow-x-hidden hx-p-4 hx-grow md:hx-h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx-flex hx-flex-col hx-gap-1 md:hx-hidden">
+      
+      
+          <li class="open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/"
+    
+  >Blog
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/latex-homework-template/"
+    
+  >LaTeX Homework Template
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/blog/menulis-latex/"
+    
+  >Menulis Latex
+    </a>
+  
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/patching-simple-terminal-st/"
+    
+  >Patching Simple Terminal (st)
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/hacking-on-xmonad/"
+    
+  >Hacking on XMonad &#43; Polybar
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/plotting-fresnel-equation-python/"
+    
+  >Plotting Fresnel Equations with Python3
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/latex-inkscape-emacs/"
+    
+  >Latex-Inkscape-DoomEmacs Combo
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/blog/asynchronous-up-counter.id/"
+    
+  >Pencacah Maju Asinkron (Asynchronous Up Counter) dengan Clocked J-K Flip-Flop: Simulasi dengan Proteus
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/"
+    
+  >Kumpulan Materi Fisika
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/"
+    
+  >Fisika Kelas 11
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/elastisitas/"
+    
+  >Elastisitas
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/"
+    
+  >Titik Berat Benda
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/titik-berat-sistem-titik/"
+    
+  >Titik Berat Benda Titik/Partikel
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/titik-berat-sistem-1d/"
+    
+  >Titik Berat Benda Homogen 1 Dimensi
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikaxi/titik-berat/titik-berat-sistem-2d/"
+    
+  >Titik Berat Benda Homogen 2 Dimensi
+    </a>
+              
+            </li></ul>
+      </div>
+            </li></ul>
+      </div>
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/docs/fisikax/"
+    
+  >Fisika Kelas 10
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/about/"
+    
+  >About
+    </a></li>
+      <li class="[word-break:break-word] hx-mt-5 hx-mb-2 hx-px-2 hx-py-1.5 hx-text-sm hx-font-semibold hx-text-gray-900 first:hx-mt-0 dark:hx-text-gray-100">
+        <span class="hx-cursor-default">More</span>
+      </li>
+    
+      <li><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/"
+    
+  >My Github</a></li>
+    
+    </ul>
+
+    <div class="max-xl:hx-hidden hx-h-0 hx-w-64 hx-shrink-0"></div></div>
+  
+  
+    <div class="md:hx-hidden  hx-sticky hx-bottom-0 hx-bg-white dark:hx-bg-dark hx-mx-4 hx-py-4 hx-shadow-[0_-12px_16px_#fff] hx-flex hx-items-center hx-gap-2 dark:hx-border-neutral-800 dark:hx-shadow-[0_-12px_16px_#111] contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-shadow-none hx-border-t" data-toggle-animation="show"><div class="hx-flex hx-grow hx-flex-col"><button
+  title="Change theme"
+  data-theme="light"
+  class="theme-toggle hx-group hx-h-7 hx-rounded-md hx-px-2 hx-text-left hx-text-xs hx-font-medium hx-text-gray-600 hx-transition-colors dark:hx-text-gray-400 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50"
+  type="button"
+  aria-label="Change theme"
+>
+  <div class="hx-flex hx-items-center hx-gap-2 hx-capitalize"><svg height=12 class="group-data-[theme=light]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hx-hidden">Light</span><svg height=12 class="group-data-[theme=dark]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hx-hidden">Dark</span></div>
+</button>
+</div></div></aside>
+    
+<nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
+      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/imfing/hextra/edit/main/exampleSite/content/blog/menulis-latex.org" target="_blank" rel="noreferer">Edit this page on GitHub →</a>
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
+          <span>Scroll to top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+        
+  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current">
+        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
+          <a href="/blog/">Blog</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Menulis Latex</div>
+  </div>
+
+        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">Menulis Latex</h1>
+        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">February 7, 2024</span></div>
+        <div class="content">
+          
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Menulis LaTeX
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+Pernahkah kalian membaca dokumen, artikel ilmiah, atau buku teks fisika dengan banyak persamaan/rumus seperti gambar di bawah?</p>
+<p>
+dummy pict</p>
+<p>
+Dokumen pada Gambar 1, 2, dan 3 ditulis menggunakan LaTeX. Secara sederhana, LaTeX sama saja dengan <span style="text-decoration: underline;">software</span> penulisan dokumen lainnya, seperti Ms. Word. Perbedanannya, untuk melakukan pemformatan pada dokumen, kita menggunakan sebuah perintah/command, bukan menggunakan tombol GUI (graphical user interface).</p>
+<blockquote>
+<p><strong><strong>Jika alsannya adalah untuk menuliskan persamaan, mengapa tidak menggunakan Ms. Word saja?</strong></strong> Memang kita dapat menggunakan <span style="text-decoration: underline;">equation tools</span> di dalam Ms. Word untuk menulis dokumen yang berisi persamaan fisika/matematika. Namun, jika persamaan-persamaan tersbut mulai kompleks, akan jauh lebih mudah dan tertata jika dituliskan menggunakan LaTeX. Disamping itu, terdapat banyak kelebihan menggunakan LaTeX dibandingkan software office biasa<sup class="footnote-reference"><a id="footnote-reference-1" href="#footnote-1">1</a></sup>.</p>
+</blockquote>
+<blockquote>
+<p>Menulis menggunakan LaTeX pada awalnya akan terasa sulit. Sebelumnya, kita terbiasa menulis dengan gaya &#34;WYSIWYG&#34; <span style="text-decoration: underline;">What You See is What You Get</span> dengan Ms. Office atau Google Suite. Sedangkan LaTeX lebih condong pada &#34;WYGIWYM&#34; <span style="text-decoration: underline;">What You Get is What You Mean</span>. Pada LaTeX, kita menuliskan perintah/command semantik LaTeX dan melihat output dokumen yang dihasilkan setelah melakukan proses <span style="text-decoration: underline;">compile</span>.</p>
+</blockquote>
+<p>
+Untuk bacaan lebih lanjut, kalian dapat mengunjungi artikel <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes*What_is_LaTeX?">Learn LaTeX in 30 minutes</a>. Tutorial ini juga dibuat mengacu pada artikel tersebut.</p>
+<p>
+TLDR.</p>
+<blockquote>
+<p>Kalian dapat membaca artikel ini secara linier berurutan atau langsung melihat contoh dan mempelajarinya sendiri dengan mengeditnya.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Persiapan
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>Untuk menulis LaTeX, pada dasarnya kalian memerlukan code/text-editor &amp; terminal. Code/text-editor digunakan untuk mengedit kode LaTeX, sedangkan terminal digunakan untuk menjalankan perintah <em>compile</em> melalui <em>shell</em> yang ada.</p>
+<p>
+Code/text editor yang dapat kalian gunakan sangat bervariasi. Kalian dapat menggunakan text editor seperti: notepad; code editor seperti: Visual Studio Code, emacs, dan VIM/Neovim; maupun IDE LaTeX seperti TeXstudio, TeXmaker, dan TeXifier.</p>
+<blockquote>
+<p>Namun, untuk pengenalan kali ini kita akan menggunakan <a href="https://www.overleaf.com/project">Overleaf</a>. <a href="https://www.overleaf.com/project">Overleaf</a> adalah editor LaTeX berbasis web. Dengan menggunakan <a href="https://www.overleaf.com/project">Overleaf</a> kita tidak perlu melakukan installasi dan setup LaTeX di komputer kita. Kelemahannya, kalian harus <em>online</em> untuk dapat menggunakan <a href="https://www.overleaf.com/project">Overleaf</a>.</p>
+</blockquote>
+<p>
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; className=&#34;w-full&#34; src=&#34;/images/learn-latex-article-g.gif&#34;/&gt;
+    &lt;figcaption&gt;Penulisan LaTeX menggunakan &lt;a href=&#34;<a href="https://www.overleaf.com/project">https://www.overleaf.com/project</a>&#34; rel=&#34;noreferrer&#34;&gt;Overleaf&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;</p>
+<blockquote>
+<p>Jika kalian ingin menulis LaTeX secara <span style="text-decoration: underline;">offline</span>, kalian dapat melihat berbagai video totorial di YouTube. Berikut beberapa contohnya:</p>
+<ul>
+<li>Untuk sistem operasi Windows: <a href="https://www.youtube.com/watch?v=4lyHIQl4VM8">klik di sini</a></li>
+<li>Untuk sistem operasi MacOS: <a href="https://www.youtube.com/watch?v=CmagZthwhaY">klik di sini</a></li>
+<li>Untuk sistem operasi Linux: <a href="https://www.youtube.com/watch?v=meIMb6vwhxo&amp;t=40s">klik di sini</a></li>
+</ul>
+<p>Catatan: Untuk linux, sesuaikan perintah install TeXLive dengan package manager distro linux masing-masing. Dalam video tersbut saya menggunakan Endeavour OS (Arch linux based).</p>
+</blockquote>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Prasyarat: Dasar Overleaf
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<ul>
+<li>Kalian harus membuat akun Overleaf dengan klik <strong>Sign up</strong> di sudut kanan atas.</li>
+<li>Klik <strong>New Project</strong> (di sisi kiri) untuk membuat proyek baru (untuk saat ini, pilih <strong>Blank Project</strong>. Tentu kalian bebas mencoba pilihan lainnya.).</li>
+</ul>
+<p>![new project](/images/learn-latex-article-6.png)</p>
+<ul>
+<li>Setelah itu, kalian akan masuk ke dalam halaman berikut.</li>
+</ul>
+<p>![new project](/images/learn-latex-article-7.png)</p>
+<p>
+Di sebelah kiri, terdadpat file-tree projek kalian. Secara <span style="text-decoration: underline;">default</span> kita diberikan file <strong>main.tex</strong> yang merupakan file latex kita.</p>
+<blockquote>
+<p>Setiap file dalam komputer memiliki ekstensi file (bagian yang terletak setelah nama file, misal namaFile.extensi). Sebagai contoh, file gambar dapat memiliki ekstensi (<strong>.jpg</strong>, <strong>.png</strong>, <strong>.webp</strong>, dsb.). File bahasa pemrograman python dengan ekstensi <strong>.py</strong>, bahasa c++ dengan ekstensi <strong>.cpp</strong>, begitupun LaTeX/TeX dengan ekstensi <strong>.tex</strong>.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+Memulai Menulis LaTeX
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p>Setiap dokumen LaTeX memiliki struktur dasar sebagai berikut:</p>
+<div class="src src-latex">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl"><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span> <span class="c">% Kelas dokumen
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span> <span class="c">% mengimport package &#34;graphicx&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl"><span class="k">\title</span><span class="nb">{</span>Judul Dokumen<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\author</span><span class="nb">{</span>Nama Penulis<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span> <span class="c">% Tanggal otomatis
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">\maketitle</span> <span class="c">% Mengkonversi \title{...} \author{...} \date{...} ke dalam teks judul
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>
+</span></span><span class="line"><span class="cl">    Isi dokumen kita. Laba penjualan yang diperoleh sebesar 3<span class="k">\%</span>.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span></span></span></code></pre></div>
+</div>
+<p>
+Stuktur dokumen diatas jika kita compile di dalam <a href="https://www.overleaf.com/project">overleaf</a> akan menghasilkan output berikut.</p>
+<p>
+&lt;figure&gt;
+    &lt;img loading=&#34;lazy&#34; className=&#34;w-full&#34; src=&#34;/images/learn-latex-article-4.png&#34;/&gt;
+&lt;/figure&gt;</p>
+<p>
+Mari kita bahas elemen-elemen utama dalam struktur dasar di atas.</p>
+<ul>
+<li><code>\documentclass{article}:</code> Menentukan jenis dokumen, dalam hal ini adalah artikel. Selain artikel terdapat beberapa kelas lain seperti report, book, beamer, dan bahkan kelas dokumen custom yang dapat dibuat sendiri.</li>
+<li><code>\usepackage{graphicx}:</code> Mengimport package &#34;graphicx&#34;. Terdapat banyak package yang dapat digunakan di dalam LaTeX. Dalam contoh ini, graphicx diperlukan jika kita ingin menyisipkan gambar di dalam dokumen kita.</li>
+<li><code>\title{}:</code> Mendefinisikan judul dokumen.</li>
+<li><code>\author{}:</code> Mendefinisikan nama penulis.</li>
+<li><code>\date{}:</code> Mendefinisikan tanggal. →day menghasilkan tanggal hari ini secara otomatis.</li>
+<li><code>\begin{document} dan \end{document}:</code> Menkaliani awal dan akhir dokumen.</li>
+<li><code>\maketitle:</code> Membuat judul dokumen berdasarkan <code>\title{...} \author{...} \date{...}</code>.</li>
+<li><code>\section{}:</code> Membuat section/bagian dalam dokumen mirip seperti heading pada Ms. Word.</li>
+<li>Seluruh area sebelum perintah <code>\begin{document}</code> disebut area preamble.</li>
+<li>baris yang diawali tkalian <code>%</code> tidak akan dieksekusi/dicompile. Simbol <code>%</code> digunakan untuk menandakan baris <em>comment</em> seperti bahasa-bahasa pemrograman lain. Bagaimana jika ingin menuliskan tanda <code>%</code> di dalam sebuah kalimat? kita harus menambahak escape character: <code>\</code> sebelum tanda %.</li>
+</ul>
+<blockquote>
+<p>Secara lebih detail kalian dapat membaca <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes*Writing_your_first_piece_of_LaTeX">artikel berikut</a>.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Text Bold, Italic, dan Underline
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p>Teks dengan format:</p>
+<ul>
+<li><strong><strong>Bold</strong></strong>: dihasilkan dengan memasukkan teks ke dalam perintah `\textbf{teks ini dicetak tebal}`.</li>
+<li><span style="text-decoration: underline;">Italic</span>: dihasilkan dengan memasukkan teks ke dalam perintah `\textit{teks ini dicetak miring}`.</li>
+<li>&lt;u&gt;Underline&lt;/u&gt;: dihasilkan dengan memasukkan teks ke dalam perintah `_line{teks ini memiliki underline}`.</li>
+<li>&lt;em&gt;Emphasized&lt;/em&gt; (membuat teks menjadi italic jika dalam teks biasa, atau tegak jika berada dalam perintah `\textit{…}`): dihasilkan dengan perintah `\emph{contoh teks dengan penekanan (emphasized)}`.</li>
+</ul>
+<p>Perhatikan contoh berikut.</p>
+<p>
+```latex showLineNumbers
+\documentclass{article}</p>
+\begin{document}
+
+    Lorem \textbf{teks bercetak bold} dolor sit amet,
+    \underline{teks dengan underline} elit, sed do eiusmod
+    tempor \textit{teks bercetak italic} ut labore et
+    dolore magna aliqua.
+
+    Ut enim ad minim veniam, quis nostrud \emph{teks emphasized}
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    \textit{Ut enim ad minim veniam, \emph{teks emphasized di dalam
+    italic} ullamco laboris nisi ut aliquip consequat.}
+
+\end{document}
+<p>```
+&lt;Callout&gt;
+output:
+![contoh format teks](/images/learn-latex-article-5.png)
+&lt;/Callout&gt;</p>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Menambahkan Gambar
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
+<p>
+Untuk menambahkan gambar, kita memerlukan package `graphicx` yang menyediakan perintah import gambar. Jika kita memiliki struktur projek sebegai berikut pada file-tree.</p>
+<p>
+```sh
+.
+├── gambar
+│   └── contoh-gambar.png
+└── main.tex
+```
+&lt;Callout&gt;
+Note: `contoh-gambar.png` terletak di dalam folder `gambar`.
+&lt;/Callout&gt;</p>
+<p>
+Maka gambar dapat di-<span style="text-decoration: underline;">import</span> menggunakan perintah `∈cludegraphics{gambar/contoh-gambar.png}`. Berikut contoh lengkap menambahkan gambar.</p>
+<p>
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{graphicx}</p>
+\begin{document}
+
+\begin{figure}[h] % argument `[h]` akan saya bahas pada blog terpisah
+    \centering
+    \includegraphics[width=0.75\textwidth]{gambar/contoh-gambar.png}
+    \caption{Mengimport gambar}
+    \label{fig:contoh-gambar}
+\end{figure}
+
+Gambar \ref{fig:contoh-gambar} menunjukkan kapasitor pelat sejajar
+dengan dua material dielektrik linier berbeda.
+
+\end{document}
+<p>
+```
+&lt;Callout&gt;
+Output:
+![contoh menambahkan gambar](/images/learn-latex-article-8.png)
+&lt;/Callout&gt;</p>
+<div id="outline-container-headline-7" class="outline-4">
+<h4 id="headline-7">
+Pembahasan Environment Figure
+</h4>
+<div id="outline-text-headline-7" class="outline-text-4">
+<p>
+Setiap perintah yang dimulai dengan `\begin{…} …
+\end{…}` disebut environment. Secara sederhana environment adalah pengelompokan perintah dengan fungsi yang saling berikaitan. Sebagai contoh, perintah `\begin{figure}` dan `\end{figure}` adalah <span style="text-decoration: underline;">environment gambar</span>. Di mana pada <span style="text-decoration: underline;">environment gambar</span> dapat berisi:</p>
+<ul>
+<li>`¢ering:` meletakkan gambar/teks di tengah secara horizontal (center).</li>
+<li>`∈cludegraphics[width=0.5\textwidth]{path/to/image.jpg}:` Menyisipkan gambar dan mengatur lebarnya menjadi 50% dari lebar area teks. Ganti `path/to/image.jpg` dengan path (alamat/letak) file gambar kalian, dalam contoh di atas pada `gambar/contoh-gambar.png`.</li>
+<li>`∩tion{Mengimport gambar}:` Menambahkan <span style="text-decoration: underline;">caption</span> di bawah gambar.</li>
+<li>`\label{fig:contoh-gambar}:` Memberikan label pada gambar untuk referensi di tempat lain dalam dokumen.</li>
+</ul>
+<p>`\label{…}` tidak hanya digunakan di dalam <span style="text-decoration: underline;">environment gambar</span>, tetapi juga <span style="text-decoration: underline;">environments</span> lain untuk kemudian dikutip di bagian lain menggunakan perintah `\ref{…}`.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Opsi Merubah Ukuran Gambar
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>
+Kalian dapat mengatur ukuran gambar menggunakan beberapa cara:</p>
+<ol>
+<li>width: untuk mengatur lebar.</li>
+</ol>
+<p>```latex showLineNumbers
+% Mengatur ukuran gambar relatif terhadap lebar area teks
+∈cludegraphics[width=0.75\textwidth]{path/to/image.jpg}</p>
+<p>
+% atau dengan ukuran absolut
+∈cludegraphics[width=10cm]{path/to/image.jpg}
+```</p>
+<ol>
+<li>height: untuk mengatur tinggi.</li>
+</ol>
+<p>```latex showLineNumbers
+% Mengatur ukuran gambar relatif terhadap lebar area teks
+∈cludegraphics[height=0.75\textwidth]{path/to/image.jpg}</p>
+<p>
+% atau dengan ukuran absolut
+∈cludegraphics[height=10cm]{path/to/image.jpg}
+```</p>
+<p>
+Kalian dapt menggunakan key height dan width bersamaan,</p>
+<p>
+```latex showLineNumbers
+∈cludegraphics[height=5cm, width=10cm]{path/to/image.jpg}
+```
+dengan konsekuensi jika rasio ukuran yang kalian berikan tidak sama dengan rasio gambar, maka gambar akan <span style="text-decoration: underline;">strech_/tertarik/_gepeng</span>.</p>
+<ol>
+<li>scale: menskalakan gambar berdasarkan faktor pengali.</li>
+</ol>
+<p>```latex showLineNumbers
+% ukuran gambar 0.5 (setengah) ukuran aslinya
+∈cludegraphics[scale=0.5]{path/to/image.jpg}</p>
+<p>
+% ukuran gambar 1.5 (satu-setengah) ukuran aslinya
+∈cludegraphics[scale=1.5]{path/to/image.jpg}
+```</p>
+<div id="outline-container-headline-9" class="outline-4">
+<h4 id="headline-9">
+Posisi Gambar
+</h4>
+<div id="outline-text-headline-9" class="outline-text-4">
+<p>
+Argument pemosisian dalam <span style="text-decoration: underline;">environment gambar</span> dapat berupa `[h], [t], [b], [p]`:</p>
+<ul>
+<li>`[h]` (<span style="text-decoration: underline;">here</span> atau di sini): menembpatkan gambar kira-kira <span style="text-decoration: underline;">di sini!</span>.</li>
+<li>`[t]` (<span style="text-decoration: underline;">top</span> atau atas): menempatkan gambar di bagian atas halaman.</li>
+<li>`[b]` (<span style="text-decoration: underline;">bottom</span> atau bawah): menempatkan gambar di bagian bawah halaman.</li>
+<li>`[p]` (<span style="text-decoration: underline;">page</span> atau halaman): menempatkan gambar pada halaman tersendiri/khusus.</li>
+</ul>
+<p>atau kombinasi beberapa/semua dari keempatnya.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Bullet/List di dalam LaTeX
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<div id="outline-container-headline-11" class="outline-4">
+<h4 id="headline-11">
+Unordered list
+</h4>
+<div id="outline-text-headline-11" class="outline-text-4">
+<p>
+<span style="text-decoration: underline;">Unordered list</span> menggunakan poin-poin <span style="text-decoration: underline;">bullet</span> untuk menkaliani setiap item. Untuk membuat <span style="text-decoration: underline;">unordered list</span>, gunakan <span style="text-decoration: underline;">environment itemize</span>.</p>
+<p>
+```latex showLineNumbers</p>
+\begin{itemize}
+    \item Unordered item pertama
+    \item Unordered item kedua
+    \item Unordered item ketiga
+\end{itemize}
+<p>```</p>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-4">
+<h4 id="headline-12">
+Ordered list
+</h4>
+<div id="outline-text-headline-12" class="outline-text-4">
+<p>
+<span style="text-decoration: underline;">Ordered list</span> menggunakan nomor/alphabet untuk menkaliani setiap item. Untuk membuat <span style="text-decoration: underline;">ordered list</span>, gunakan <span style="text-decoration: underline;">environment enumerate</span>.</p>
+<p>
+```latex showLineNumbers</p>
+\begin{enumerate}
+    \item Ordered item pertama
+    \item Ordered item kedua
+    \item Ordered item ketiga
+\end{enumerate}
+<p>```</p>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-4">
+<h4 id="headline-13">
+Kombinasi Ordered dan Unordered list
+</h4>
+<div id="outline-text-headline-13" class="outline-text-4">
+<p>
+```latex showLineNumbers</p>
+\begin{enumerate}
+    \item Item pertama
+    \begin{itemize}
+        \item Subitem satu
+        \item Subitem dua
+    \end{itemize}
+    \item Item kedua
+\end{enumerate}
+<p>```</p>
+<p>
+&lt;Callout&gt;
+Output:
+![list](/images/learn-latex-article-9.png)
+&lt;/Callout&gt;</p>
+<p>
+&gt; Untuk pemformatan list lebih lanjut seperti cara mengubah icon bullet, gaya penomoran (misalnya menggunakan angka romawi), maupun indentasi, kalian dapat membaca artikel berikut: &lt;a href=&#34;<a href="https://www.overleaf.com/learn/latex/Lists">https://www.overleaf.com/learn/latex/Lists</a>&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;overleaf.com/learn/latex/Lists&lt;/a&gt;.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-3">
+<h3 id="headline-14">
+Menambahkan Persamaan Matematika dalam Dokumen LaTeX
+</h3>
+<div id="outline-text-headline-14" class="outline-text-3">
+<p>
+Salah satu keunggulan utama LaTeX adalah kemampuannya untuk menangani notasi matematika dengan sangat baik. Kalian dapat menulis persamaan matematika baik dalam bentuk <span style="text-decoration: underline;">inline</span> (di dalam teks) maupun dalam bentuk <span style="text-decoration: underline;">display</span> (terpisah dari teks atau pada baris khusus).</p>
+<div id="outline-container-headline-15" class="outline-4">
+<h4 id="headline-15">
+Persamaan Matematika Inline
+</h4>
+<div id="outline-text-headline-15" class="outline-text-4">
+<p>
+Persamaan matematika <span style="text-decoration: underline;">inline</span> ditulis di dalam tkalian `$...$`  atau `\(...\)`. Kode berikut</p>
+<p>
+```latex showLineNumbers
+\documentclass{article}</p>
+\begin{document}
+    Rumus Pythagoras adalah \(a^2 + b^2 = c^2\).
+    Persamaan $E=mc^2$ menyatakan hubungan massa dan energi.
+\end{document}
+<p>```
+&lt;Callout&gt;
+menghasilkan output</p>
+<p>
+![inline math](/images/learn-latex-article-10.png)
+&lt;/Callout&gt;</p>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-4">
+<h4 id="headline-16">
+Persamaan Matematika Display
+</h4>
+<div id="outline-text-headline-16" class="outline-text-4">
+<p>
+Ekspresi matematika display ditulis di luar teks biasa, seringkali digunakan untuk menampilkan persamaan yang kompleks atau ingin diberi penomoran. Gunakan <span style="text-decoration: underline;">environment equation</span> untuk menampilkan persamaan matematika dalam gaya displayed.</p>
+<p>
+```latex {5,6,7,8,11,12,13} showLineNumbers
+\documentclass{article}
+\usepackage{amsmath}</p>
+\begin{document}
+    Hubungan Energi relativistik dinyatakan oleh Persamaan (\ref{persamaan-1}).
+    \begin{equation}
+        E^2=(pc)^2+(m_0 c^2)^2.
+        \label{persamaan-1}
+    \end{equation}
+
+    Hukum Faraday dalam bentuk differensial dinytakan oleh
+    \begin{equation*}
+        \vec{\nabla} \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}
+    \end{equation*}
+\end{document}
+<p>```</p>
+<p>
+&lt;Callout&gt;
+Output:</p>
+<p>
+![displayed math](/images/learn-latex-article-11.png)
+&lt;/Callout&gt;</p>
+<p>
+Perhatikan perbedaan <span style="text-decoration: underline;">environmen equation</span> vs <span style="text-decoration: underline;">equation*</span>. <span style="text-decoration: underline;">equation*</span> tidak memberikan penomoran persamaan. <span style="text-decoration: underline;">Environment equatin*</span> ini disediakan oleh package `amsmath`.</p>
+<p>
+&lt;Callout&gt;</p>
+<ul>
+<li>Secara sederhana, untuk menuliskan huruf yunani atau simbol matematika, kita menuliskan `\namaSymbolAtauHuruf` (selalu di awali tkalian <span style="text-decoration: underline;">backslash</span> &#34;\\&#34;). Sebagai contoh: $\alpha, \beta,$ dan $\gamma$ dapat diperoleh dengan menuliskan `α, β,` dan `γ`.</li>
+<li>
+<p>Untuk menulis fungsi matematika seperti trigonometri atau logaritma, gunakan perintah bawaan seperti `sin`, `cos`, `log`, dan sebagainya. Jangan menuliskannya tanpa &#34;\\&#34;. Berikut perbedaan hasil fungsi `sin` yang ditulis dengan dan tanpa tkalian &#34;\\&#34;.</p>
+<ul>
+<li>dengen &#34;\\&#34; (terbaca sebagai suatu fungsi $\sin(\dots)$)
+  $$
+  \sin(x)
+  $$</li>
+<li>tanpa &#34;\\&#34; (dianggap sebagai variabel $s$, $i$, dan $n$, sehingga ditulis miring)
+  $$
+  sin(x)
+  $$</li>
+</ul>
+</li>
+</ul>
+<p>&lt;/Callout&gt;</p>
+<p>
+Untuk notasi matematika yang lebih kompleks, kita disarankan untuk menggunakan paket `amsmath`.</p>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-4">
+<h4 id="headline-17">
+Package `amsmath`
+</h4>
+<div id="outline-text-headline-17" class="outline-text-4">
+<div id="outline-container-headline-18" class="outline-6">
+<h6 id="headline-18">
+Environment align dan aligned
+</h6>
+<div id="outline-text-headline-18" class="outline-text-6">
+<p>
+<span style="text-decoration: underline;">Environment align</span> digunakan untuk menyusun beberapa persamaan dengan tkalian `=` yang sejajar, atau mensejajarkan pada titik-titik tertentu.</p>
+<p>
+```latex showLineNumbers <em>&amp;</em> {6,13}
+\documentclass{article}
+\usepackage{amsmath}</p>
+\begin{document}
+    \section*{Environment align}
+    \begin{align}
+        \vec{E} &amp;= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+        = \frac{1}{\epsilon_0} &amp; \frac{1}{4\pi r^2}Q\\
+        &amp;= \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+        &amp;= \frac{Q}{4\pi \epsilon_0 r^2}
+    \end{align}
+
+    \section*{Environment align*}
+    \begin{align*}
+        \vec{E} &amp;= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+        = \frac{1}{\epsilon_0} &amp; \frac{1}{4\pi r^2}Q\\
+        &amp; = \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+        &amp;= \frac{Q}{4\pi \epsilon_0 r^2}
+    \end{align*}
+
+    \section*{Environment aligned di dalam equation}
+    \begin{equation}
+        \begin{aligned}
+            \vec{E} &amp;= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+            = \frac{1}{\epsilon_0} &amp; \frac{1}{4\pi r^2}Q\\
+            &amp; = \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+            &amp;= \frac{Q}{4\pi \epsilon_0 r^2}
+        \end{aligned}
+    \end{equation}
+\end{document}
+<p>```</p>
+<p>
+&lt;Callout&gt;
+Output:</p>
+<p>
+&lt;object data=&#34;/documents/learn-latex-article-12.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;460&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen &gt;
+    &lt;p&gt;Unable to display PDF file. &lt;a target=&#34;_blank&#34; href=&#34;/documents/learn-latex-article-12.pdf&#34;&gt;Download&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/object&gt;
+&lt;/Callout&gt;</p>
+<ul>
+<li>Perhatikan bahwa kita menkaliani titik-titik yang ingin disejajarkan dalam persamaan menggunakan simbol <span style="text-decoration: underline;">ampersand</span> (`&amp;`).</li>
+<li>Untuk menggunaakn tkalian ampersand (&amp;) di dalam teks biasa, sama seperti tanda %, kalian harus menambahkan tanda `\` di awal (escape character).</li>
+<li>Perhatikan perbedaan sistem penomoran dari ketiga contoh di atas.</li>
+</ul>
+<p>&gt; Untuk penulisan ekspresi matematika yang lebih lengkap dapat kalian baca dalam artikel &lt;a rel=&#34;noreferrer&#34; href=&#34;<a href="https://www.overleaf.com/learn/latex/Mathematics">https://www.overleaf.com/learn/latex/Mathematics</a>&#34; target=&#34;_blank&#34;&gt;overleaf.com/learn/latex/Mathematics&lt;/a&gt;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
+Membuat Tabel
+</h3>
+<div id="outline-text-headline-19" class="outline-text-3">
+<p>Untuk membuat tabel sederhana di LaTeX, gunakan <span style="text-decoration: underline;">environment table</span> untuk menampung tabel dan <span style="text-decoration: underline;">environment tabular</span> untuk menyimpan isi tabel.</p>
+<p>
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{amsmath}</p>
+\begin{document}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|r|}
+        \hline
+        Header 1  &amp; Header 2 &amp; Header 3 \\
+        \hline
+        Data 1    &amp; Data 2   &amp; Data 3 \\
+        Data 4    &amp; Data 5   &amp; Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Contoh Tabel}
+    \label{tab:contoh}
+\end{table}
+
+\end{document}
+<p>```
+&lt;Callout&gt;
+Output:</p>
+<p>
+&lt;img src=&#34;/images/learn-latex-article-14.png&#34; loading=&#34;lazy&#34;/&gt;</p>
+<p>
+&lt;/Callout&gt;</p>
+<ul>
+<li>`\begin{table}[h]` dan `\end{table}`: <span style="text-decoration: underline;">environment</span> untuk tabel yang menyediakan <span style="text-decoration: underline;">floating environment</span>, sehingga LaTeX dapat memposisikan tabel sesuai dengan layout dokumen. Opsi/argumen <span style="text-decoration: underline;">[h]</span> menunjukkan bahwa tabel sebaiknya diletakkan &#34;here&#34; (di sini).</li>
+<li>`¢ering`: meletakkan tabel di tengah halaman secara horizontal.</li>
+<li>`\begin{tabular}{|c|c|c|}` dan `\end{tabular}`: <span style="text-decoration: underline;">environment</span> untuk membuat isi tabel.</li>
+<li>
+<p>`{|l|c|r|}` menentukan bahwa tabel memiliki tiga kolom yang disusun secara vertikal (dengan garis pembatas di antaranya). Kolom pertama rata kiri (l, left), kolom ke-dua rata tengah (c, center), dan kolom ke-tiga rata kanan (r, right). Coba contoh berikut:</p>
+<ul>
+<li>`{c|c|c}`</li>
+<li>`{ll|c}`</li>
+</ul>
+</li>
+<li>`\hline`: Menambahkan border/garis horizontal.</li>
+<li>`&amp;`: Memisahkan kolom.</li>
+<li>`\\`: Menkaliankan akhir baris/membuat baris baru.</li>
+<li>`∩tion{Contoh Tabel}`: Menambahkan keterangan atau judul tabel.</li>
+</ul>
+<div id="outline-container-headline-20" class="outline-4">
+<h4 id="headline-20">
+Menggabungkan kolom dan/atau baris (merge column and row)
+</h4>
+<div id="outline-text-headline-20" class="outline-text-4">
+<p>Sebagai section terakhir, saya akan berikan ini sebagai latihan bagi kalian untuk memhamai secara mandiri.
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{multirow}</p>
+\begin{document}
+
+\section{Pendahuluan}
+Dokumen ini menunjukkan cara membuat dan menyesuaikan tabel dalam LaTeX.
+
+\section{Tabel Dasar}
+Berikut adalah tabel dasar:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Header 1 &amp; Header 2 &amp; Header 3 \\
+        \hline
+        Data 1 &amp; Data 2 &amp; Data 3 \\
+        Data 4 &amp; Data 5 &amp; Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Contoh Tabel}
+    \label{tab:contoh}
+\end{table}
+
+\section{Lebar Kolom yang Disesuaikan}
+Berikut adalah tabel dengan lebar kolom yang disesuaikan:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{5cm}|p{4cm}|}
+        \hline
+        Header 1 &amp; Header 2 &amp; Header 3 \\
+        \hline
+        Data 1 &amp; Data 2 &amp; Data 3 \\
+        Data 4 &amp; Data 5 &amp; Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Tabel dengan Lebar Kolom yang Disesuaikan}
+    \label{tab:lebar_kolom}
+\end{table}
+
+\section{Menggabungkan Baris dan Kolom}
+Berikut adalah tabel dengan baris dan kolom yang digabungkan:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{Gabungan Kolom} &amp; Kolom 3 \\
+        \hline
+        \multirow{2}{*}{Baris 1 dan 2} &amp; Data 2 &amp; Data 3 \\
+        &amp; Data 5 &amp; Data 6 \\
+        \hline
+        Data 7 &amp; Data 8 &amp; Data 9 \\
+        \hline
+    \end{tabular}
+    \caption{Tabel dengan Baris dan Kolom yang Digabungkan}
+    \label{tab:gabungan}
+\end{table}
+
+\end{document}
+<p>
+```</p>
+<p>
+&lt;Callout&gt;
+Output:</p>
+<p>
+&lt;object data=&#34;/documents/learn-latex-article-15.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;460&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen &gt;
+    &lt;p&gt;Unable to display PDF file. &lt;a target=&#34;_blank&#34; href=&#34;/documents/learn-latex-article-15.pdf&#34;&gt;Download&lt;/a&gt; instead.&lt;/p&gt;
+&lt;/object&gt;
+&lt;/Callout&gt;</p>
+<p>
+&lt;Callout&gt;</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-21" class="outline-3">
+<h3 id="headline-21">
+Penutup
+</h3>
+<div id="outline-text-headline-21" class="outline-text-3">
+<p>
+Dalam menulis LaTeX kalian tidak perlu menghafal secara detail semua perintah dan packages yang dibutuhkan:</p>
+<p>
+&lt;div className=&#34;text-center&#34;&gt;
+<span style="text-decoration: underline;">You google what you need, and then forget about it, until the next time you need it, at which point you google it again</span>
+&lt;/div&gt;</p>
+<div id="outline-container-headline-22" class="outline-4">
+<h4 id="headline-22">
+Referensi tutorial
+</h4>
+<div id="outline-text-headline-22" class="outline-text-4">
+<ul>
+<li>Totorial LaTeX lengkap dapat kalian di dalam &lt;a href=&#34;<a href="https://www.overleaf.com/learn">https://www.overleaf.com/learn</a>&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;dokumentasi LaTeX oleh Overleaf&lt;/a&gt;,</li>
+<li>atau dengan melihat playlist youtube &lt;a href=&#34;<a href="https://youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73&amp;si=WhEAnfmAUYOhoBXK">https://youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73&amp;si=WhEAnfmAUYOhoBXK</a>&#34; target=&#34;<span style="text-decoration: underline;">blank&#34; rel=&#34;noreferrer&#34;&gt;_LaTeX tutorials</span> berikut&lt;/a&gt;.</li>
+</ul>
+<p>&lt;/Callout&gt;</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-23" class="outline-3">
+<h3 id="headline-23">
+Referensi
+</h3>
+<div id="outline-text-headline-23" class="outline-text-3">
+<p><sup class="footnote-reference"><a id="footnote-reference-1" href="#footnote-1">1</a></sup>: Baca artikel <a href="https://www.overleaf.com/about/why-latex">The secret to better scientific and technical writing</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr class="footnotes-separatator">
+<div class="footnote-definitions">
+</div>
+</div>
+
+        </div>
+        
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2024-02-07T17:44:15.000Z">February 7, 2024</time></div>
+        
+        <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
+        href="/blog/patching-simple-terminal-st/"
+        title="Patching Simple Terminal (st)"
+        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Patching Simple Terminal (st)</a><a
+        href="/blog/latex-homework-template/"
+        title="LaTeX Homework Template"
+        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
+      >LaTeX Homework Template<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx-bg-gray-100 hx-pb-[env(safe-area-inset-bottom)] dark:hx-bg-neutral-900 print:hx-bg-transparent"><div class="hx-mx-auto hx-flex hx-gap-2 hx-py-2 hx-px-4 hx-max-w-screen-xl"><button
+  title="Change theme"
+  data-theme="light"
+  class="theme-toggle hx-group hx-h-7 hx-rounded-md hx-px-2 hx-text-left hx-text-xs hx-font-medium hx-text-gray-600 hx-transition-colors dark:hx-text-gray-400 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50"
+  type="button"
+  aria-label="Change theme"
+>
+  <div class="hx-flex hx-items-center hx-gap-2 hx-capitalize"><svg height=12 class="group-data-[theme=light]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hx-hidden">Light</span><svg height=12 class="group-data-[theme=dark]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hx-hidden">Dark</span></div>
+</button>
+</div><hr class="dark:hx-border-neutral-800" /><div
+    class="hx-max-w-screen-xl hx-mx-auto hx-flex hx-justify-center hx-py-12 hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400 md:hx-justify-start"
+  >
+    <div class="hx-flex hx-w-full hx-flex-col hx-items-center sm:hx-items-start"><div class="hx-font-semibold"><a class="hx-flex hx-text-sm hx-items-center hx-gap-1 hx-text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
+    <span>Powered by Hextra<svg height=1em class="hx-inline-block ltr:hx-ml-1 rtl:hx-mr-1 hx-align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
+  </a></div><div class="hx-mt-6 hx-text-xs">© 2024 Hextra Project.</div>
+    </div>
+  </div>
+</footer>
+    
+    <script defer src="/js/main.js" integrity=""></script>
+
+
+<script defer src="/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
+    <script defer src="/en.search.js" integrity=""></script>
+
+
+  </body>
+</html>
