@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Fisika Kelas 11</title>
-    <link>http://192.168.1.108:1313/docs/fisikaxi/</link>
+    <link>http://localhost:1313/docs/fisikaxi/</link>
     <description>Recent content in Fisika Kelas 11 on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Sep 2024 17:02:29 +0700</lastBuildDate>
     
-	  <atom:link href="http://192.168.1.108:1313/docs/fisikaxi/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/docs/fisikaxi/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Elastisitas</title>
-      <link>http://192.168.1.108:1313/docs/fisikaxi/elastisitas/</link>
+      <link>http://localhost:1313/docs/fisikaxi/elastisitas/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
       
-      <guid>http://192.168.1.108:1313/docs/fisikaxi/elastisitas/</guid>
+      <guid>http://localhost:1313/docs/fisikaxi/elastisitas/</guid>
       <description>
         
         
@@ -35,7 +35,7 @@
 
 &lt;p&gt;File pembahasan soal eastisitas dapat diunduh &lt;a href=&#34;https://drive.google.com/file/d/1Q_YT0NthA-Huc5u_OgEC329YPbcnZAoC/view?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;disini&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;hextra-pdf&#34;&gt;
-  &lt;iframe src=&#34;http://192.168.1.108:1313/solusi-elastisitas.pdf&#34; width=&#34;100%&#34; style=&#34;min-height: 32rem;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:1313/solusi-elastisitas.pdf&#34; width=&#34;100%&#34; style=&#34;min-height: 32rem;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 
@@ -44,10 +44,10 @@
     
     <item>
       <title>Titik Berat Benda</title>
-      <link>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/</link>
+      <link>http://localhost:1313/docs/fisikaxi/titik-berat/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
       
-      <guid>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/</guid>
+      <guid>http://localhost:1313/docs/fisikaxi/titik-berat/</guid>
       <description>
         
         
@@ -61,6 +61,12 @@
   &lt;a
     class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;titik-berat-sistem-2d&#34;
       &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;Titik Berat Sistem Benda 2 Dimensi&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;titik-berat-sistem-3d&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;Titik Berat Sistem Benda 3 Dimensi&lt;/span&gt;&lt;/a&gt;
+  &lt;a
+    class=&#34;hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900&#34;href=&#34;tugas-titik-berat&#34;
+      &gt;&lt;span class=&#34;hextra-card-icon hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50&#34;&gt;Tugas Titik Berat&lt;/span&gt;&lt;/a&gt;
 &lt;/div&gt;
 
 

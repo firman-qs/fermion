@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – St</title>
-    <link>http://192.168.1.108:1313/tags/st/</link>
+    <link>http://localhost:1313/tags/st/</link>
     <description>Recent content in St on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Feb 2024 17:44:15 +0700</lastBuildDate>
     
-	  <atom:link href="http://192.168.1.108:1313/tags/st/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/st/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Patching Simple Terminal (st)</title>
-      <link>http://192.168.1.108:1313/blog/patching-simple-terminal-st/</link>
+      <link>http://localhost:1313/blog/patching-simple-terminal-st/</link>
       <pubDate>Wed, 07 Feb 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://192.168.1.108:1313/blog/patching-simple-terminal-st/</guid>
+      <guid>http://localhost:1313/blog/patching-simple-terminal-st/</guid>
       <description>
         
         

@@ -2,111 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-titik/</loc>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-titik/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/elastisitas/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-1d/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-2d/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-3d/</loc>
     <lastmod>2024-09-08T17:02:29+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/fisikaxi/elastisitas/</loc>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/tugas-titik-berat/</loc>
     <lastmod>2024-09-08T17:02:29+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/fisikaxi/</loc>
-    <lastmod>2024-09-08T17:02:29+07:00</lastmod>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/</loc>
-    <lastmod>2024-09-08T17:02:29+07:00</lastmod>
+    <loc>http://localhost:1313/docs/fisikax/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-1d/</loc>
-    <lastmod>2024-09-08T17:02:29+07:00</lastmod>
+    <loc>http://localhost:1313/docs/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/fisikaxi/titik-berat/titik-berat-sistem-2d/</loc>
-    <lastmod>2024-09-08T17:02:29+07:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/</loc>
-    <lastmod>2024-09-08T15:56:12+07:00</lastmod>
+    <loc>http://localhost:1313/tags/latex/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/fisikax/</loc>
-    <lastmod>2024-09-08T15:42:56+07:00</lastmod>
+    <loc>http://localhost:1313/blog/latex-homework-template/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/docs/</loc>
-    <lastmod>2024-09-08T15:42:56+07:00</lastmod>
+    <loc>http://localhost:1313/tags/school/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/</loc>
-    <lastmod>2024-09-08T15:42:50+07:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/latex/</loc>
-    <lastmod>2024-06-10T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/latex-homework-template/</loc>
-    <lastmod>2024-06-10T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/code/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/school/</loc>
-    <lastmod>2024-06-10T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/math/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/</loc>
-    <lastmod>2024-06-10T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/blog/menulis-latex/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/about/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/blog/patching-simple-terminal-st/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/code/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/st/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/math/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/terminal/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/menulis-latex/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/blog/hacking-on-xmonad/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/patching-simple-terminal-st/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/st/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/ricing/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/terminal/</loc>
-    <lastmod>2024-02-07T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/xmonad/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/hacking-on-xmonad/</loc>
-    <lastmod>2024-01-11T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/optics/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/linux/</loc>
-    <lastmod>2024-01-11T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/physics/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/ricing/</loc>
-    <lastmod>2024-01-11T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/blog/plotting-fresnel-equation-python/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/xmonad/</loc>
-    <lastmod>2024-01-11T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/optics/</loc>
-    <lastmod>2023-12-23T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/emacs/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/physics/</loc>
-    <lastmod>2023-12-23T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/blog/latex-inkscape-emacs/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/plotting-fresnel-equation-python/</loc>
-    <lastmod>2023-12-23T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/electronics/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/python/</loc>
-    <lastmod>2023-12-23T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/integrated-circuit/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/emacs/</loc>
-    <lastmod>2023-08-03T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/blog/asynchronous-up-counter.id/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/blog/latex-inkscape-emacs/</loc>
-    <lastmod>2023-08-03T17:44:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/proteus/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
-    <loc>http://192.168.1.108:1313/tags/electronics/</loc>
-    <lastmod>2022-11-10T17:44:15+07:00</lastmod>
-  </url><url>
-    <loc>http://192.168.1.108:1313/tags/integrated-circuit/</loc>
-    <lastmod>2022-11-10T17:44:15+07:00</lastmod>
-  </url><url>
-    <loc>http://192.168.1.108:1313/blog/asynchronous-up-counter.id/</loc>
-    <lastmod>2022-11-10T17:44:15+07:00</lastmod>
-  </url><url>
-    <loc>http://192.168.1.108:1313/tags/proteus/</loc>
-    <lastmod>2022-11-10T17:44:15+07:00</lastmod>
-  </url><url>
-    <loc>http://192.168.1.108:1313/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

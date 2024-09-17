@@ -9,4 +9,6 @@ draft = false
   {{< card link="titik-berat-sistem-titik" title="Titik Berat Sistem Benda Titik atau Partikel">}}
   {{< card link="titik-berat-sistem-1d" title="Titik Berat Sistem Benda 1 Dimensi">}}
   {{< card link="titik-berat-sistem-2d" title="Titik Berat Sistem Benda 2 Dimensi">}}
+  {{< card link="titik-berat-sistem-3d" title="Titik Berat Sistem Benda 3 Dimensi">}}
+  {{< card link="tugas-titik-berat" title="Tugas Titik Berat">}}
 {{< /cards >}}

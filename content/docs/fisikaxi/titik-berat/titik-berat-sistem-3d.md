@@ -1,11 +1,11 @@
 +++
-title = 'Titik Berat Benda Titik/Partikel'
+title = 'Titik Berat Benda Homogen 3 Dimensi'
 date = 2024-09-08T17:02:29+07:00
-weight = 1
 draft = false
 +++
 
-## Penjelasan Materi Titik Berat Sistem Benda Titik/Partikel
+
+## Penjelasan Materi Titik Berat Sistem Benda Homogen 3 Dimensi
 
 <!-- {{< callout emoji="📝" >}} -->
 <!--  Tugas sistem 3 partikel pada akhir video dapat di-scan dan diunggah [disini](https://drive.google.com/drive/folders/1_KSi9XThz-BNHciMG2nrXf5dTjxJZJtm?usp=sharing). -->
@@ -17,6 +17,4 @@ draft = false
 <!---->
 <!-- <div style="margin-top: 2ex;"></div> -->
 
-{{< youtube pr3AjuoZyv8 >}}
-
-
+{{< youtube e9IF1aeq97w >}}
