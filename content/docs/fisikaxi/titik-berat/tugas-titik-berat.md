@@ -7,7 +7,7 @@ draft = false
 ## Latihan Soal Titik Berat Benda ^_^
 
 {{< callout emoji="📝" >}}
- Latihan Soal Titik Berat Benda dapat diunggah [disini](https://drive.google.com/drive/folders/1_KSi9XThz-BNHciMG2nrXf5dTjxJZJtm?usp=sharing).
+ Latihan Soal Titik Berat Benda dapat diunggah [disini](https://forms.gle/ShSGFxfscSkZhv5c7). Batas Pengumpulan adalah pada hari **Rabu, 25 September 2024, Pukul 23.59**.
 {{< /callout >}}
 
 > Diperbolehkan berdikusi dengan teman yang lain. Jangan sungkan untuk bertanya kepada saya melalui chat-pribadi jika mengalami kesulitan dalam mengerjakan soal kapanpun.
