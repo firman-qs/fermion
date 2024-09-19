@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Ricing</title>
-    <link>http://localhost:1313/tags/ricing/</link>
+    <link>http://localhost:1313/fermion/tags/ricing/</link>
     <description>Recent content in Ricing on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Jan 2024 17:44:15 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/ricing/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/tags/ricing/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Hacking on XMonad &#43; Polybar</title>
-      <link>http://localhost:1313/blog/hacking-on-xmonad/</link>
+      <link>http://localhost:1313/fermion/blog/hacking-on-xmonad/</link>
       <pubDate>Thu, 11 Jan 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/hacking-on-xmonad/</guid>
+      <guid>http://localhost:1313/fermion/blog/hacking-on-xmonad/</guid>
       <description>
         
         

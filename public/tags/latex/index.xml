@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Latex</title>
-    <link>http://localhost:1313/tags/latex/</link>
+    <link>http://localhost:1313/fermion/tags/latex/</link>
     <description>Recent content in Latex on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Jun 2024 17:44:15 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>LaTeX Homework Template</title>
-      <link>http://localhost:1313/blog/latex-homework-template/</link>
+      <link>http://localhost:1313/fermion/blog/latex-homework-template/</link>
       <pubDate>Mon, 10 Jun 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/latex-homework-template/</guid>
+      <guid>http://localhost:1313/fermion/blog/latex-homework-template/</guid>
       <description>
         
         
@@ -47,10 +47,10 @@ How to create Homework LaTeX Template?
     
     <item>
       <title>Menulis Latex</title>
-      <link>http://localhost:1313/blog/menulis-latex/</link>
+      <link>http://localhost:1313/fermion/blog/menulis-latex/</link>
       <pubDate>Wed, 07 Feb 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/menulis-latex/</guid>
+      <guid>http://localhost:1313/fermion/blog/menulis-latex/</guid>
       <description>
         
         
@@ -725,10 +725,10 @@ Referensi
     
     <item>
       <title>Latex-Inkscape-DoomEmacs Combo</title>
-      <link>http://localhost:1313/blog/latex-inkscape-emacs/</link>
+      <link>http://localhost:1313/fermion/blog/latex-inkscape-emacs/</link>
       <pubDate>Thu, 03 Aug 2023 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/latex-inkscape-emacs/</guid>
+      <guid>http://localhost:1313/fermion/blog/latex-inkscape-emacs/</guid>
       <description>
         
         

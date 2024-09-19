@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Electronics</title>
-    <link>http://localhost:1313/tags/electronics/</link>
+    <link>http://localhost:1313/fermion/tags/electronics/</link>
     <description>Recent content in Electronics on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Nov 2022 17:44:15 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/electronics/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/tags/electronics/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Pencacah Maju Asinkron (Asynchronous Up Counter) dengan Clocked J-K Flip-Flop: Simulasi dengan Proteus</title>
-      <link>http://localhost:1313/blog/asynchronous-up-counter.id/</link>
+      <link>http://localhost:1313/fermion/blog/asynchronous-up-counter.id/</link>
       <pubDate>Thu, 10 Nov 2022 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/asynchronous-up-counter.id/</guid>
+      <guid>http://localhost:1313/fermion/blog/asynchronous-up-counter.id/</guid>
       <description>
         
         
