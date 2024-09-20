@@ -2,6 +2,7 @@ baseURL: https://firman-qs.github.io/fermion/
 languageCode: en-us
 title: Fermion
 theme: hextra
+math: true
 
 enableRobotsTXT: true
 enableGitInfo: true
@@ -19,6 +20,8 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
+  extensions:
+    KaTeX: true
 
 enableInlineShortcodes: true
 

@@ -302,11 +302,15 @@
 &lt;blockquote&gt;
 &lt;p&gt;Diperbolehkan berdikusi dengan teman yang lain. Jangan sungkan untuk bertanya kepada saya melalui chat-pribadi jika mengalami kesulitan dalam mengerjakan soal kapanpun.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Jika pdf tidak dapat diakses, silahkan menggunakan tautan &lt;a href=&#34;https://drive.google.com/file/d/14tBxUvRzObKmvCxqPwCTm5C9fXiwGUh6/view?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;berikut&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;div style=&#34;margin-top: 3ex;&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;hextra-pdf&#34;&gt;
+&lt;!-- &lt;div class=&#34;hextra-pdf&#34;&gt;
   &lt;iframe src=&#34;http://localhost:1313/fermion/fermion/soal-titik-berat.pdf&#34; width=&#34;100%&#34; style=&#34;min-height: 32rem;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-
+ --&gt;
+&lt;embed src=&#34;https://drive.google.com/file/d/14tBxUvRzObKmvCxqPwCTm5C9fXiwGUh6/preview&#34; width=&#34;100%&#34; height=&#34;375&#34;&gt;
 
       </description>
     </item>

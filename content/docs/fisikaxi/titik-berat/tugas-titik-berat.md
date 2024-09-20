@@ -12,9 +12,13 @@ draft = false
 
 > Diperbolehkan berdikusi dengan teman yang lain. Jangan sungkan untuk bertanya kepada saya melalui chat-pribadi jika mengalami kesulitan dalam mengerjakan soal kapanpun.
 
+> Jika pdf tidak dapat diakses, silahkan menggunakan tautan [berikut](https://drive.google.com/file/d/14tBxUvRzObKmvCxqPwCTm5C9fXiwGUh6/view?usp=sharing).
+
 <div style="margin-top: 3ex;"></div>
 
-{{< pdf "/soal-titik-berat.pdf" >}}
+<!-- {{< pdf "/soal-titik-berat.pdf" >}} -->
+
+<embed src="https://drive.google.com/file/d/14tBxUvRzObKmvCxqPwCTm5C9fXiwGUh6/preview" width="100%" height="375">
 
 
 

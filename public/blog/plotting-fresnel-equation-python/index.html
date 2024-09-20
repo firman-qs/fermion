@@ -1,5 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="/fermion/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=fermion/livereload" data-no-instant defer></script>
+<head><script src="/fermion/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=fermion/livereload" data-no-instant defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+<html lang="en"><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
@@ -11,8 +21,8 @@
 <link rel="apple-touch-icon" href="/fermion/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/fermion/site.webmanifest" rel="manifest" />
 
-  <title>Plotting Fresnel Equations with Python3 – Fermion</title>
-  <meta name="description" content="Plotting Fresnel Equation in Python with Numpy and Matplotlib" />
+  <title>Hacking on Xmonad – Fermion</title>
+  <meta name="description" content="Nothing special, just XMonad rice" />
 
   
     <link rel="canonical" href="http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/" itemprop="url" />
@@ -20,23 +30,23 @@
 
   
 
-<meta property="og:title" content="Plotting Fresnel Equations with Python3" />
-<meta property="og:description" content="Plotting Fresnel Equation in Python with Numpy and Matplotlib" />
+<meta property="og:title" content="Hacking on Xmonad" />
+<meta property="og:description" content="Nothing special, just XMonad rice" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2023-12-23T17:44:15+07:00" />
-<meta property="article:modified_time" content="2024-09-08T19:39:15+07:00" />
+<meta property="article:published_time" content="2023-12-23T15:55:07+07:00" />
+<meta property="article:modified_time" content="2023-12-23T15:55:07+07:00" />
 
   
-  <meta itemprop="name" content="Plotting Fresnel Equations with Python3">
-  <meta itemprop="description" content="Plotting Fresnel Equation in Python with Numpy and Matplotlib">
-  <meta itemprop="datePublished" content="2023-12-23T17:44:15+07:00">
-  <meta itemprop="dateModified" content="2024-09-08T19:39:15+07:00">
-  <meta itemprop="wordCount" content="115">
-  <meta itemprop="keywords" content="Physics,Optics,Python">
+  <meta itemprop="name" content="Hacking on Xmonad">
+  <meta itemprop="description" content="Nothing special, just XMonad rice">
+  <meta itemprop="datePublished" content="2023-12-23T15:55:07+07:00">
+  <meta itemprop="dateModified" content="2023-12-23T15:55:07+07:00">
+  <meta itemprop="wordCount" content="116">
+  <meta itemprop="keywords" content="Markdown,Example,Guide">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Plotting Fresnel Equations with Python3">
-  <meta name="twitter:description" content="Plotting Fresnel Equation in Python with Numpy and Matplotlib">
+  <meta name="twitter:title" content="Hacking on Xmonad">
+  <meta name="twitter:description" content="Nothing special, just XMonad rice">
 
     <link href="/fermion/css/compiled/main.css" rel="stylesheet" />
 
@@ -213,8 +223,34 @@
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/fermion/blog/plotting-fresnel-equation-python/"
     
-  >Plotting Fresnel Equations with Python3
+  >Hacking on Xmonad
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#simple-equation-derivation"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Simple Equation Derivation</a>
+            </li>
+          <li>
+              <a
+                href="#provided-code"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Provided code</a>
+            </li>
+          <li>
+              <a
+                href="#final-result"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Final Result</a>
+            </li>
+          <li>
+              <a
+                href="#video-on-plotting-fresnel-equations"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              >Video on Plotting Fresnel Equations</a>
+            </li>
+          </ul>
   
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -366,8 +402,24 @@
 </div></div></aside>
     
 <nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
-    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4">
-      <div class=" hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/imfing/hextra/edit/main/exampleSite/content/blog/plotting-fresnel-equation-python.org" target="_blank" rel="noreferer">Edit this page on GitHub →</a>
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#simple-equation-derivation">Simple Equation Derivation
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#provided-code">Provided code
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#final-result">Final Result
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="hx-font-semibold hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#video-on-plotting-fresnel-equations">Video on Plotting Fresnel Equations
+        </a>
+      </li></ul>
+      <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400"><a class="hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50" href="https://github.com/imfing/hextra/edit/main/exampleSite/content/blog/plotting-fresnel-equation-python.md" target="_blank" rel="noreferer">Edit this page on GitHub →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
           <span>Scroll to top</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
@@ -385,82 +437,58 @@
   <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current">
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
           <a href="/fermion/blog/">Blog</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Plotting Fresnel Equations with Python3</div>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Hacking on Xmonad</div>
   </div>
 
-        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">Plotting Fresnel Equations with Python3</h1>
-        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">December 23, 2023</span></div>
+        <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">Hacking on Xmonad</h1>
+        <div class="hx-mt-4 hx-mb-16 hx-text-gray-500 hx-text-sm hx-flex hx-items-center hx-flex-wrap hx-gap-y-2"><span class="hx-mr-1">December 23, 2023</span><span class="hx-mx-1">·</span><a
+                  
+                  class="hx-group hx-inline-flex hx-items-center hx-text-current hx-gap-x-1.5 hx-mx-1"
+                  title="firmanqs"
+                ><div class="group-hover:hx-underline">firmanqs</div>
+                </a></div>
         <div class="content">
-          
-<div id="outline-container-headline-1" class="outline-2">
-<h2 id="headline-1">
-Simple Equation Derivation
-</h2>
-<div id="outline-text-headline-1" class="outline-text-2">
-<p>We start with Fresnel Equations</p>
-<p>
-\</p>
+          <h2>Simple Equation Derivation<span class="hx-absolute -hx-mt-20" id="simple-equation-derivation"></span>
+    <a href="#simple-equation-derivation" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>We start with Fresnel Equations</p>
+<p>$$
 \begin{equation}
-\tilde{E}_{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}_{0_I}, ~~~~~~ \tilde{E}_{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}_{0_I}. \tag{1}
+\tilde{E}<em>{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}</em>{0_I}, ~~~~~~ \tilde{E}<em>{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}</em>{0_I}. \tag{1}
 \end{equation}
-<p>
-where</p>
-\begin{equation}
+$$</p>
+<p>where</p>
+<p>\begin{equation}
 \alpha\equiv \frac{\cos\theta_T}{\cos\theta_I}, \tag{2}
-\end{equation}
-<p>
-and</p>
-\begin{equation}
+\end{equation}</p>
+<p>and</p>
+<p>\begin{equation}
 \beta \equiv \frac{\mu_1 v_1}{\mu_2 v_2} = \frac{\mu_1 n_2}{\mu_2 n_1}. \tag{3}
-\end{equation}
-<p>
-If we assume the special case where \(\mu_1 \cong \mu_2 \cong \mu_0\) then</p>
-\begin{equation}
+\end{equation}</p>
+<p>If we assume the special case where (\mu_1 \cong \mu_2 \cong \mu_0) then</p>
+<p>\begin{equation}
 \beta \cong \frac{n_2}{n_1}. \tag{4}
-\end{equation}
-<p>
-Based on Snell&#39;s law we know that</p>
-\begin{equation}
+\end{equation}</p>
+<p>Based on Snell&rsquo;s law we know that</p>
+<p>\begin{equation}
 \sin\theta_T = \frac{n_1}{n_2} \sin\theta_I. \tag{5}
-\end{equation}
-<p>
-Using identity \(\cos^2\theta_T+\sin^2\theta_T = 1\) then the previous \( \alpha \) equation (2) becomes</p>
-\begin{equation}
+\end{equation}</p>
+<p>Using identity (\cos^2\theta_T+\sin^2\theta_T = 1) then the previous ( \alpha ) equation (2) becomes</p>
+<p>\begin{equation}
 \alpha = \frac{\sqrt{1-\sin^2\theta_T}}{\cos\theta_I} = \frac{\sqrt{1-\left[(n_1/n_2)\sin\theta_I\right]^2}}{\cos\theta_I}.
-\end{equation}
-<p>
-For reflectance and transmittance</p>
-\begin{equation}
+\end{equation}</p>
+<p>For reflectance and transmittance</p>
+<p>\begin{equation}
 \newcommand{\rbrak}[1]{\left(#1 \right)}
-T\equiv\frac{I_T}{I_I}=\underbrace{\frac{\epsilon_2v_2}{\epsilon_1v_1}}_\beta\underbrace{\rbrak{\frac{E_{0_T}}{E_{0_I}}}}_\text{Eq. 1}\underbrace{\frac{\cos\theta_T}{\cos\theta_I}}_\alpha=\alpha\beta\rbrak{\frac{2}{\alpha+\beta}}^2.
-\end{equation}
-</div>
-</div>
-<div id="outline-container-headline-2" class="outline-2">
-<h2 id="headline-2">
-Provided code
-</h2>
-<div id="outline-text-headline-2" class="outline-text-2">
-<p><a href="https://github.com/firman-qs/fresnel-equation-plot-python">https://github.com/firman-qs/fresnel-equation-plot-python</a></p>
-</div>
-</div>
-<div id="outline-container-headline-3" class="outline-2">
-<h2 id="headline-3">
-Final Result
-</h2>
-<div id="outline-text-headline-3" class="outline-text-2">
-<figure><img src="https://raw.githubusercontent.com/firman-qs/fresnel-equation-plot-python/main/Fresnel_equation_plot_python.png"
+T\equiv\frac{I_T}{I_I}=\underbrace{\frac{\epsilon_2v_2}{\epsilon_1v_1}}<em>\beta\underbrace{\rbrak{\frac{E</em>{0_T}}{E_{0_I}}}}<em>\text{Eq. 1}\underbrace{\frac{\cos\theta_T}{\cos\theta_I}}</em>\alpha=\alpha\beta\rbrak{\frac{2}{\alpha+\beta}}^2.
+\end{equation}</p>
+<h2>Provided code<span class="hx-absolute -hx-mt-20" id="provided-code"></span>
+    <a href="#provided-code" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>[[https://github.com/firman-qs/fresnel-equation-plot-python]]</p>
+<h2>Final Result<span class="hx-absolute -hx-mt-20" id="final-result"></span>
+    <a href="#final-result" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><figure><img src="https://raw.githubusercontent.com/firman-qs/fresnel-equation-plot-python/main/Fresnel_equation_plot_python.png"
     alt="Fresnel Equations Plot">
 </figure>
 
-</div>
-</div>
-<div id="outline-container-headline-4" class="outline-2">
-<h2 id="headline-4">
-Video on Plotting Fresnel Equations
-</h2>
-<div id="outline-text-headline-4" class="outline-text-2">
-
+<h2>Video on Plotting Fresnel Equations<span class="hx-absolute -hx-mt-20" id="video-on-plotting-fresnel-equations"></span>
+    <a href="#video-on-plotting-fresnel-equations" class="subheading-anchor" aria-label="Permalink for this section"></a></h2>
 
     
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -468,12 +496,10 @@ Video on Plotting Fresnel Equations
       ></iframe>
     </div>
 
-</div>
-</div>
 
         </div>
         
-    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2024-09-08T19:39:15.000Z">September 8, 2024</time></div>
+    <div class="hx-mt-12 hx-mb-8 hx-block hx-text-xs hx-text-gray-500 ltr:hx-text-right rtl:hx-text-left dark:hx-text-gray-400">Last updated on <time datetime="2023-12-23T15:55:07.000Z">December 23, 2023</time></div>
         
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/fermion/blog/latex-inkscape-emacs/"

@@ -13,6 +13,10 @@ draft = false
 {{< /hextra/hero-badge >}}
 
 
+<div class="hx-mb-6" style="margin-top: 3ex;">
+{{< hextra/hero-button text="Get Started" link="docs" >}}
+</div>
+
 <div class="hx-mt-6 hx-mb-6" style="font-size: 1.5rem;">
 {{< hextra/hero-headline >}}
 <div class="hx-mt-6 hx-mb-6" style="font-size: 1.5rem;">
@@ -34,8 +38,22 @@ $$
 {{< /hextra/hero-headline >}}
 </div>
 
-<div class="hx-mb-6">
-{{< hextra/hero-button text="Get Started" link="docs" >}}
+---
+<div class="hx-mt-6 hx-mb-6" style="font-size: 1.5rem;">
+{{< hextra/hero-headline >}}
+<div class="hx-mt-6 hx-mb-6" style="font-size: 1.5rem;">
+In this world there are good and bad me, born by pair production.
+<div>
+{{< /hextra/hero-headline >}}
+<div class="hx-mt-6 hx-mb-6" style="font-size: 2.0rem;">
+$$
+i\hbar\gamma^\mu \partial_\mu \psi - mc\psi = 0
+$$
+<div>
+{{< hextra/hero-headline >}}
+<div class="hx-mt-6 hx-mb-6" style="font-size: 2.0rem;">
+The question is which one do we choose and run until pair annihilation arrives
+<div>
+{{< /hextra/hero-headline >}}
 </div>
-
 

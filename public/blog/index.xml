@@ -1663,84 +1663,55 @@ THE MAIN
     </item>
     
     <item>
-      <title>Plotting Fresnel Equations with Python3</title>
+      <title>Hacking on Xmonad</title>
       <link>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</link>
-      <pubDate>Sat, 23 Dec 2023 17:44:15 +0700</pubDate>
+      <pubDate>Sat, 23 Dec 2023 15:55:07 +0700</pubDate>
       
       <guid>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</guid>
       <description>
         
         
-        
-&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
-&lt;h2 id=&#34;headline-1&#34;&gt;
-Simple Equation Derivation
-&lt;/h2&gt;
-&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
-&lt;p&gt;We start with Fresnel Equations&lt;/p&gt;
-&lt;p&gt;
-\&lt;/p&gt;
+        &lt;h2&gt;Simple Equation Derivation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;simple-equation-derivation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#simple-equation-derivation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We start with Fresnel Equations&lt;/p&gt;
+&lt;p&gt;$$
 \begin{equation}
-\tilde{E}_{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}_{0_I}, ~~~~~~ \tilde{E}_{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}_{0_I}. \tag{1}
+\tilde{E}&lt;em&gt;{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}&lt;/em&gt;{0_I}, ~~~~~~ \tilde{E}&lt;em&gt;{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}&lt;/em&gt;{0_I}. \tag{1}
 \end{equation}
-&lt;p&gt;
-where&lt;/p&gt;
-\begin{equation}
+$$&lt;/p&gt;
+&lt;p&gt;where&lt;/p&gt;
+&lt;p&gt;\begin{equation}
 \alpha\equiv \frac{\cos\theta_T}{\cos\theta_I}, \tag{2}
-\end{equation}
-&lt;p&gt;
-and&lt;/p&gt;
-\begin{equation}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+&lt;p&gt;\begin{equation}
 \beta \equiv \frac{\mu_1 v_1}{\mu_2 v_2} = \frac{\mu_1 n_2}{\mu_2 n_1}. \tag{3}
-\end{equation}
-&lt;p&gt;
-If we assume the special case where \(\mu_1 \cong \mu_2 \cong \mu_0\) then&lt;/p&gt;
-\begin{equation}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;If we assume the special case where (\mu_1 \cong \mu_2 \cong \mu_0) then&lt;/p&gt;
+&lt;p&gt;\begin{equation}
 \beta \cong \frac{n_2}{n_1}. \tag{4}
-\end{equation}
-&lt;p&gt;
-Based on Snell&amp;#39;s law we know that&lt;/p&gt;
-\begin{equation}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Based on Snell&amp;rsquo;s law we know that&lt;/p&gt;
+&lt;p&gt;\begin{equation}
 \sin\theta_T = \frac{n_1}{n_2} \sin\theta_I. \tag{5}
-\end{equation}
-&lt;p&gt;
-Using identity \(\cos^2\theta_T+\sin^2\theta_T = 1\) then the previous \( \alpha \) equation (2) becomes&lt;/p&gt;
-\begin{equation}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Using identity (\cos^2\theta_T+\sin^2\theta_T = 1) then the previous ( \alpha ) equation (2) becomes&lt;/p&gt;
+&lt;p&gt;\begin{equation}
 \alpha = \frac{\sqrt{1-\sin^2\theta_T}}{\cos\theta_I} = \frac{\sqrt{1-\left[(n_1/n_2)\sin\theta_I\right]^2}}{\cos\theta_I}.
-\end{equation}
-&lt;p&gt;
-For reflectance and transmittance&lt;/p&gt;
-\begin{equation}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;For reflectance and transmittance&lt;/p&gt;
+&lt;p&gt;\begin{equation}
 \newcommand{\rbrak}[1]{\left(#1 \right)}
-T\equiv\frac{I_T}{I_I}=\underbrace{\frac{\epsilon_2v_2}{\epsilon_1v_1}}_\beta\underbrace{\rbrak{\frac{E_{0_T}}{E_{0_I}}}}_\text{Eq. 1}\underbrace{\frac{\cos\theta_T}{\cos\theta_I}}_\alpha=\alpha\beta\rbrak{\frac{2}{\alpha+\beta}}^2.
-\end{equation}
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;outline-container-headline-2&#34; class=&#34;outline-2&#34;&gt;
-&lt;h2 id=&#34;headline-2&#34;&gt;
-Provided code
-&lt;/h2&gt;
-&lt;div id=&#34;outline-text-headline-2&#34; class=&#34;outline-text-2&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/firman-qs/fresnel-equation-plot-python&#34;&gt;https://github.com/firman-qs/fresnel-equation-plot-python&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;outline-container-headline-3&#34; class=&#34;outline-2&#34;&gt;
-&lt;h2 id=&#34;headline-3&#34;&gt;
-Final Result
-&lt;/h2&gt;
-&lt;div id=&#34;outline-text-headline-3&#34; class=&#34;outline-text-2&#34;&gt;
-&lt;figure&gt;&lt;img src=&#34;https://raw.githubusercontent.com/firman-qs/fresnel-equation-plot-python/main/Fresnel_equation_plot_python.png&#34;
+T\equiv\frac{I_T}{I_I}=\underbrace{\frac{\epsilon_2v_2}{\epsilon_1v_1}}&lt;em&gt;\beta\underbrace{\rbrak{\frac{E&lt;/em&gt;{0_T}}{E_{0_I}}}}&lt;em&gt;\text{Eq. 1}\underbrace{\frac{\cos\theta_T}{\cos\theta_I}}&lt;/em&gt;\alpha=\alpha\beta\rbrak{\frac{2}{\alpha+\beta}}^2.
+\end{equation}&lt;/p&gt;
+&lt;h2&gt;Provided code&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;provided-code&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#provided-code&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;[[https://github.com/firman-qs/fresnel-equation-plot-python]]&lt;/p&gt;
+&lt;h2&gt;Final Result&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;final-result&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#final-result&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;figure&gt;&lt;img src=&#34;https://raw.githubusercontent.com/firman-qs/fresnel-equation-plot-python/main/Fresnel_equation_plot_python.png&#34;
     alt=&#34;Fresnel Equations Plot&#34;&gt;
 &lt;/figure&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;outline-container-headline-4&#34; class=&#34;outline-2&#34;&gt;
-&lt;h2 id=&#34;headline-4&#34;&gt;
-Video on Plotting Fresnel Equations
-&lt;/h2&gt;
-&lt;div id=&#34;outline-text-headline-4&#34; class=&#34;outline-text-2&#34;&gt;
-
+&lt;h2&gt;Video on Plotting Fresnel Equations&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;video-on-plotting-fresnel-equations&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#video-on-plotting-fresnel-equations&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
 
     
     &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
@@ -1748,8 +1719,6 @@ Video on Plotting Fresnel Equations
       &gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
 
       </description>
     </item>

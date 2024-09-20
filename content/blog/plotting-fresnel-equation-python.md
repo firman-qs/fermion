@@ -1,20 +1,26 @@
 ---
-title: "Plotting Fresnel Equations with Python3"
-date: 2023-12-23T17:44:15+07:00
-author: "firmanqs"
+title: "Hacking on Xmonad"
+date: 2023-12-23T15:55:07+07:00
 draft: false
 math: true
-tags: ["physics", "optics", "python"]
-description: "Plotting Fresnel Equation in Python with Numpy and Matplotlib"
+authors:
+  - name: firmanqs
+tags:
+  - Markdown
+  - Example
+  - Guide
+description: "Nothing special, just XMonad rice"
 ---
 
-* Simple Equation Derivation
+## Simple Equation Derivation
 We start with Fresnel Equations
 
-\
+$$
 \begin{equation}
 \tilde{E}_{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}_{0_I}, ~~~~~~ \tilde{E}_{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}_{0_I}. \tag{1}
 \end{equation}
+$$
+
 
 where
 
@@ -54,11 +60,11 @@ T\equiv\frac{I_T}{I_I}=\underbrace{\frac{\epsilon_2v_2}{\epsilon_1v_1}}_\beta\un
 \end{equation}
 
 
-* Provided code
+## Provided code
 [[https://github.com/firman-qs/fresnel-equation-plot-python]]
 
-* Final Result
+## Final Result
 {{< figure src="https://raw.githubusercontent.com/firman-qs/fresnel-equation-plot-python/main/Fresnel_equation_plot_python.png" alt="Fresnel Equations Plot">}}
 
-* Video on Plotting Fresnel Equations
+## Video on Plotting Fresnel Equations
 {{< youtube vb2NnQ_LcBE >}}
