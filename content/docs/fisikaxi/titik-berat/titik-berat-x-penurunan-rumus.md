@@ -14,7 +14,7 @@ draft = false
 
 ## PDF Rangkuman dan Asal-usul Rumus-Rumus Titik Berat (belum lengkap)
 
-> Jika pdf tidak dapat diakses, silahkan menggunakan tautan [berikut](https://drive.google.com/file/d/1Fq6JiGqeeDaj1hfdDYguJFa_SMW_0lqU/view?usp=sharing).
+> Jika pdf tidak dapat diakses, silahkan **download** menggunakan tautan [berikut](https://drive.google.com/file/d/1Fq6JiGqeeDaj1hfdDYguJFa_SMW_0lqU/view?usp=sharing).
 
 > Penurunan rumus (tidak jadi saya tuliskan) tidak akan masuk di ujian. Hanya sebagai pengetahuan. File di bawah berisi rangkuman materi titik berat yang bisa dibaca.
 
