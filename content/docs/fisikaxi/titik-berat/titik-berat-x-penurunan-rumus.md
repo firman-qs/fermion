@@ -6,6 +6,11 @@ draft = false
 +++
 
 
+
+{{< callout emoji="📝" >}}
+ Latihan Soal di dalam video adalah gambaran soal yang diujikan dalam **Ulangan Harian** 27-sep-2024.
+{{< /callout >}}
+
 ## Video
 
 {{< youtube 2iUaiQkyy_Q >}}
