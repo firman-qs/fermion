@@ -905,7 +905,7 @@ WORKSPACES
 </span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">-- Make custom xmonad polybar module clickable</span>
-</span></span><span class="line"><span class="cl"><span class="nf">myWorkspaceIndices</span> <span class="ow">=</span> <span class="kt">M</span><span class="o">.</span><span class="n">fromList</span> <span class="o">$</span> <span class="n">zipWith</span> <span class="p">(</span><span class="err">,</span><span class="p">)</span> <span class="n">myWorkspaces</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">myWorkspaceIndices</span> <span class="ow">=</span> <span class="kt">M</span><span class="o">.</span><span class="n">fromList</span> <span class="o">$</span> <span class="n">zipWith</span> <span class="p">(,)</span> <span class="n">myWorkspaces</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="cm">{- | Basically we use xdotool (don&#39;t forget to install it) to press our
 </span></span></span><span class="line"><span class="cl"><span class="cm">keybinding, when we do click to polybar xmonad workspace.
 </span></span></span><span class="line"><span class="cl"><span class="cm">-}</span>
