@@ -1,7 +1,7 @@
 baseURL: https://firman-qs.github.io/fermion/
 languageCode: en-us
 title: Fermion
-theme: hextra
+theme: ["hugo-notice", "hextra"]
 math: true
 
 enableRobotsTXT: true

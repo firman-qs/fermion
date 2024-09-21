@@ -16,7 +16,7 @@
     
     
     <item>
-      <title>Hacking on Xmonad</title>
+      <title>Plotting Fresnel Equations with Python</title>
       <link>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</link>
       <pubDate>Sat, 23 Dec 2023 15:55:07 +0700</pubDate>
       
@@ -26,11 +26,9 @@
         
         &lt;h2&gt;Simple Equation Derivation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;simple-equation-derivation&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#simple-equation-derivation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We start with Fresnel Equations&lt;/p&gt;
-&lt;p&gt;$$
-\begin{equation}
+&lt;p&gt;\begin{equation}
 \tilde{E}&lt;em&gt;{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}&lt;/em&gt;{0_I}, ~~~~~~ \tilde{E}&lt;em&gt;{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}&lt;/em&gt;{0_I}. \tag{1}
-\end{equation}
-$$&lt;/p&gt;
+\end{equation}&lt;/p&gt;
 &lt;p&gt;where&lt;/p&gt;
 &lt;p&gt;\begin{equation}
 \alpha\equiv \frac{\cos\theta_T}{\cos\theta_I}, \tag{2}

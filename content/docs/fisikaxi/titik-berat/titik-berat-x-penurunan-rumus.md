@@ -6,10 +6,9 @@ draft = false
 +++
 
 
-
-{{< callout type="info" >}}
+{{< notice note >}}
  Latihan Soal di dalam video adalah gambaran soal yang diujikan dalam **Ulangan Harian** 27-sep-2024.
-{{< /callout >}}
+{{< /notice >}}
 
 ## Video
 

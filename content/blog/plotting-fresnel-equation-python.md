@@ -1,5 +1,5 @@
 ---
-title: "Hacking on Xmonad"
+title: "Plotting Fresnel Equations with Python"
 date: 2023-12-23T15:55:07+07:00
 draft: false
 math: true
@@ -15,11 +15,9 @@ description: "Nothing special, just XMonad rice"
 ## Simple Equation Derivation
 We start with Fresnel Equations
 
-$$
 \begin{equation}
 \tilde{E}_{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}_{0_I}, ~~~~~~ \tilde{E}_{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}_{0_I}. \tag{1}
 \end{equation}
-$$
 
 
 where
