@@ -7,6 +7,6 @@ weight = 2
 
 
 {{< cards >}}
-  {{< card link="elastisitas" title="Elastisitas" icon="variable" >}}
-  {{< card link="titik-berat" title="Titik Berat" icon="scale" >}}
+  {{< card link="pengukuran" title="Pengukuran" icon="variable" >}}
+  {{< card link="pemanasan-global" title="Pemanasan Global" icon="scale" >}}
 {{< /cards >}}
