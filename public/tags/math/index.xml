@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Math</title>
-    <link>http://localhost:1313/fermion/tags/math/</link>
+    <link>http://localhost:1313/tags/math/</link>
     <description>Recent content in Math on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 Feb 2024 17:44:15 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/fermion/tags/math/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Menulis Latex</title>
-      <link>http://localhost:1313/fermion/blog/menulis-latex/</link>
+      <link>http://localhost:1313/blog/menulis-latex/</link>
       <pubDate>Wed, 07 Feb 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/menulis-latex/</guid>
+      <guid>http://localhost:1313/blog/menulis-latex/</guid>
       <description>
         
         

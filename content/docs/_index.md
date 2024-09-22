@@ -5,7 +5,7 @@ draft = false
 +++
 
 {{< cards >}}
-  {{< card link="fisikax" title="Fisika Kelas 10" icon="bookmark-alt" >}}
+  {{< card link="fisika-x" title="Fisika Kelas 10" icon="bookmark-alt" >}}
   {{< card link="fisikaxi" title="Fisika Kelas 11" icon="bookmark-alt" >}}
 {{< /cards >}}
 

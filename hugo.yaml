@@ -1,4 +1,5 @@
-baseURL: https://firman-qs.github.io/fermion/
+# baseURL: https://firman-qs.github.io/fermion/
+baseURL: https://www.example.com
 languageCode: en-us
 title: Fermion
 theme: ["hugo-notice", "hextra"]
@@ -57,7 +58,8 @@ menu:
       weight: 1
     - identifier: My Github
       name: "My Github"
-      pageRef: "https://github.com/firman-qs"
+      url: "https://github.com/firman-qs"
+      pageRef: "https://github.com/firman-qs/"
       weight: 2
 
 params:

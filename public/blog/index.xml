@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Blog</title>
-    <link>http://localhost:1313/fermion/blog/</link>
+    <link>http://192.168.1.108:1313/blog/</link>
     <description>Recent content in Blog on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Sep 2024 15:56:12 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/fermion/blog/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://192.168.1.108:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>LaTeX Homework Template</title>
-      <link>http://localhost:1313/fermion/blog/latex-homework-template/</link>
+      <link>http://192.168.1.108:1313/blog/latex-homework-template/</link>
       <pubDate>Mon, 10 Jun 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/latex-homework-template/</guid>
+      <guid>http://192.168.1.108:1313/blog/latex-homework-template/</guid>
       <description>
         
         
@@ -47,10 +47,10 @@ How to create Homework LaTeX Template?
     
     <item>
       <title>Menulis Latex</title>
-      <link>http://localhost:1313/fermion/blog/menulis-latex/</link>
+      <link>http://192.168.1.108:1313/blog/menulis-latex/</link>
       <pubDate>Wed, 07 Feb 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/menulis-latex/</guid>
+      <guid>http://192.168.1.108:1313/blog/menulis-latex/</guid>
       <description>
         
         
@@ -725,10 +725,10 @@ Referensi
     
     <item>
       <title>Patching Simple Terminal (st)</title>
-      <link>http://localhost:1313/fermion/blog/patching-simple-terminal-st/</link>
+      <link>http://192.168.1.108:1313/blog/patching-simple-terminal-st/</link>
       <pubDate>Wed, 07 Feb 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/patching-simple-terminal-st/</guid>
+      <guid>http://192.168.1.108:1313/blog/patching-simple-terminal-st/</guid>
       <description>
         
         
@@ -754,10 +754,10 @@ How to create Homework LaTeX Template?
     
     <item>
       <title>Hacking on XMonad &#43; Polybar</title>
-      <link>http://localhost:1313/fermion/blog/hacking-on-xmonad/</link>
+      <link>http://192.168.1.108:1313/blog/hacking-on-xmonad/</link>
       <pubDate>Thu, 11 Jan 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/hacking-on-xmonad/</guid>
+      <guid>http://192.168.1.108:1313/blog/hacking-on-xmonad/</guid>
       <description>
         
         
@@ -1663,21 +1663,19 @@ THE MAIN
     </item>
     
     <item>
-      <title>Hacking on Xmonad</title>
-      <link>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</link>
+      <title>Plotting Fresnel Equations with Python</title>
+      <link>http://192.168.1.108:1313/blog/plotting-fresnel-equation-python/</link>
       <pubDate>Sat, 23 Dec 2023 15:55:07 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</guid>
+      <guid>http://192.168.1.108:1313/blog/plotting-fresnel-equation-python/</guid>
       <description>
         
         
         &lt;h2&gt;Simple Equation Derivation&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;simple-equation-derivation&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#simple-equation-derivation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;We start with Fresnel Equations&lt;/p&gt;
-&lt;p&gt;$$
-\begin{equation}
+&lt;p&gt;\begin{equation}
 \tilde{E}&lt;em&gt;{0_R} = \left(\frac{\alpha-\beta}{\alpha+\beta}\right)\tilde{E}&lt;/em&gt;{0_I}, ~~~~~~ \tilde{E}&lt;em&gt;{0_T} = \left(\frac{2}{\alpha + \beta}\right) \tilde{E}&lt;/em&gt;{0_I}. \tag{1}
-\end{equation}
-$$&lt;/p&gt;
+\end{equation}&lt;/p&gt;
 &lt;p&gt;where&lt;/p&gt;
 &lt;p&gt;\begin{equation}
 \alpha\equiv \frac{\cos\theta_T}{\cos\theta_I}, \tag{2}
@@ -1725,10 +1723,10 @@ T\equiv\frac{I_T}{I_I}=\underbrace{\frac{\epsilon_2v_2}{\epsilon_1v_1}}&lt;em&gt
     
     <item>
       <title>Latex-Inkscape-DoomEmacs Combo</title>
-      <link>http://localhost:1313/fermion/blog/latex-inkscape-emacs/</link>
+      <link>http://192.168.1.108:1313/blog/latex-inkscape-emacs/</link>
       <pubDate>Thu, 03 Aug 2023 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/latex-inkscape-emacs/</guid>
+      <guid>http://192.168.1.108:1313/blog/latex-inkscape-emacs/</guid>
       <description>
         
         
@@ -1764,10 +1762,10 @@ Inkscape-figure, require us to have rofi (of course we can use another menu, may
     
     <item>
       <title>Pencacah Maju Asinkron (Asynchronous Up Counter) dengan Clocked J-K Flip-Flop: Simulasi dengan Proteus</title>
-      <link>http://localhost:1313/fermion/blog/asynchronous-up-counter.id/</link>
+      <link>http://192.168.1.108:1313/blog/asynchronous-up-counter.id/</link>
       <pubDate>Thu, 10 Nov 2022 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/fermion/blog/asynchronous-up-counter.id/</guid>
+      <guid>http://192.168.1.108:1313/blog/asynchronous-up-counter.id/</guid>
       <description>
         
         
