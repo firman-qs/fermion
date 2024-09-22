@@ -16,6 +16,20 @@
     
     
     <item>
+      <title>📖 Buku Pengukuran</title>
+      <link>http://localhost:1313/docs/fisikax/pengukuran/2-0/</link>
+      <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
+      
+      <guid>http://localhost:1313/docs/fisikax/pengukuran/2-0/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Buku Pengukuran dalam Kegiatan Kerja Ilmiah&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;buku-pengukuran-dalam-kegiatan-kerja-ilmiah&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#buku-pengukuran-dalam-kegiatan-kerja-ilmiah&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Besaran, Satuan, dan Dimensi</title>
       <link>http://localhost:1313/docs/fisikax/pengukuran/2-1/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
@@ -157,6 +171,165 @@
         }
     });
 &lt;/script&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>🎯 Tugas Bab Pengukuran dalam Kegiatan Kerja Ilmiah</title>
+      <link>http://localhost:1313/docs/fisikax/pengukuran/tugas/</link>
+      <pubDate>Sun, 22 Sep 2024 17:02:29 +0700</pubDate>
+      
+      <guid>http://localhost:1313/docs/fisikax/pengukuran/tugas/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;Tugas 1: Tugas Besaran Pokok dan Turunan yang dikerjakan di Kelas.&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;tugas-1-tugas-besaran-pokok-dan-turunan-yang-dikerjakan-di-kelas&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tugas-1-tugas-besaran-pokok-dan-turunan-yang-dikerjakan-di-kelas&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;style type=&#34;text/css&#34;&gt;
+     
+    .notice {
+        --title-color: #fff;
+        --title-background-color: #6be;
+        --content-color: #444;
+        --content-background-color: #e7f2fa;
+    }
+
+    .notice.info {
+        --title-background-color: #fb7;
+        --content-background-color: #fec;
+    }
+
+    .notice.tip {
+        --title-background-color: #5a5;
+        --content-background-color: #efe;
+    }
+
+    .notice.warning {
+        --title-background-color: #c33;
+        --content-background-color: #fee;
+    }
+
+     
+    @media (prefers-color-scheme:dark) {
+        .notice {
+            --title-color: #fff;
+            --title-background-color: #069;
+            --content-color: #ddd;
+            --content-background-color: #023;
+        }
+
+        .notice.info {
+            --title-background-color: #a50;
+            --content-background-color: #420;
+        }
+
+        .notice.tip {
+            --title-background-color: #363;
+            --content-background-color: #121;
+        }
+
+        .notice.warning {
+            --title-background-color: #800;
+            --content-background-color: #400;
+        }
+    }
+
+    body.dark .notice {
+        --title-color: #fff;
+        --title-background-color: #069;
+        --content-color: #ddd;
+        --content-background-color: #023;
+    }
+
+    body.dark .notice.info {
+        --title-background-color: #a50;
+        --content-background-color: #420;
+    }
+
+    body.dark .notice.tip {
+        --title-background-color: #363;
+        --content-background-color: #121;
+    }
+
+    body.dark .notice.warning {
+        --title-background-color: #800;
+        --content-background-color: #400;
+    }
+
+     
+    .notice {
+        padding: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        color: var(--content-color);
+        background: var(--content-background-color);
+    }
+
+    .notice p:last-child {
+        margin-bottom: 0
+    }
+
+     
+    .notice-title {
+        margin: -18px -18px 12px;
+        padding: 4px 18px;
+        border-radius: 4px 4px 0 0;
+        font-weight: 700;
+        color: var(--title-color);
+        background: var(--title-background-color);
+    }
+
+     
+    .icon-notice {
+        display: inline-flex;
+        align-self: center;
+        margin-right: 8px;
+    }
+
+    .icon-notice img,
+    .icon-notice svg {
+        height: 1em;
+        width: 1em;
+        fill: currentColor;
+    }
+
+    .icon-notice img,
+    .icon-notice.baseline svg {
+        top: .125em;
+        position: relative;
+    }
+&lt;/style&gt;&lt;div class=&#34;notice info&#34; &gt;
+    &lt;p class=&#34;notice-title&#34;&gt;
+        &lt;span class=&#34;icon-notice baseline&#34;&gt;
+            &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;92 59.5 300 300&#34;&gt;
+  &lt;path d=&#34;M292 303.25V272c0-3.516-2.734-6.25-6.25-6.25H267v-100c0-3.516-2.734-6.25-6.25-6.25h-62.5c-3.516 0-6.25 2.734-6.25 6.25V197c0 3.516 2.734 6.25 6.25 6.25H217v62.5h-18.75c-3.516 0-6.25 2.734-6.25 6.25v31.25c0 3.516 2.734 6.25 6.25 6.25h87.5c3.516 0 6.25-2.734 6.25-6.25Zm-25-175V97c0-3.516-2.734-6.25-6.25-6.25h-37.5c-3.516 0-6.25 2.734-6.25 6.25v31.25c0 3.516 2.734 6.25 6.25 6.25h37.5c3.516 0 6.25-2.734 6.25-6.25Zm125 81.25c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z&#34;/&gt;
+&lt;/svg&gt;
+
+        &lt;/span&gt;Info&lt;/p&gt;&lt;p&gt;Tugas dikumpulkan pada tautan &lt;a href=&#34;https://forms.gle/3SK7iqkkkZ153thU7&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;berikut&lt;/a&gt; paling lambat &lt;strong&gt;Jum&amp;rsquo;at, 4 Oktober 2024&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;
+
+&lt;h2&gt;Tugas 2: Dimensi.&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;tugas-2-dimensi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tugas-2-dimensi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;div class=&#34;notice info&#34; &gt;
+    &lt;p class=&#34;notice-title&#34;&gt;
+        &lt;span class=&#34;icon-notice baseline&#34;&gt;
+            &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;92 59.5 300 300&#34;&gt;
+  &lt;path d=&#34;M292 303.25V272c0-3.516-2.734-6.25-6.25-6.25H267v-100c0-3.516-2.734-6.25-6.25-6.25h-62.5c-3.516 0-6.25 2.734-6.25 6.25V197c0 3.516 2.734 6.25 6.25 6.25H217v62.5h-18.75c-3.516 0-6.25 2.734-6.25 6.25v31.25c0 3.516 2.734 6.25 6.25 6.25h87.5c3.516 0 6.25-2.734 6.25-6.25Zm-25-175V97c0-3.516-2.734-6.25-6.25-6.25h-37.5c-3.516 0-6.25 2.734-6.25 6.25v31.25c0 3.516 2.734 6.25 6.25 6.25h37.5c3.516 0 6.25-2.734 6.25-6.25Zm125 81.25c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z&#34;/&gt;
+&lt;/svg&gt;
+
+        &lt;/span&gt;Info&lt;/p&gt;&lt;p&gt;Tugas dikumpulkan pada tautan &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSf3XzO5gc6VosPRqqakyI9_nPchVQFnNtzescAu_DldTfB_PA/viewform?usp=sf_link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;berikut&lt;/a&gt; paling lambat &lt;strong&gt;Senin, 7 Oktober 2024&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;
+
+&lt;embed src=&#34;https://drive.google.com/file/d/1lelpNZrde1rFMw1HnxoS43xf5T8TAqxM/preview&#34; width=&#34;100%&#34; height=&#34;375&#34;&gt;
+&lt;h2&gt;Tugas 3: Jangka Sorong dan Mikrometer Sekrup.&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;tugas-3-jangka-sorong-dan-mikrometer-sekrup&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#tugas-3-jangka-sorong-dan-mikrometer-sekrup&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;div class=&#34;notice info&#34; &gt;
+    &lt;p class=&#34;notice-title&#34;&gt;
+        &lt;span class=&#34;icon-notice baseline&#34;&gt;
+            &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;92 59.5 300 300&#34;&gt;
+  &lt;path d=&#34;M292 303.25V272c0-3.516-2.734-6.25-6.25-6.25H267v-100c0-3.516-2.734-6.25-6.25-6.25h-62.5c-3.516 0-6.25 2.734-6.25 6.25V197c0 3.516 2.734 6.25 6.25 6.25H217v62.5h-18.75c-3.516 0-6.25 2.734-6.25 6.25v31.25c0 3.516 2.734 6.25 6.25 6.25h87.5c3.516 0 6.25-2.734 6.25-6.25Zm-25-175V97c0-3.516-2.734-6.25-6.25-6.25h-37.5c-3.516 0-6.25 2.734-6.25 6.25v31.25c0 3.516 2.734 6.25 6.25 6.25h37.5c3.516 0 6.25-2.734 6.25-6.25Zm125 81.25c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z&#34;/&gt;
+&lt;/svg&gt;
+
+        &lt;/span&gt;Info&lt;/p&gt;&lt;p&gt;Tugas dikumpulkan pada tautan &lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSd477YSntfqsqRTFoBc3JJ6qlggRsfOU0O9-0FTnMNN72WP6A/viewform?usp=sf_link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;berikut&lt;/a&gt; paling lambat &lt;strong&gt;Jum&amp;rsquo;at, 11 Oktober 2024&lt;/strong&gt;.&lt;/p&gt;&lt;/div&gt;
+
+&lt;embed src=&#34;https://drive.google.com/file/d/17etZtAzqZUCl8rDXM0S6TonEK3ADfk1V/preview&#34; width=&#34;100%&#34; height=&#34;375&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

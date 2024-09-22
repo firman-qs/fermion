@@ -1,5 +1,5 @@
 +++
-title = 'Rangkuman dan Latihan 22 Soal Titik Berat'
+title = '⭐ Rangkuman dan Latihan 22 Soal Titik Berat'
 date = 2024-09-08T17:02:29+07:00
 weight = 3
 draft = false

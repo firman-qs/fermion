@@ -7,7 +7,9 @@ weight = 1
 
 
 {{< cards >}}
+  {{< card link="2-0" title="📖 Buku Pengukuran">}}
   {{< card link="2-1" title="Besaran, Satuan, dan Dimensi">}}
   {{< card link="2-2a" title="Jangka Sorong">}}
   {{< card link="2-2b" title="Mikrometer Sekrup">}}
+  {{< card link="tugas" title="🎯 Tugas Bab Pengukuran dalam Kegiatan Kerja Ilmiah">}}
 {{< /cards >}}

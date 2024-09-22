@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/docs/fisikax/pengukuran/2-1/</loc>
-    <lastmod>2024-09-22T18:27:44+07:00</lastmod>
+    <loc>http://localhost:1313/docs/fisikax/pengukuran/2-0/</loc>
+    <lastmod>2024-09-08T17:02:29+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/fisikax/pengukuran/</loc>
     <lastmod>2024-09-22T18:27:44+07:00</lastmod>
@@ -14,14 +14,14 @@
     <loc>http://localhost:1313/docs/pfisum6110optics/gelombang-em-vakum/</loc>
     <lastmod>2024-09-22T18:27:44+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/fisikax/</loc>
+    <loc>http://localhost:1313/docs/fisikax/pengukuran/2-1/</loc>
     <lastmod>2024-09-22T18:27:44+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikax/</loc>
+    <lastmod>2024-09-22T18:45:21+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/fisikaxi/</loc>
     <lastmod>2024-09-22T18:27:44+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/fisikax/pengukuran/2-2a/</loc>
-    <lastmod>2024-09-22T18:40:06+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/fisikax/pemanasan-global/</loc>
     <lastmod>2024-09-22T18:27:44+07:00</lastmod>
@@ -44,19 +44,25 @@
     <loc>http://localhost:1313/docs/pfisum6110optics/</loc>
     <lastmod>2024-09-22T18:27:44+07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/titik-berat-x-penurunan-rumus/</loc>
+    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikax/pengukuran/2-2a/</loc>
+    <lastmod>2024-09-22T18:40:06+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/docs/fisikax/pengukuran/2-2b/</loc>
     <lastmod>2024-09-22T18:40:06+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/titik-berat-x-penurunan-rumus/</loc>
+    <loc>http://localhost:1313/docs/fisikax/pengukuran/tugas/</loc>
+    <lastmod>2024-09-22T17:02:29+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/tugas-titik-berat/</loc>
     <lastmod>2024-09-21T08:39:20+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/fisikaxi/elastisitas/</loc>
     <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/fisikaxi/titik-berat/</loc>
-    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/docs/fisikaxi/titik-berat/tugas-titik-berat/</loc>
     <lastmod>2024-09-21T08:39:20+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/docs/</loc>
