@@ -57,3 +57,19 @@ The question is which one do we choose and run until pair annihilation arrives
 {{< /hextra/hero-headline >}}
 </div>
 
+---
+
+<div class="hx-mt-6 hx-mb-6" style="font-size: 1.5rem;">
+{{< hextra/hero-headline >}}
+<div class="hx-mt-6 hx-mb-6" style="font-size: 1.5rem;">
+Kaum Rebahan, as Einstein said, they are literally curving space (🛏️ bed space ^_^).
+<div>
+{{< /hextra/hero-headline >}}
+<div class="hx-mt-6 hx-mb-6" style="font-size: 2.0rem;">
+<img src="rebahan.webp" alt="rebahan" width="300" />
+$$
+R_{\mu \nu} - {1 \over 2}R \, g_{\mu \nu} + \Lambda g_{\mu \nu}= {8 \pi G \over c^4} T_{\mu \nu}
+$$
+<div>
+</div>
+
