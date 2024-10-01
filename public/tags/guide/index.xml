@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Guide</title>
-    <link>http://localhost:1313/tags/guide/</link>
+    <link>http://localhost:1313/fermion/tags/guide/</link>
     <description>Recent content in Guide on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Dec 2023 15:55:07 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/tags/guide/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Plotting Fresnel Equations with Python</title>
-      <link>http://localhost:1313/blog/plotting-fresnel-equation-python/</link>
+      <link>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</link>
       <pubDate>Sat, 23 Dec 2023 15:55:07 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/plotting-fresnel-equation-python/</guid>
+      <guid>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</guid>
       <description>
         
         

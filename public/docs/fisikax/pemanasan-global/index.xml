@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Pemanasan Global</title>
-    <link>http://localhost:1313/docs/fisikax/pemanasan-global/</link>
+    <link>http://localhost:1313/fermion/docs/fisikax/pemanasan-global/</link>
     <description>Recent content in Pemanasan Global on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Sep 2024 17:02:29 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/docs/fisikax/pemanasan-global/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/docs/fisikax/pemanasan-global/index.xml" rel="self" type="application/rss+xml" />
     
     
       

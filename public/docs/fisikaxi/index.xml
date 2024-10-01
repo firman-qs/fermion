@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Fisika Kelas 11</title>
-    <link>http://localhost:1313/docs/fisikaxi/</link>
+    <link>http://localhost:1313/fermion/docs/fisikaxi/</link>
     <description>Recent content in Fisika Kelas 11 on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Sep 2024 17:02:29 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/docs/fisikaxi/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/docs/fisikaxi/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Elastisitas</title>
-      <link>http://localhost:1313/docs/fisikaxi/elastisitas/</link>
+      <link>http://localhost:1313/fermion/docs/fisikaxi/elastisitas/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
       
-      <guid>http://localhost:1313/docs/fisikaxi/elastisitas/</guid>
+      <guid>http://localhost:1313/fermion/docs/fisikaxi/elastisitas/</guid>
       <description>
         
         
@@ -35,7 +35,7 @@
 
 &lt;p&gt;File pembahasan soal eastisitas dapat diunduh &lt;a href=&#34;https://drive.google.com/file/d/1Q_YT0NthA-Huc5u_OgEC329YPbcnZAoC/view?usp=sharing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;disini&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;hextra-pdf&#34;&gt;
-  &lt;iframe src=&#34;http://localhost:1313/solusi-elastisitas.pdf&#34; width=&#34;100%&#34; style=&#34;min-height: 32rem;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;http://localhost:1313/fermion/fermion/solusi-elastisitas.pdf&#34; width=&#34;100%&#34; style=&#34;min-height: 32rem;&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 
@@ -44,10 +44,10 @@
     
     <item>
       <title>Titik Berat Benda</title>
-      <link>http://localhost:1313/docs/fisikaxi/titik-berat/</link>
+      <link>http://localhost:1313/fermion/docs/fisikaxi/titik-berat/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
       
-      <guid>http://localhost:1313/docs/fisikaxi/titik-berat/</guid>
+      <guid>http://localhost:1313/fermion/docs/fisikaxi/titik-berat/</guid>
       <description>
         
         

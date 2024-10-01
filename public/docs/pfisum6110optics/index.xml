@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – PFIS6110-Optika</title>
-    <link>http://localhost:1313/docs/pfisum6110optics/</link>
+    <link>http://localhost:1313/fermion/docs/pfisum6110optics/</link>
     <description>Recent content in PFIS6110-Optika on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 13 Sep 2024 17:02:29 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/docs/pfisum6110optics/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/docs/pfisum6110optics/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Pertemuan 1: Gelombang EM di ruang Vakum dan Kecepatan Cahaya</title>
-      <link>http://localhost:1313/docs/pfisum6110optics/gelombang-em-vakum/</link>
+      <link>http://localhost:1313/fermion/docs/pfisum6110optics/gelombang-em-vakum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docs/pfisum6110optics/gelombang-em-vakum/</guid>
+      <guid>http://localhost:1313/fermion/docs/pfisum6110optics/gelombang-em-vakum/</guid>
       <description>
         
         
@@ -35,10 +35,10 @@
     
     <item>
       <title>Pertemuan 2: Gelombang EM di Material dan Hukum Dasar Optika</title>
-      <link>http://localhost:1313/docs/pfisum6110optics/em-di-material-dan-hukum-dasar-optika/</link>
+      <link>http://localhost:1313/fermion/docs/pfisum6110optics/em-di-material-dan-hukum-dasar-optika/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/docs/pfisum6110optics/em-di-material-dan-hukum-dasar-optika/</guid>
+      <guid>http://localhost:1313/fermion/docs/pfisum6110optics/em-di-material-dan-hukum-dasar-optika/</guid>
       <description>
         
         

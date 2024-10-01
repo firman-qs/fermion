@@ -1,5 +1,5 @@
-# baseURL: https://firman-qs.github.io/fermion/
-baseURL: https://www.example.com
+baseURL: https://firman-qs.github.io/fermion/
+# baseURL: https://www.example.com
 languageCode: en-us
 title: Fermion
 theme: ["hugo-notice", "hextra"]

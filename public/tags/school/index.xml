@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – School</title>
-    <link>http://localhost:1313/tags/school/</link>
+    <link>http://localhost:1313/fermion/tags/school/</link>
     <description>Recent content in School on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Jun 2024 17:44:15 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/tags/school/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/tags/school/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>LaTeX Homework Template</title>
-      <link>http://localhost:1313/blog/latex-homework-template/</link>
+      <link>http://localhost:1313/fermion/blog/latex-homework-template/</link>
       <pubDate>Mon, 10 Jun 2024 17:44:15 +0700</pubDate>
       
-      <guid>http://localhost:1313/blog/latex-homework-template/</guid>
+      <guid>http://localhost:1313/fermion/blog/latex-homework-template/</guid>
       <description>
         
         

@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fermion – Fisika Kelas 10</title>
-    <link>http://localhost:1313/docs/fisikax/</link>
+    <link>http://localhost:1313/fermion/docs/fisikax/</link>
     <description>Recent content in Fisika Kelas 10 on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 08 Sep 2024 17:02:29 +0700</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/docs/fisikax/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/fermion/docs/fisikax/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>Pengukuran</title>
-      <link>http://localhost:1313/docs/fisikax/pengukuran/</link>
+      <link>http://localhost:1313/fermion/docs/fisikax/pengukuran/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
       
-      <guid>http://localhost:1313/docs/fisikax/pengukuran/</guid>
+      <guid>http://localhost:1313/fermion/docs/fisikax/pengukuran/</guid>
       <description>
         
         
@@ -48,10 +48,10 @@
     
     <item>
       <title>Pemanasan Global</title>
-      <link>http://localhost:1313/docs/fisikax/pemanasan-global/</link>
+      <link>http://localhost:1313/fermion/docs/fisikax/pemanasan-global/</link>
       <pubDate>Sun, 08 Sep 2024 17:02:29 +0700</pubDate>
       
-      <guid>http://localhost:1313/docs/fisikax/pemanasan-global/</guid>
+      <guid>http://localhost:1313/fermion/docs/fisikax/pemanasan-global/</guid>
       <description>
         
         
