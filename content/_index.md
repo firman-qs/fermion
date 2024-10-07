@@ -5,7 +5,6 @@ draft = false
 +++
 
 
-
 {{< hextra/hero-badge >}}
   <div class="hx-w-2 hx-h-2 hx-rounded-full hx-bg-primary-400"></div>
   <span>copyright 2024: fermion</span>
