@@ -1,5 +1,4 @@
 baseURL: https://firman-qs.github.io/fermion/
-# baseURL: https://www.example.com
 languageCode: en-us
 title: Fermion
 theme: ["hugo-notice", "hextra"]
@@ -125,16 +124,17 @@ params:
       display: hover
 
   comments:
-    enable: false
+    enable: true
     type: giscus
 
     # https://giscus.app/
     giscus:
-      repo: imfing/hextra
-      repoId: R_kgDOJ9fJag
+      repo: firman-qs/fermion
+      repoId: R_kgDOMuiiVw
       category: General
-      categoryId: DIC_kwDOJ9fJas4CY7gW
-      # mapping: pathname
+      categoryId: DIC_kwDOMuiiV84CjQFs
+      loading: lazy
+      mapping: pathname
       # strict: 0
       # reactionsEnabled: 1
       # emitMetadata: 0

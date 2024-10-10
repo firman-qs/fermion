@@ -2,6 +2,7 @@
 title = "Pertemuan 2: Gelombang EM di Material dan Hukum Dasar Optika"
 draft = false
 weight = 2
+comments = true
 +++
 
 
