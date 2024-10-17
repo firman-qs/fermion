@@ -39,7 +39,7 @@
     <lastmod>2024-10-11T04:44:19+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/babats7/</loc>
-    <lastmod>2024-09-22T18:27:44+07:00</lastmod>
+    <lastmod>2024-10-12T23:22:04+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/fisikaxi/titik-berat/titik-berat-x-penurunan-rumus/</loc>
     <lastmod>2024-09-22T22:08:50+07:00</lastmod>
@@ -51,18 +51,19 @@
     <lastmod>2024-09-22T22:08:50+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/babats8/</loc>
+    <lastmod>2024-10-12T23:22:04+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/fisikax/pengukuran/2-3/</loc>
     <lastmod>2024-10-07T21:34:01+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/fermion/docs/fisikax/pengukuran/tugas/</loc>
-    <lastmod>2024-10-01T16:27:55+07:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/fermion/docs/fisikax/pengukuran/2-4/</loc>
     <lastmod>2024-10-12T22:49:51+07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/fermion/docs/fisikax/pengukuran/tugas/</loc>
+    <lastmod>2024-10-01T16:27:55+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/fermion/docs/pfisum6110optics/</loc>
-    <lastmod>2024-09-22T18:27:44+07:00</lastmod>
+    <lastmod>2024-10-12T23:22:04+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/fisikaxi/titik-berat/tugas-titik-berat/</loc>
     <lastmod>2024-09-22T22:08:50+07:00</lastmod>
@@ -71,21 +72,6 @@
     <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/fisikaxi/titik-berat/</loc>
-    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/example/</loc>
-    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/guide/</loc>
-    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fermion/blog/hacking-on-xmonad/</loc>
-    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/markdown/</loc>
-    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/</loc>
     <lastmod>2024-09-21T08:39:20+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/docs/</loc>
@@ -102,6 +88,9 @@
   </url><url>
     <loc>http://localhost:1313/fermion/tags/school/</loc>
     <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/</loc>
+    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/about/</loc>
     <lastmod>2024-09-08T19:39:15+07:00</lastmod>
@@ -124,6 +113,27 @@
     <loc>http://localhost:1313/fermion/tags/terminal/</loc>
     <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/fermion/blog/hacking-on-xmonad/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/linux/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/ricing/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/xmonad/</loc>
+    <lastmod>2024-09-08T19:39:15+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/example/</loc>
+    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/guide/</loc>
+    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/fermion/tags/markdown/</loc>
+    <lastmod>2024-09-21T08:39:20+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/fermion/blog/plotting-fresnel-equation-python/</loc>
     <lastmod>2024-09-21T08:39:20+07:00</lastmod>
   </url><url>
@@ -140,11 +150,5 @@
     <lastmod>2024-09-08T19:39:15+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/fermion/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/linux/</loc>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/ricing/</loc>
-  </url><url>
-    <loc>http://localhost:1313/fermion/tags/xmonad/</loc>
   </url>
 </urlset>

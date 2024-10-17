@@ -5,6 +5,7 @@
     <description>Recent content in Code on Fermion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 07 Feb 2024 17:44:15 +0700</lastBuildDate>
     
 	  <atom:link href="http://localhost:1313/fermion/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,6 +14,684 @@
         
       
     
+    
+    <item>
+      <title>Menulis Latex</title>
+      <link>http://localhost:1313/fermion/blog/menulis-latex/</link>
+      <pubDate>Wed, 07 Feb 2024 17:44:15 +0700</pubDate>
+      
+      <guid>http://localhost:1313/fermion/blog/menulis-latex/</guid>
+      <description>
+        
+        
+        
+&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Menulis LaTeX
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;
+Pernahkah kalian membaca dokumen, artikel ilmiah, atau buku teks fisika dengan banyak persamaan/rumus seperti gambar di bawah?&lt;/p&gt;
+&lt;p&gt;
+dummy pict&lt;/p&gt;
+&lt;p&gt;
+Dokumen pada Gambar 1, 2, dan 3 ditulis menggunakan LaTeX. Secara sederhana, LaTeX sama saja dengan &lt;span style=&#34;text-decoration: underline;&#34;&gt;software&lt;/span&gt; penulisan dokumen lainnya, seperti Ms. Word. Perbedanannya, untuk melakukan pemformatan pada dokumen, kita menggunakan sebuah perintah/command, bukan menggunakan tombol GUI (graphical user interface).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;strong&gt;Jika alsannya adalah untuk menuliskan persamaan, mengapa tidak menggunakan Ms. Word saja?&lt;/strong&gt;&lt;/strong&gt; Memang kita dapat menggunakan &lt;span style=&#34;text-decoration: underline;&#34;&gt;equation tools&lt;/span&gt; di dalam Ms. Word untuk menulis dokumen yang berisi persamaan fisika/matematika. Namun, jika persamaan-persamaan tersbut mulai kompleks, akan jauh lebih mudah dan tertata jika dituliskan menggunakan LaTeX. Disamping itu, terdapat banyak kelebihan menggunakan LaTeX dibandingkan software office biasa&lt;sup class=&#34;footnote-reference&#34;&gt;&lt;a id=&#34;footnote-reference-1&#34; href=&#34;#footnote-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Menulis menggunakan LaTeX pada awalnya akan terasa sulit. Sebelumnya, kita terbiasa menulis dengan gaya &amp;#34;WYSIWYG&amp;#34; &lt;span style=&#34;text-decoration: underline;&#34;&gt;What You See is What You Get&lt;/span&gt; dengan Ms. Office atau Google Suite. Sedangkan LaTeX lebih condong pada &amp;#34;WYGIWYM&amp;#34; &lt;span style=&#34;text-decoration: underline;&#34;&gt;What You Get is What You Mean&lt;/span&gt;. Pada LaTeX, kita menuliskan perintah/command semantik LaTeX dan melihat output dokumen yang dihasilkan setelah melakukan proses &lt;span style=&#34;text-decoration: underline;&#34;&gt;compile&lt;/span&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+Untuk bacaan lebih lanjut, kalian dapat mengunjungi artikel &lt;a href=&#34;https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes*What_is_LaTeX?&#34;&gt;Learn LaTeX in 30 minutes&lt;/a&gt;. Tutorial ini juga dibuat mengacu pada artikel tersebut.&lt;/p&gt;
+&lt;p&gt;
+TLDR.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Kalian dapat membaca artikel ini secara linier berurutan atau langsung melihat contoh dan mempelajarinya sendiri dengan mengeditnya.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-2&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-2&#34;&gt;
+Persiapan
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-2&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;Untuk menulis LaTeX, pada dasarnya kalian memerlukan code/text-editor &amp;amp; terminal. Code/text-editor digunakan untuk mengedit kode LaTeX, sedangkan terminal digunakan untuk menjalankan perintah &lt;em&gt;compile&lt;/em&gt; melalui &lt;em&gt;shell&lt;/em&gt; yang ada.&lt;/p&gt;
+&lt;p&gt;
+Code/text editor yang dapat kalian gunakan sangat bervariasi. Kalian dapat menggunakan text editor seperti: notepad; code editor seperti: Visual Studio Code, emacs, dan VIM/Neovim; maupun IDE LaTeX seperti TeXstudio, TeXmaker, dan TeXifier.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Namun, untuk pengenalan kali ini kita akan menggunakan &lt;a href=&#34;https://www.overleaf.com/project&#34;&gt;Overleaf&lt;/a&gt;. &lt;a href=&#34;https://www.overleaf.com/project&#34;&gt;Overleaf&lt;/a&gt; adalah editor LaTeX berbasis web. Dengan menggunakan &lt;a href=&#34;https://www.overleaf.com/project&#34;&gt;Overleaf&lt;/a&gt; kita tidak perlu melakukan installasi dan setup LaTeX di komputer kita. Kelemahannya, kalian harus &lt;em&gt;online&lt;/em&gt; untuk dapat menggunakan &lt;a href=&#34;https://www.overleaf.com/project&#34;&gt;Overleaf&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+&amp;lt;figure&amp;gt;
+    &amp;lt;img loading=&amp;#34;lazy&amp;#34; className=&amp;#34;w-full&amp;#34; src=&amp;#34;/images/learn-latex-article-g.gif&amp;#34;/&amp;gt;
+    &amp;lt;figcaption&amp;gt;Penulisan LaTeX menggunakan &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.overleaf.com/project&#34;&gt;https://www.overleaf.com/project&lt;/a&gt;&amp;#34; rel=&amp;#34;noreferrer&amp;#34;&amp;gt;Overleaf&amp;lt;/a&amp;gt;&amp;lt;/figcaption&amp;gt;
+&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Jika kalian ingin menulis LaTeX secara &lt;span style=&#34;text-decoration: underline;&#34;&gt;offline&lt;/span&gt;, kalian dapat melihat berbagai video totorial di YouTube. Berikut beberapa contohnya:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Untuk sistem operasi Windows: &lt;a href=&#34;https://www.youtube.com/watch?v=4lyHIQl4VM8&#34;&gt;klik di sini&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Untuk sistem operasi MacOS: &lt;a href=&#34;https://www.youtube.com/watch?v=CmagZthwhaY&#34;&gt;klik di sini&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Untuk sistem operasi Linux: &lt;a href=&#34;https://www.youtube.com/watch?v=meIMb6vwhxo&amp;amp;t=40s&#34;&gt;klik di sini&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Catatan: Untuk linux, sesuaikan perintah install TeXLive dengan package manager distro linux masing-masing. Dalam video tersbut saya menggunakan Endeavour OS (Arch linux based).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;outline-container-headline-3&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-3&#34;&gt;
+Prasyarat: Dasar Overleaf
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-3&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;Kalian harus membuat akun Overleaf dengan klik &lt;strong&gt;Sign up&lt;/strong&gt; di sudut kanan atas.&lt;/li&gt;
+&lt;li&gt;Klik &lt;strong&gt;New Project&lt;/strong&gt; (di sisi kiri) untuk membuat proyek baru (untuk saat ini, pilih &lt;strong&gt;Blank Project&lt;/strong&gt;. Tentu kalian bebas mencoba pilihan lainnya.).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;![new project](/images/learn-latex-article-6.png)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Setelah itu, kalian akan masuk ke dalam halaman berikut.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;![new project](/images/learn-latex-article-7.png)&lt;/p&gt;
+&lt;p&gt;
+Di sebelah kiri, terdadpat file-tree projek kalian. Secara &lt;span style=&#34;text-decoration: underline;&#34;&gt;default&lt;/span&gt; kita diberikan file &lt;strong&gt;main.tex&lt;/strong&gt; yang merupakan file latex kita.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Setiap file dalam komputer memiliki ekstensi file (bagian yang terletak setelah nama file, misal namaFile.extensi). Sebagai contoh, file gambar dapat memiliki ekstensi (&lt;strong&gt;.jpg&lt;/strong&gt;, &lt;strong&gt;.png&lt;/strong&gt;, &lt;strong&gt;.webp&lt;/strong&gt;, dsb.). File bahasa pemrograman python dengan ekstensi &lt;strong&gt;.py&lt;/strong&gt;, bahasa c++ dengan ekstensi &lt;strong&gt;.cpp&lt;/strong&gt;, begitupun LaTeX/TeX dengan ekstensi &lt;strong&gt;.tex&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-4&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-4&#34;&gt;
+Memulai Menulis LaTeX
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-4&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;Setiap dokumen LaTeX memiliki struktur dasar sebagai berikut:&lt;/p&gt;
+&lt;div class=&#34;src src-latex&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\documentclass&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;article&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;% Kelas dokumen
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\usepackage&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;graphicx&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;% mengimport package &amp;#34;graphicx&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\title&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Judul Dokumen&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\author&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;Nama Penulis&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\date&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\today&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;% Tanggal otomatis
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\begin&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;\maketitle&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;% Mengkonversi \title{...} \author{...} \date{...} ke dalam teks judul
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Isi dokumen kita. Laba penjualan yang diperoleh sebesar 3&lt;span class=&#34;k&#34;&gt;\%&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;document&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+Stuktur dokumen diatas jika kita compile di dalam &lt;a href=&#34;https://www.overleaf.com/project&#34;&gt;overleaf&lt;/a&gt; akan menghasilkan output berikut.&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;figure&amp;gt;
+    &amp;lt;img loading=&amp;#34;lazy&amp;#34; className=&amp;#34;w-full&amp;#34; src=&amp;#34;/images/learn-latex-article-4.png&amp;#34;/&amp;gt;
+&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+Mari kita bahas elemen-elemen utama dalam struktur dasar di atas.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\documentclass{article}:&lt;/code&gt; Menentukan jenis dokumen, dalam hal ini adalah artikel. Selain artikel terdapat beberapa kelas lain seperti report, book, beamer, dan bahkan kelas dokumen custom yang dapat dibuat sendiri.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\usepackage{graphicx}:&lt;/code&gt; Mengimport package &amp;#34;graphicx&amp;#34;. Terdapat banyak package yang dapat digunakan di dalam LaTeX. Dalam contoh ini, graphicx diperlukan jika kita ingin menyisipkan gambar di dalam dokumen kita.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\title{}:&lt;/code&gt; Mendefinisikan judul dokumen.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\author{}:&lt;/code&gt; Mendefinisikan nama penulis.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\date{}:&lt;/code&gt; Mendefinisikan tanggal. →day menghasilkan tanggal hari ini secara otomatis.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\begin{document} dan \end{document}:&lt;/code&gt; Menkaliani awal dan akhir dokumen.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\maketitle:&lt;/code&gt; Membuat judul dokumen berdasarkan &lt;code&gt;\title{...} \author{...} \date{...}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\section{}:&lt;/code&gt; Membuat section/bagian dalam dokumen mirip seperti heading pada Ms. Word.&lt;/li&gt;
+&lt;li&gt;Seluruh area sebelum perintah &lt;code&gt;\begin{document}&lt;/code&gt; disebut area preamble.&lt;/li&gt;
+&lt;li&gt;baris yang diawali tkalian &lt;code&gt;%&lt;/code&gt; tidak akan dieksekusi/dicompile. Simbol &lt;code&gt;%&lt;/code&gt; digunakan untuk menandakan baris &lt;em&gt;comment&lt;/em&gt; seperti bahasa-bahasa pemrograman lain. Bagaimana jika ingin menuliskan tanda &lt;code&gt;%&lt;/code&gt; di dalam sebuah kalimat? kita harus menambahak escape character: &lt;code&gt;\&lt;/code&gt; sebelum tanda %.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Secara lebih detail kalian dapat membaca &lt;a href=&#34;https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes*Writing_your_first_piece_of_LaTeX&#34;&gt;artikel berikut&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-5&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-5&#34;&gt;
+Text Bold, Italic, dan Underline
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-5&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;Teks dengan format:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/strong&gt;: dihasilkan dengan memasukkan teks ke dalam perintah `\textbf{teks ini dicetak tebal}`.&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;text-decoration: underline;&#34;&gt;Italic&lt;/span&gt;: dihasilkan dengan memasukkan teks ke dalam perintah `\textit{teks ini dicetak miring}`.&lt;/li&gt;
+&lt;li&gt;&amp;lt;u&amp;gt;Underline&amp;lt;/u&amp;gt;: dihasilkan dengan memasukkan teks ke dalam perintah `_line{teks ini memiliki underline}`.&lt;/li&gt;
+&lt;li&gt;&amp;lt;em&amp;gt;Emphasized&amp;lt;/em&amp;gt; (membuat teks menjadi italic jika dalam teks biasa, atau tegak jika berada dalam perintah `\textit{…}`): dihasilkan dengan perintah `\emph{contoh teks dengan penekanan (emphasized)}`.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Perhatikan contoh berikut.&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers
+\documentclass{article}&lt;/p&gt;
+\begin{document}
+
+    Lorem \textbf{teks bercetak bold} dolor sit amet,
+    \underline{teks dengan underline} elit, sed do eiusmod
+    tempor \textit{teks bercetak italic} ut labore et
+    dolore magna aliqua.
+
+    Ut enim ad minim veniam, quis nostrud \emph{teks emphasized}
+    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+    \textit{Ut enim ad minim veniam, \emph{teks emphasized di dalam
+    italic} ullamco laboris nisi ut aliquip consequat.}
+
+\end{document}
+&lt;p&gt;```
+&amp;lt;Callout&amp;gt;
+output:
+![contoh format teks](/images/learn-latex-article-5.png)
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-6&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-6&#34;&gt;
+Menambahkan Gambar
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-6&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;
+Untuk menambahkan gambar, kita memerlukan package `graphicx` yang menyediakan perintah import gambar. Jika kita memiliki struktur projek sebegai berikut pada file-tree.&lt;/p&gt;
+&lt;p&gt;
+```sh
+.
+├── gambar
+│   └── contoh-gambar.png
+└── main.tex
+```
+&amp;lt;Callout&amp;gt;
+Note: `contoh-gambar.png` terletak di dalam folder `gambar`.
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+Maka gambar dapat di-&lt;span style=&#34;text-decoration: underline;&#34;&gt;import&lt;/span&gt; menggunakan perintah `∈cludegraphics{gambar/contoh-gambar.png}`. Berikut contoh lengkap menambahkan gambar.&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{graphicx}&lt;/p&gt;
+\begin{document}
+
+\begin{figure}[h] % argument `[h]` akan saya bahas pada blog terpisah
+    \centering
+    \includegraphics[width=0.75\textwidth]{gambar/contoh-gambar.png}
+    \caption{Mengimport gambar}
+    \label{fig:contoh-gambar}
+\end{figure}
+
+Gambar \ref{fig:contoh-gambar} menunjukkan kapasitor pelat sejajar
+dengan dua material dielektrik linier berbeda.
+
+\end{document}
+&lt;p&gt;
+```
+&amp;lt;Callout&amp;gt;
+Output:
+![contoh menambahkan gambar](/images/learn-latex-article-8.png)
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;div id=&#34;outline-container-headline-7&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-7&#34;&gt;
+Pembahasan Environment Figure
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-7&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+Setiap perintah yang dimulai dengan `\begin{…} …
+\end{…}` disebut environment. Secara sederhana environment adalah pengelompokan perintah dengan fungsi yang saling berikaitan. Sebagai contoh, perintah `\begin{figure}` dan `\end{figure}` adalah &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment gambar&lt;/span&gt;. Di mana pada &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment gambar&lt;/span&gt; dapat berisi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;`¢ering:` meletakkan gambar/teks di tengah secara horizontal (center).&lt;/li&gt;
+&lt;li&gt;`∈cludegraphics[width=0.5\textwidth]{path/to/image.jpg}:` Menyisipkan gambar dan mengatur lebarnya menjadi 50% dari lebar area teks. Ganti `path/to/image.jpg` dengan path (alamat/letak) file gambar kalian, dalam contoh di atas pada `gambar/contoh-gambar.png`.&lt;/li&gt;
+&lt;li&gt;`∩tion{Mengimport gambar}:` Menambahkan &lt;span style=&#34;text-decoration: underline;&#34;&gt;caption&lt;/span&gt; di bawah gambar.&lt;/li&gt;
+&lt;li&gt;`\label{fig:contoh-gambar}:` Memberikan label pada gambar untuk referensi di tempat lain dalam dokumen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;`\label{…}` tidak hanya digunakan di dalam &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment gambar&lt;/span&gt;, tetapi juga &lt;span style=&#34;text-decoration: underline;&#34;&gt;environments&lt;/span&gt; lain untuk kemudian dikutip di bagian lain menggunakan perintah `\ref{…}`.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-8&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-8&#34;&gt;
+Opsi Merubah Ukuran Gambar
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-8&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;
+Kalian dapat mengatur ukuran gambar menggunakan beberapa cara:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;width: untuk mengatur lebar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;```latex showLineNumbers
+% Mengatur ukuran gambar relatif terhadap lebar area teks
+∈cludegraphics[width=0.75\textwidth]{path/to/image.jpg}&lt;/p&gt;
+&lt;p&gt;
+% atau dengan ukuran absolut
+∈cludegraphics[width=10cm]{path/to/image.jpg}
+```&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;height: untuk mengatur tinggi.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;```latex showLineNumbers
+% Mengatur ukuran gambar relatif terhadap lebar area teks
+∈cludegraphics[height=0.75\textwidth]{path/to/image.jpg}&lt;/p&gt;
+&lt;p&gt;
+% atau dengan ukuran absolut
+∈cludegraphics[height=10cm]{path/to/image.jpg}
+```&lt;/p&gt;
+&lt;p&gt;
+Kalian dapt menggunakan key height dan width bersamaan,&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers
+∈cludegraphics[height=5cm, width=10cm]{path/to/image.jpg}
+```
+dengan konsekuensi jika rasio ukuran yang kalian berikan tidak sama dengan rasio gambar, maka gambar akan &lt;span style=&#34;text-decoration: underline;&#34;&gt;strech_/tertarik/_gepeng&lt;/span&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;scale: menskalakan gambar berdasarkan faktor pengali.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;```latex showLineNumbers
+% ukuran gambar 0.5 (setengah) ukuran aslinya
+∈cludegraphics[scale=0.5]{path/to/image.jpg}&lt;/p&gt;
+&lt;p&gt;
+% ukuran gambar 1.5 (satu-setengah) ukuran aslinya
+∈cludegraphics[scale=1.5]{path/to/image.jpg}
+```&lt;/p&gt;
+&lt;div id=&#34;outline-container-headline-9&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-9&#34;&gt;
+Posisi Gambar
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-9&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+Argument pemosisian dalam &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment gambar&lt;/span&gt; dapat berupa `[h], [t], [b], [p]`:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;`[h]` (&lt;span style=&#34;text-decoration: underline;&#34;&gt;here&lt;/span&gt; atau di sini): menembpatkan gambar kira-kira &lt;span style=&#34;text-decoration: underline;&#34;&gt;di sini!&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;`[t]` (&lt;span style=&#34;text-decoration: underline;&#34;&gt;top&lt;/span&gt; atau atas): menempatkan gambar di bagian atas halaman.&lt;/li&gt;
+&lt;li&gt;`[b]` (&lt;span style=&#34;text-decoration: underline;&#34;&gt;bottom&lt;/span&gt; atau bawah): menempatkan gambar di bagian bawah halaman.&lt;/li&gt;
+&lt;li&gt;`[p]` (&lt;span style=&#34;text-decoration: underline;&#34;&gt;page&lt;/span&gt; atau halaman): menempatkan gambar pada halaman tersendiri/khusus.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;atau kombinasi beberapa/semua dari keempatnya.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-10&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-10&#34;&gt;
+Bullet/List di dalam LaTeX
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-10&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;div id=&#34;outline-container-headline-11&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-11&#34;&gt;
+Unordered list
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-11&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+&lt;span style=&#34;text-decoration: underline;&#34;&gt;Unordered list&lt;/span&gt; menggunakan poin-poin &lt;span style=&#34;text-decoration: underline;&#34;&gt;bullet&lt;/span&gt; untuk menkaliani setiap item. Untuk membuat &lt;span style=&#34;text-decoration: underline;&#34;&gt;unordered list&lt;/span&gt;, gunakan &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment itemize&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers&lt;/p&gt;
+\begin{itemize}
+    \item Unordered item pertama
+    \item Unordered item kedua
+    \item Unordered item ketiga
+\end{itemize}
+&lt;p&gt;```&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-12&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-12&#34;&gt;
+Ordered list
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-12&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+&lt;span style=&#34;text-decoration: underline;&#34;&gt;Ordered list&lt;/span&gt; menggunakan nomor/alphabet untuk menkaliani setiap item. Untuk membuat &lt;span style=&#34;text-decoration: underline;&#34;&gt;ordered list&lt;/span&gt;, gunakan &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment enumerate&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers&lt;/p&gt;
+\begin{enumerate}
+    \item Ordered item pertama
+    \item Ordered item kedua
+    \item Ordered item ketiga
+\end{enumerate}
+&lt;p&gt;```&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-13&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-13&#34;&gt;
+Kombinasi Ordered dan Unordered list
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-13&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+```latex showLineNumbers&lt;/p&gt;
+\begin{enumerate}
+    \item Item pertama
+    \begin{itemize}
+        \item Subitem satu
+        \item Subitem dua
+    \end{itemize}
+    \item Item kedua
+\end{enumerate}
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;Callout&amp;gt;
+Output:
+![list](/images/learn-latex-article-9.png)
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+&amp;gt; Untuk pemformatan list lebih lanjut seperti cara mengubah icon bullet, gaya penomoran (misalnya menggunakan angka romawi), maupun indentasi, kalian dapat membaca artikel berikut: &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.overleaf.com/learn/latex/Lists&#34;&gt;https://www.overleaf.com/learn/latex/Lists&lt;/a&gt;&amp;#34; target=&amp;#34;_blank&amp;#34; rel=&amp;#34;noreferrer&amp;#34;&amp;gt;overleaf.com/learn/latex/Lists&amp;lt;/a&amp;gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-14&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-14&#34;&gt;
+Menambahkan Persamaan Matematika dalam Dokumen LaTeX
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-14&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;
+Salah satu keunggulan utama LaTeX adalah kemampuannya untuk menangani notasi matematika dengan sangat baik. Kalian dapat menulis persamaan matematika baik dalam bentuk &lt;span style=&#34;text-decoration: underline;&#34;&gt;inline&lt;/span&gt; (di dalam teks) maupun dalam bentuk &lt;span style=&#34;text-decoration: underline;&#34;&gt;display&lt;/span&gt; (terpisah dari teks atau pada baris khusus).&lt;/p&gt;
+&lt;div id=&#34;outline-container-headline-15&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-15&#34;&gt;
+Persamaan Matematika Inline
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-15&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+Persamaan matematika &lt;span style=&#34;text-decoration: underline;&#34;&gt;inline&lt;/span&gt; ditulis di dalam tkalian `$...$`  atau `\(...\)`. Kode berikut&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers
+\documentclass{article}&lt;/p&gt;
+\begin{document}
+    Rumus Pythagoras adalah \(a^2 + b^2 = c^2\).
+    Persamaan $E=mc^2$ menyatakan hubungan massa dan energi.
+\end{document}
+&lt;p&gt;```
+&amp;lt;Callout&amp;gt;
+menghasilkan output&lt;/p&gt;
+&lt;p&gt;
+![inline math](/images/learn-latex-article-10.png)
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-16&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-16&#34;&gt;
+Persamaan Matematika Display
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-16&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;
+Ekspresi matematika display ditulis di luar teks biasa, seringkali digunakan untuk menampilkan persamaan yang kompleks atau ingin diberi penomoran. Gunakan &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment equation&lt;/span&gt; untuk menampilkan persamaan matematika dalam gaya displayed.&lt;/p&gt;
+&lt;p&gt;
+```latex {5,6,7,8,11,12,13} showLineNumbers
+\documentclass{article}
+\usepackage{amsmath}&lt;/p&gt;
+\begin{document}
+    Hubungan Energi relativistik dinyatakan oleh Persamaan (\ref{persamaan-1}).
+    \begin{equation}
+        E^2=(pc)^2+(m_0 c^2)^2.
+        \label{persamaan-1}
+    \end{equation}
+
+    Hukum Faraday dalam bentuk differensial dinytakan oleh
+    \begin{equation*}
+        \vec{\nabla} \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}
+    \end{equation*}
+\end{document}
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;Callout&amp;gt;
+Output:&lt;/p&gt;
+&lt;p&gt;
+![displayed math](/images/learn-latex-article-11.png)
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+Perhatikan perbedaan &lt;span style=&#34;text-decoration: underline;&#34;&gt;environmen equation&lt;/span&gt; vs &lt;span style=&#34;text-decoration: underline;&#34;&gt;equation*&lt;/span&gt;. &lt;span style=&#34;text-decoration: underline;&#34;&gt;equation*&lt;/span&gt; tidak memberikan penomoran persamaan. &lt;span style=&#34;text-decoration: underline;&#34;&gt;Environment equatin*&lt;/span&gt; ini disediakan oleh package `amsmath`.&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;Callout&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Secara sederhana, untuk menuliskan huruf yunani atau simbol matematika, kita menuliskan `\namaSymbolAtauHuruf` (selalu di awali tkalian &lt;span style=&#34;text-decoration: underline;&#34;&gt;backslash&lt;/span&gt; &amp;#34;\\&amp;#34;). Sebagai contoh: $\alpha, \beta,$ dan $\gamma$ dapat diperoleh dengan menuliskan `α, β,` dan `γ`.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Untuk menulis fungsi matematika seperti trigonometri atau logaritma, gunakan perintah bawaan seperti `sin`, `cos`, `log`, dan sebagainya. Jangan menuliskannya tanpa &amp;#34;\\&amp;#34;. Berikut perbedaan hasil fungsi `sin` yang ditulis dengan dan tanpa tkalian &amp;#34;\\&amp;#34;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dengen &amp;#34;\\&amp;#34; (terbaca sebagai suatu fungsi $\sin(\dots)$)
+  $$
+  \sin(x)
+  $$&lt;/li&gt;
+&lt;li&gt;tanpa &amp;#34;\\&amp;#34; (dianggap sebagai variabel $s$, $i$, dan $n$, sehingga ditulis miring)
+  $$
+  sin(x)
+  $$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+Untuk notasi matematika yang lebih kompleks, kita disarankan untuk menggunakan paket `amsmath`.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-17&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-17&#34;&gt;
+Package `amsmath`
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-17&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;div id=&#34;outline-container-headline-18&#34; class=&#34;outline-6&#34;&gt;
+&lt;h6 id=&#34;headline-18&#34;&gt;
+Environment align dan aligned
+&lt;/h6&gt;
+&lt;div id=&#34;outline-text-headline-18&#34; class=&#34;outline-text-6&#34;&gt;
+&lt;p&gt;
+&lt;span style=&#34;text-decoration: underline;&#34;&gt;Environment align&lt;/span&gt; digunakan untuk menyusun beberapa persamaan dengan tkalian `=` yang sejajar, atau mensejajarkan pada titik-titik tertentu.&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers &lt;em&gt;&amp;amp;&lt;/em&gt; {6,13}
+\documentclass{article}
+\usepackage{amsmath}&lt;/p&gt;
+\begin{document}
+    \section*{Environment align}
+    \begin{align}
+        \vec{E} &amp;amp;= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+        = \frac{1}{\epsilon_0} &amp;amp; \frac{1}{4\pi r^2}Q\\
+        &amp;amp;= \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+        &amp;amp;= \frac{Q}{4\pi \epsilon_0 r^2}
+    \end{align}
+
+    \section*{Environment align*}
+    \begin{align*}
+        \vec{E} &amp;amp;= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+        = \frac{1}{\epsilon_0} &amp;amp; \frac{1}{4\pi r^2}Q\\
+        &amp;amp; = \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+        &amp;amp;= \frac{Q}{4\pi \epsilon_0 r^2}
+    \end{align*}
+
+    \section*{Environment aligned di dalam equation}
+    \begin{equation}
+        \begin{aligned}
+            \vec{E} &amp;amp;= \frac{1}{\epsilon_0(1+\chi_e)}\vec{D}\\
+            = \frac{1}{\epsilon_0} &amp;amp; \frac{1}{4\pi r^2}Q\\
+            &amp;amp; = \frac{1}{\epsilon_0} \frac{1}{4\pi r^2}Q\\
+            &amp;amp;= \frac{Q}{4\pi \epsilon_0 r^2}
+        \end{aligned}
+    \end{equation}
+\end{document}
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;Callout&amp;gt;
+Output:&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;object data=&amp;#34;/documents/learn-latex-article-12.pdf&amp;#34; type=&amp;#34;application/pdf&amp;#34; width=&amp;#34;100%&amp;#34; height=&amp;#34;460&amp;#34; allow=&amp;#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&amp;#34; allowfullscreen &amp;gt;
+    &amp;lt;p&amp;gt;Unable to display PDF file. &amp;lt;a target=&amp;#34;_blank&amp;#34; href=&amp;#34;/documents/learn-latex-article-12.pdf&amp;#34;&amp;gt;Download&amp;lt;/a&amp;gt; instead.&amp;lt;/p&amp;gt;
+&amp;lt;/object&amp;gt;
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Perhatikan bahwa kita menkaliani titik-titik yang ingin disejajarkan dalam persamaan menggunakan simbol &lt;span style=&#34;text-decoration: underline;&#34;&gt;ampersand&lt;/span&gt; (`&amp;amp;`).&lt;/li&gt;
+&lt;li&gt;Untuk menggunaakn tkalian ampersand (&amp;amp;) di dalam teks biasa, sama seperti tanda %, kalian harus menambahkan tanda `\` di awal (escape character).&lt;/li&gt;
+&lt;li&gt;Perhatikan perbedaan sistem penomoran dari ketiga contoh di atas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;gt; Untuk penulisan ekspresi matematika yang lebih lengkap dapat kalian baca dalam artikel &amp;lt;a rel=&amp;#34;noreferrer&amp;#34; href=&amp;#34;&lt;a href=&#34;https://www.overleaf.com/learn/latex/Mathematics&#34;&gt;https://www.overleaf.com/learn/latex/Mathematics&lt;/a&gt;&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;overleaf.com/learn/latex/Mathematics&amp;lt;/a&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-19&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-19&#34;&gt;
+Membuat Tabel
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-19&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;Untuk membuat tabel sederhana di LaTeX, gunakan &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment table&lt;/span&gt; untuk menampung tabel dan &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment tabular&lt;/span&gt; untuk menyimpan isi tabel.&lt;/p&gt;
+&lt;p&gt;
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{amsmath}&lt;/p&gt;
+\begin{document}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|r|}
+        \hline
+        Header 1  &amp;amp; Header 2 &amp;amp; Header 3 \\
+        \hline
+        Data 1    &amp;amp; Data 2   &amp;amp; Data 3 \\
+        Data 4    &amp;amp; Data 5   &amp;amp; Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Contoh Tabel}
+    \label{tab:contoh}
+\end{table}
+
+\end{document}
+&lt;p&gt;```
+&amp;lt;Callout&amp;gt;
+Output:&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;img src=&amp;#34;/images/learn-latex-article-14.png&amp;#34; loading=&amp;#34;lazy&amp;#34;/&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;`\begin{table}[h]` dan `\end{table}`: &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment&lt;/span&gt; untuk tabel yang menyediakan &lt;span style=&#34;text-decoration: underline;&#34;&gt;floating environment&lt;/span&gt;, sehingga LaTeX dapat memposisikan tabel sesuai dengan layout dokumen. Opsi/argumen &lt;span style=&#34;text-decoration: underline;&#34;&gt;[h]&lt;/span&gt; menunjukkan bahwa tabel sebaiknya diletakkan &amp;#34;here&amp;#34; (di sini).&lt;/li&gt;
+&lt;li&gt;`¢ering`: meletakkan tabel di tengah halaman secara horizontal.&lt;/li&gt;
+&lt;li&gt;`\begin{tabular}{|c|c|c|}` dan `\end{tabular}`: &lt;span style=&#34;text-decoration: underline;&#34;&gt;environment&lt;/span&gt; untuk membuat isi tabel.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;`{|l|c|r|}` menentukan bahwa tabel memiliki tiga kolom yang disusun secara vertikal (dengan garis pembatas di antaranya). Kolom pertama rata kiri (l, left), kolom ke-dua rata tengah (c, center), dan kolom ke-tiga rata kanan (r, right). Coba contoh berikut:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;`{c|c|c}`&lt;/li&gt;
+&lt;li&gt;`{ll|c}`&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;`\hline`: Menambahkan border/garis horizontal.&lt;/li&gt;
+&lt;li&gt;`&amp;amp;`: Memisahkan kolom.&lt;/li&gt;
+&lt;li&gt;`\\`: Menkaliankan akhir baris/membuat baris baru.&lt;/li&gt;
+&lt;li&gt;`∩tion{Contoh Tabel}`: Menambahkan keterangan atau judul tabel.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;outline-container-headline-20&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-20&#34;&gt;
+Menggabungkan kolom dan/atau baris (merge column and row)
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-20&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;Sebagai section terakhir, saya akan berikan ini sebagai latihan bagi kalian untuk memhamai secara mandiri.
+```latex showLineNumbers
+\documentclass{article}
+\usepackage{multirow}&lt;/p&gt;
+\begin{document}
+
+\section{Pendahuluan}
+Dokumen ini menunjukkan cara membuat dan menyesuaikan tabel dalam LaTeX.
+
+\section{Tabel Dasar}
+Berikut adalah tabel dasar:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Header 1 &amp;amp; Header 2 &amp;amp; Header 3 \\
+        \hline
+        Data 1 &amp;amp; Data 2 &amp;amp; Data 3 \\
+        Data 4 &amp;amp; Data 5 &amp;amp; Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Contoh Tabel}
+    \label{tab:contoh}
+\end{table}
+
+\section{Lebar Kolom yang Disesuaikan}
+Berikut adalah tabel dengan lebar kolom yang disesuaikan:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{3cm}|p{5cm}|p{4cm}|}
+        \hline
+        Header 1 &amp;amp; Header 2 &amp;amp; Header 3 \\
+        \hline
+        Data 1 &amp;amp; Data 2 &amp;amp; Data 3 \\
+        Data 4 &amp;amp; Data 5 &amp;amp; Data 6 \\
+        \hline
+    \end{tabular}
+    \caption{Tabel dengan Lebar Kolom yang Disesuaikan}
+    \label{tab:lebar_kolom}
+\end{table}
+
+\section{Menggabungkan Baris dan Kolom}
+Berikut adalah tabel dengan baris dan kolom yang digabungkan:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{2}{|c|}{Gabungan Kolom} &amp;amp; Kolom 3 \\
+        \hline
+        \multirow{2}{*}{Baris 1 dan 2} &amp;amp; Data 2 &amp;amp; Data 3 \\
+        &amp;amp; Data 5 &amp;amp; Data 6 \\
+        \hline
+        Data 7 &amp;amp; Data 8 &amp;amp; Data 9 \\
+        \hline
+    \end{tabular}
+    \caption{Tabel dengan Baris dan Kolom yang Digabungkan}
+    \label{tab:gabungan}
+\end{table}
+
+\end{document}
+&lt;p&gt;
+```&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;Callout&amp;gt;
+Output:&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;object data=&amp;#34;/documents/learn-latex-article-15.pdf&amp;#34; type=&amp;#34;application/pdf&amp;#34; width=&amp;#34;100%&amp;#34; height=&amp;#34;460&amp;#34; allow=&amp;#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&amp;#34; allowfullscreen &amp;gt;
+    &amp;lt;p&amp;gt;Unable to display PDF file. &amp;lt;a target=&amp;#34;_blank&amp;#34; href=&amp;#34;/documents/learn-latex-article-15.pdf&amp;#34;&amp;gt;Download&amp;lt;/a&amp;gt; instead.&amp;lt;/p&amp;gt;
+&amp;lt;/object&amp;gt;
+&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;Callout&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-21&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-21&#34;&gt;
+Penutup
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-21&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;
+Dalam menulis LaTeX kalian tidak perlu menghafal secara detail semua perintah dan packages yang dibutuhkan:&lt;/p&gt;
+&lt;p&gt;
+&amp;lt;div className=&amp;#34;text-center&amp;#34;&amp;gt;
+&lt;span style=&#34;text-decoration: underline;&#34;&gt;You google what you need, and then forget about it, until the next time you need it, at which point you google it again&lt;/span&gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;div id=&#34;outline-container-headline-22&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-22&#34;&gt;
+Referensi tutorial
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-22&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;Totorial LaTeX lengkap dapat kalian di dalam &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.overleaf.com/learn&#34;&gt;https://www.overleaf.com/learn&lt;/a&gt;&amp;#34; target=&amp;#34;_blank&amp;#34; rel=&amp;#34;noreferrer&amp;#34;&amp;gt;dokumentasi LaTeX oleh Overleaf&amp;lt;/a&amp;gt;,&lt;/li&gt;
+&lt;li&gt;atau dengan melihat playlist youtube &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73&amp;amp;si=WhEAnfmAUYOhoBXK&#34;&gt;https://youtube.com/playlist?list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73&amp;amp;si=WhEAnfmAUYOhoBXK&lt;/a&gt;&amp;#34; target=&amp;#34;&lt;span style=&#34;text-decoration: underline;&#34;&gt;blank&amp;#34; rel=&amp;#34;noreferrer&amp;#34;&amp;gt;_LaTeX tutorials&lt;/span&gt; berikut&amp;lt;/a&amp;gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;/Callout&amp;gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-23&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-23&#34;&gt;
+Referensi
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-23&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;&lt;sup class=&#34;footnote-reference&#34;&gt;&lt;a id=&#34;footnote-reference-1&#34; href=&#34;#footnote-1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;: Baca artikel &lt;a href=&#34;https://www.overleaf.com/about/why-latex&#34;&gt;The secret to better scientific and technical writing&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr class=&#34;footnotes-separatator&#34;&gt;
+&lt;div class=&#34;footnote-definitions&#34;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+      </description>
+    </item>
     
   </channel>
 </rss>
